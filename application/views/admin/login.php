@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Classy Login form Widget Flat Responsive Widget Template :: w3layouts</title>
+<title>User Login Of LoveMarket</title>
     <link href="<?= base_url()?>/assets/dist/js/jquery.min.js" rel="stylesheet">
 <!-- Custom Theme files -->
     <link href="<?= base_url()?>/assets/dist/css/style.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
-		       <h1>Classy Login Form</h1>
+		       <h1>LoveMarket Login</h1>
 			<div class="header-bottom">
 				<div class="header-right w3agile">
 					
@@ -39,14 +39,6 @@
 					   
 						<input type="submit" value="Login">
 					</form>	
-					<div class="header-left-top">
-						<div class="sign-up"> <h2>or</h2> </div>
-					
-					</div>
-					<div class="header-social wthree">
-							<a href="#" class="face"><h5>Facebook</h5></a>
-							<a href="#" class="twitt"><h5>Twitter</h5></a>
-						</div>
 						
 				</div>
 				</div>
@@ -56,7 +48,7 @@
 </div>
 <!--header end here-->
 <div class="copyright">
-	<p>© 2016 Classy Login Form. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+	<p>© 2018 LoveMarket Login Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">  LoveMarket </a></p>
 </div>
 <!--footer end here-->
 </body>
