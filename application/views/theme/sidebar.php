@@ -47,7 +47,7 @@
                             <a href="<?php base_url("home.php"); ?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Barang<span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Barang<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Pemesanan Barang</a>
@@ -59,13 +59,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Cek Barang Masuk</a>
+                            <a href="#"><i class="glyphicon glyphicon-check"></i> Cek Barang Masuk</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Catalog Display</a>
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Supplier</a>
+                            <a href="#"><i class="glyphicon glyphicon-user"></i> Supplier</a>
                         </li>
  
                             <!-- /.nav-second-level -->

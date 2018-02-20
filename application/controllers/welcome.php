@@ -19,10 +19,6 @@ class welcome extends CI_Controller{
 	{
 		$this->load->view("pemesanan");
 	}
-			public function konten()
-	{
-		$this->load->view("konten");
-	}
 
 
 
