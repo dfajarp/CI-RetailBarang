@@ -24,7 +24,7 @@
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="#" method="post">
+					 <form action="<?= base_url("welcome") ?>" method="post">
 						<input type="text"  value="User name" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
 					<input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
 						<div class="remember">
