@@ -11,4 +11,20 @@ class welcome extends CI_Controller{
 	{
 		$this->load->view("admin/login");
 	}
+		public function beranda()
+	{
+		$this->load->view("home");
+	}
+		public function pemesanan()
+	{
+		$this->load->view("pemesanan");
+	}
+			public function konten()
+	{
+		$this->load->view("konten");
+	}
+
+
+
+
 }
