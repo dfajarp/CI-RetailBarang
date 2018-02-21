@@ -24,8 +24,8 @@
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="<?= base_url("welcome") ?>" method="post">
-						<input type="text"  value="User name" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
+					 <form action="<?= base_url("login/masuk") ?>" method="post">
+						<input type="text"  value="User name" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
 					<input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
 						<div class="remember">
 			             <span class="checkbox1">
@@ -50,6 +50,15 @@
 <div class="copyright">
 	<p>© 2018 LoveMarket Login Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">  LoveMarket </a></p>
 </div>
+<?php
+if($this->session->flashdata('pesan') <> ''){
+?>
+	<div class="alert alert-dismissible alert-danger">
+		<?php echo $this->session->flashdata('pesan');?>
+	</div>
+	<?php
+	}
+	?>
 <!--footer end here-->
 </body>
 </html>
