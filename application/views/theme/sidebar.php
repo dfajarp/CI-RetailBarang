@@ -44,18 +44,11 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php base_url("home.php"); ?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
+                            <a href="<?= base_url("welcome/home"); ?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Barang<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Pemesanan Barang</a>
-                                </li>
-                                <li>
-                                    <a href="#">Detail Barang</a>
-                                </li>
-                            </ul>
+                            <a href="<?= base_url("crud/vtampil"); ?>"><i class="glyphicon glyphicon-briefcase"></i> Barang</a>
+                           
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
