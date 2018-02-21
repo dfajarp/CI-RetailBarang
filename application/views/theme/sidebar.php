@@ -47,7 +47,7 @@
                             <a href="<?= base_url("welcome/home"); ?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
                         </li>
                         <li>
-                            <a href="<?= base_url("crud/vtampil"); ?>"><i class="glyphicon glyphicon-briefcase"></i> Barang</a>
+                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Barang</a>
                            
                             <!-- /.nav-second-level -->
                         </li>
@@ -58,7 +58,7 @@
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Catalog Display</a>
                         </li>
                          <li>
-                            <a href="#"><i class="glyphicon glyphicon-user"></i> Supplier</a>
+                            <a href="<?= base_url("crud/vtampil"); ?>"><i class="glyphicon glyphicon-user"></i> Supplier</a>
                         </li>
  
                             <!-- /.nav-second-level -->
