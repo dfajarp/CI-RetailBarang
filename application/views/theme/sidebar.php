@@ -58,7 +58,7 @@
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Catalog Display</a>
                         </li>
                          <li>
-                            <a href="<?= base_url("crud/vtampil"); ?>"><i class="glyphicon glyphicon-user"></i> Supplier</a>
+                            <a href="<?= base_url("crud/vsupplier"); ?>"><i class="glyphicon glyphicon-user"></i> Supplier</a>
                         </li>
  
                             <!-- /.nav-second-level -->

@@ -8,9 +8,30 @@ class Crud extends CI_Controller{
                 $this->load->helper('url');
 	}
 
-	function vtampil()
+	function vsupplier()
 	{
 		$data['supplier'] = $this->m_data->tampil_data()->result();
-		$this->load->view("vtampil",$data);
+		$this->load->view("/supplier/vsupplier",$data);
+	}
+
+	function vtambah()
+	{
+		$this->load->view("/supplier/vtambah");
+	}
+
+		function tambah_aksi(){
+		$id_supplier = $this->input->post('id_supplier');
+		$nama_supplier = $this->input->post('nama_supplier');
+		$alamat = $this->input->post('alamat');
+		$no_telepon = $this->input->post('no_telepon');
+ 
+		$data = array(
+			'id_supplier'  => $id_supplier,
+			'nama_supplier' => $nama_supplier,
+			'alamat' => $alamat,
+			'no_telepon' => $no_telepon
+			);
+		$this->m_data->input_data($data,"supplier");
+		redirect('crud/vsupplier');
 	}
 }
