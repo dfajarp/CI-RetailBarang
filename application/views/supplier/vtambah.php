@@ -4,7 +4,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h1 class="page-header">Supplier</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -13,7 +13,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                            Data Supplier
                         </div>
 	<div class="panel-body">
             <?php echo $this->session->flashdata('pesan'); ?> 
@@ -37,15 +37,7 @@
                     </tr> 
                     <tr>
                     </tr> 
-                    <tr> 
-                        <td>Alamat</td> 
-                        <td> 
-                            <div class="col-sm-4"> 
-                                <input type="text" name="alamat" class="form-control" value=""> 
-                            </div> 
-                        </td>
-                    </tr> 
-                    <tr> 
+                      <tr> 
                         <td>No. Tlp</td> 
                         <td> 
                             <div class="col-sm-4"> 
@@ -54,9 +46,17 @@
                         </td>
                     </tr> 
                     <tr> 
+                        <td>Alamat</td> 
+                        <td> 
+                            <div class="col-sm-6"> 
+                                <input type="address" name="alamat" class="form-control" value=""> 
+                            </div> 
+                        </td>
+                    </tr> 
+                    <tr> 
                         <td colspan="2">
                             <input type="submit" class="btn btn-success" value="Simpan"> 
-                            <button type="reset" class="btn btn-default">Batal</button> 
+                            <button type="reset" class="btn btn-default">Reset</button> 
                         </td> 
                     </tr> 
                 </table> 

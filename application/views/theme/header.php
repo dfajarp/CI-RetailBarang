@@ -243,7 +243,12 @@
                     <!-- /.dropdown-alerts -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
+                
+
+
+
+
+<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
@@ -258,6 +263,12 @@
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
+
+
+
+
+
+
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->

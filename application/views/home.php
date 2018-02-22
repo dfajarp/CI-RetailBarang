@@ -1,6 +1,7 @@
 <?php $this->load->view('theme/header'); ?>
 <?php $this->load->view('theme/sidebar'); ?>
 
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
