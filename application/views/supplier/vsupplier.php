@@ -13,7 +13,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                            Data Supplier
                         </div>
 	<div class="panel-body">
 	<a href="<?= base_url("crud/vtambah"); ?>" class="btn btn-sm btn-primary">
@@ -40,11 +40,11 @@
 			<td><?php echo $u->alamat ?></td>
 			<td><?php echo $u->no_telepon ?></td>
 			<td>
-			      <a href="<?php echo base_url() ?>barang/form/edit/" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+			      <a href="<?php echo base_url('crud/edit/'.$u->id_supplier); ?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 
 			     <a href="<?php echo base_url() ?>barang/detail/" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 			      
-                 <a href="<?php echo base_url() ?>barang/hapus/" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')"><i class="glyphicon glyphicon-trash"></i></a>
+                 <a href="<?php echo base_url('crud/hapus/'.$u->id_supplier); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')"><i class="glyphicon glyphicon-trash"></i></a>
 			</td>
 		</tr>
 		<?php } ?>
