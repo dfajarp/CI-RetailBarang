@@ -47,12 +47,18 @@
                             <a href="<?= base_url("welcome/home"); ?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Barang</a>
+                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Barang<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?= base_url("stok/vbarang"); ?>">Stok Barang</a>
+                                </li>
+                                <li>
+                                    <a href="#">Beli Barang</a>
+                                </li>
+                            </ul>
+
                            
                             <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="glyphicon glyphicon-check"></i> Cek Barang Masuk</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Catalog Display</a>
