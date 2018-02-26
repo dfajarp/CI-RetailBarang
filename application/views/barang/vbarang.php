@@ -1,6 +1,7 @@
 <?php $this->load->view('theme/header'); ?>
 <?php $this->load->view('theme/sidebar'); ?>
-<div class="main-content">
+
+            <div class="main-content">
                 <div class="main-content-inner">
                     <div class="breadcrumbs ace-save-state" id="breadcrumbs">
                         <ul class="breadcrumb">
@@ -18,13 +19,13 @@
                             <li class="active">Data Stok</li>
                         </ul><!-- /.breadcrumb -->
                     </div>
-<?php $this->load->view('theme/setting'); ?>
 
                     <div class="page-content">
                         <div class="ace-settings-container" id="ace-settings-container">
                             <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                                 <i class="ace-icon fa fa-cog bigger-130"></i>
                             </div>
+<?php $this->load->view('theme/setting'); ?>
                         </div><!-- /.ace-settings-container -->
 
                         <div class="page-header">
@@ -83,6 +84,3 @@
 </body>
 </html>
 <?php $this->load->view('theme/setting_down'); ?>
-
-            
-            
