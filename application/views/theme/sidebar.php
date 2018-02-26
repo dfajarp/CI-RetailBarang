@@ -102,7 +102,7 @@
                         <b class="arrow"></b>
                     </li>
 
-                                        <li class="">
+                     <li class="">
                         <a href="widgets.html">
                             <i class="fa fa-edit fa-fw"></i>
                             <span class="menu-text"> Catalog Display </span>

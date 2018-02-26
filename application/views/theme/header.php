@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta charset="utf-8" />
-        <title>Dashboard - Ace Admin</title>
+        <title>Aplikasi Retail Barang</title>
 
         <meta name="description" content="overview &amp; stats" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -61,7 +61,7 @@
                     <a href="<?= base_url("welcome/home"); ?>" class="navbar-brand">
                         <small>
                             <i class="fa fa-leaf"></i>
-                            Ace Admin
+                            (RB) Retail Barang
                         </small>
                     </a>
                 </div>
@@ -325,10 +325,10 @@
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                                <img class="nav-user-photo" src="<?= base_url()?>/assets/images/user.png" alt="Gudang's Photo" />
                                 <span class="user-info">
-                                    <small>Welcome,</small>
-                                    Jason
+                                    <small>Selamat <br>Datang</small>
+                                
                                 </span>
 
                                 <i class="ace-icon fa fa-caret-down"></i>
