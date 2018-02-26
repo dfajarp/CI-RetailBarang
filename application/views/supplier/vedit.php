@@ -7,13 +7,13 @@
                         <ul class="breadcrumb">
                             <li>
                                 <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="#">Home</a>
+                                <a href="<?= base_url("welcome/home"); ?>">Home</a>
                             </li>
 
                             <li>
-                                <a href="#">Tables</a>
+                                <a href="<?= base_url("crud/vsupplier"); ?>">Supplier</a>
                             </li>
-                            <li class="active">Simple &amp; Dynamic</li>
+                            <li class="active">Ubah Data</li>
                         </ul><!-- /.breadcrumb -->
 
                         <div class="nav-search" id="nav-search">
@@ -96,10 +96,10 @@
 
                         <div class="page-header">
                             <h1>
-                                Tables
+                                Supplier
                                 <small>
                                     <i class="ace-icon fa fa-angle-double-right"></i>
-                                    Static &amp; Dynamic Tables
+                                   Ubah Data
                                 </small>
                             </h1>
                         </div><!-- /.page-header -->
