@@ -11,9 +11,9 @@
                             </li>
 
                             <li>
-                                <a href="#">Tables</a>
+                                <a href="#">Supplier</a>
                             </li>
-                            <li class="active">Simple &amp; Dynamic</li>
+                            <li class="active">Data Supplier</li>
                         </ul><!-- /.breadcrumb -->
 
                         <div class="nav-search" id="nav-search">
@@ -96,10 +96,10 @@
 
                         <div class="page-header">
                             <h1>
-                                Tables
+                                Supplier
                                 <small>
                                     <i class="ace-icon fa fa-angle-double-right"></i>
-                                    Static &amp; Dynamic Tables
+                                    Data Supplier
                                 </small>
                             </h1>
                         </div><!-- /.page-header -->
