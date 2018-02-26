@@ -9,70 +9,127 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <title>Aplikasi Retail Barang</title>
+            <meta name="description" content="overview &amp; stats" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php base_url()?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+         <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<?= base_url()?>/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-    <!-- MetisMenu CSS -->
-    <link href="<?php base_url()?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+        <!-- page specific plugin styles -->
 
-    <!-- Custom CSS -->
-    <link href="<?php base_url()?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
+        <!-- text fonts -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/fonts.googleapis.com.css" />
 
-    <!-- Morris Charts CSS -->
-    <link href="<?php base_url()?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
+        <!-- ace styles -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
-    <!-- Custom Fonts -->
-    <link href="<?php base_url()?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+        <![endif]-->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/ace-skins.min.css" />
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/ace-rtl.min.css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <!--[if lte IE 9]>
+          <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+        <![endif]-->
 
+        <!-- inline styles related to this page -->
+
+        <!-- ace settings handler -->
+        <script src="<?= base_url()?>/assets/js/ace-extra.min.js"></script>
 </head>
 
 <body>
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                                
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href="<?= base_url("welcome/home"); ?>"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i> Barang</a>
-                           
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="glyphicon glyphicon-check"></i> Cek Barang Masuk</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Catalog Display</a>
-                        </li>
-                         <li>
-                            <a href="<?= base_url("crud/vsupplier"); ?>"><i class="glyphicon glyphicon-user"></i> Supplier</a>
-                        </li>
- 
-                            <!-- /.nav-second-level -->
-                       
+        <div class="main-container ace-save-state" id="main-container">
+            <script type="text/javascript">
+                try{ace.settings.loadState('main-container')}catch(e){}
+            </script>
 
-                    </ul>
+            <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+                <script type="text/javascript">
+                    try{ace.settings.loadState('sidebar')}catch(e){}
+                </script>
+
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button class="btn btn-success">
+                            <i class="ace-icon fa fa-signal"></i>
+                        </button>
+
+                        <button class="btn btn-info">
+                            <i class="ace-icon fa fa-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-warning">
+                            <i class="ace-icon fa fa-users"></i>
+                        </button>
+
+                        <button class="btn btn-danger">
+                            <i class="ace-icon fa fa-cogs"></i>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                        <span class="btn btn-success"></span>
+
+                        <span class="btn btn-info"></span>
+
+                        <span class="btn btn-warning"></span>
+
+                        <span class="btn btn-danger"></span>
+                    </div>
+                </div><!-- /.sidebar-shortcuts -->
+
+                <ul class="nav nav-list">
+                    <li class="active">
+                        <a href="<?= base_url("welcome/home"); ?>">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            <span class="menu-text"> Beranda </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="widgets.html">
+                            <i class="menu-icon fa fa-list-alt"></i>
+                            <span class="menu-text"> Barang </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                                        <li class="">
+                        <a href="widgets.html">
+                            <i class="fa fa-edit fa-fw"></i>
+                            <span class="menu-text"> Catalog Display </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+
+                    <li class="">
+                        <a href="<?= base_url("crud/vsupplier"); ?>">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="menu-text"> Supplier </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+
+
+
+                        </ul>
+                    </li>
+                </ul><!-- /.nav-list -->
+                <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                    <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
                 </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-    </li>
-</ul>
-</div>
-</div>
-</body>
-</html>
+            </div>  
+
+
