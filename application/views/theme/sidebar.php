@@ -94,7 +94,21 @@
                     </li>
 
                     <li class="">
-                        <a href="widgets.html">
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li>
+                                    <a href="flot.html" class="active">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+                    <li class="">
+                        <a href="">
                             <i class="menu-icon fa fa-list-alt"></i>
                             <span class="menu-text"> Barang </span>
                         </a>
