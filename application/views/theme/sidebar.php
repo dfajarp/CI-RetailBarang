@@ -93,30 +93,38 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                                <li>
-                                    <a href="flot.html" class="active">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-
-
-                    <li class="">
-                        <a href="">
-                            <i class="menu-icon fa fa-list-alt"></i>
+    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-list"></i>
                             <span class="menu-text"> Barang </span>
+
+                            <b class="arrow fa fa-angle-down"></b>
                         </a>
 
                         <b class="arrow"></b>
+
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="tables.html">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Stok Barang
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+
+                            <li class="">
+                                <a href="jqgrid.html">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Beli Barang
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
                     </li>
 
-                     <li class="">
+                                        <li class="">
                         <a href="widgets.html">
                             <i class="fa fa-edit fa-fw"></i>
                             <span class="menu-text"> Catalog Display </span>
