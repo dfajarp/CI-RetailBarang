@@ -14,7 +14,10 @@
             <meta name="description" content="overview &amp; stats" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-         <!-- bootstrap & fontawesome -->
+
+
+
+       <!-- bootstrap & fontawesome -->
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="<?= base_url()?>/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
@@ -40,10 +43,17 @@
 
         <!-- ace settings handler -->
         <script src="<?= base_url()?>/assets/js/ace-extra.min.js"></script>
+
+        <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+        <!--[if lte IE 8]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
 </head>
 
 <body>
-        <div class="main-container ace-save-state" id="main-container">
+        <div class="main-container ace-save-state" id="main-container"></div>
             <script type="text/javascript">
                 try{ace.settings.loadState('main-container')}catch(e){}
             </script>
@@ -86,16 +96,16 @@
                 <ul class="nav nav-list">
                     <li class="active">
                         <a href="<?= base_url("welcome/home"); ?>">
-                            <i class="glyphicon glyphicon-briefcase"></i>
+                            <i class="fa fa-dashboard fa-fw"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
 
                         <b class="arrow"></b>
                     </li>
 
-    <li class="">
+                    <li class="">
                         <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-list"></i>
+                            <i class="glyphicon glyphicon-briefcase"></i>
                             <span class="menu-text"> Barang </span>
 
                             <b class="arrow fa fa-angle-down"></b>
@@ -124,7 +134,7 @@
                         </ul>
                     </li>
 
-                                        <li class="">
+                        <li class="">
                         <a href="widgets.html">
                             <i class="fa fa-edit fa-fw"></i>
                             <span class="menu-text"> Catalog Display </span>
@@ -142,16 +152,13 @@
 
                         <b class="arrow"></b>
                     </li>
-
-
-
-
                         </ul>
-                    </li>
-                </ul><!-- /.nav-list -->
+                 
+               <!-- /.nav-list -->
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
                     <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
                 </div>
-            </div>  
+            </div>
 
 
+ 
