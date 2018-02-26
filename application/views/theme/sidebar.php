@@ -105,7 +105,7 @@
 
                         <ul class="submenu">
                             <li class="">
-                                <a href="tables.html">
+                                <a href="<?= base_url("stok/vbarang"); ?>">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Stok Barang
                                 </a>
