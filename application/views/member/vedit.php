@@ -11,12 +11,19 @@
                             </li>
 
                             <li>
-                                <a href="<?= base_url("crud/vsupplier"); ?>">Member</a>
+                                <a href="<?= base_url("member/vmember"); ?>">Member</a>
                             </li>
-                            <li class="active">Data Member</li>
+                            <li class="active">Ubah Data</li>
                         </ul><!-- /.breadcrumb -->
 
-                      
+                        <div class="nav-search" id="nav-search">
+                            <form class="form-search">
+                                <span class="input-icon">
+                                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                                    <i class="ace-icon fa fa-search nav-search-icon"></i>
+                                </span>
+                            </form>
+                        </div><!-- /.nav-search -->
                     </div>
 
                     <div class="page-content">
@@ -92,7 +99,7 @@
                                 Member
                                 <small>
                                     <i class="ace-icon fa fa-angle-double-right"></i>
-                                    Data Member
+                                   Ubah Data
                                 </small>
                             </h1>
                         </div><!-- /.page-header -->
@@ -104,50 +111,80 @@
                                     <div class="col-xs-12">
 
 
-<div class="panel panel-default">
+                    <h1 class="page-header">Member</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             Data Member
                         </div>
     <div class="panel-body">
-    <a href="<?= base_url("member/vtambah"); ?>" class="btn btn-sm btn-primary">
-        <i class="glyphicon glyphicon-plus"></i> Tambah</a>
-    <table class="table table-striped">
-        <thead>
-                   <tr> 
-                        <th>No</th> 
-                        <th>No. Member</th> 
-                        <th>Nama</th> 
-                        <th>Email</th> 
-                        <th>No.Tlp</th> 
-                        <th>Valid date</th> 
-                        <th>Aksi</th>
+            <?php echo $this->session->flashdata('pesan'); ?> 
+            <?php foreach($member as $u){ ?>
+            <form action="<?= base_url("member/update"); ?>" method="post">
+                <table class="table table-striped">
+                     <tr> 
+                        <td>No. Member</td> 
+                        <td> 
+                            <div class="col-sm-6"> 
+                                <input type="text" name="member_no" class="form-control" value="<?php echo $u->member_no ?>"> 
+                            </div>
+                        </td>
                     </tr> 
-                </thead>
-        <?php 
-        $no = 1;
-        foreach ($member as $u){ 
-        ?>
-        <tr>
-            <td><?php echo $no++ ?></td>
-            <td><?php echo $u->member_no ?></td>
-            <td><?php echo $u->nama ?></td>
-            <td><?php echo $u->no_telepon ?></td>
-            <td><?php echo $u->email ?></td>
-            <td><?php echo $u->valid_date ?></td>
-            <td>
-                  <a href="<?php echo base_url('member/edit/'.$u->member_no); ?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
-                  
-                 <a href="<?php echo base_url('member/hapus/'.$u->member_no); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')"><i class="glyphicon glyphicon-trash"></i></a>
-            </td>
-        </tr>
-        <?php } ?>
+                    <tr> 
+                        <td>Nama</td> 
+                        <td> 
+                            <div class="col-sm-6"> 
+                                <input type="text" name="nama" class="form-control" value="<?php echo $u->nama ?>"> 
+                            </div>
+                        </td>
+                    </tr> 
+                    <tr>
+                    </tr> 
 
-    </table>
-</div>
-</div>
-</div>
-</div>
-</div>
+                     <tr> 
+                        <td>Email</td> 
+                        <td> 
+                            <div class="col-sm-4"> 
+                                <input type="text" name="email" class="form-control" value="<?php echo $u->email ?>">
+                            </div>
+                        </td>
+                    </tr> 
+                    <tr> 
 
-    </div>
+                     <tr> 
+                        <td>No. Tlp</td> 
+                        <td> 
+                            <div class="col-sm-4"> 
+                                <input type="text" name="no_telepon" class="form-control" value="<?php echo $u->no_telepon ?>">
+                            </div>
+                        </td>
+                    </tr> 
+                    <tr> 
+                        <td>Valid Date</td> 
+                        <td> 
+                            <div class="col-sm-6"> 
+                                <input type="address" name="valid_date" class="form-control" value="<?php echo $u->valid_date ?>"> 
+                            </div> 
+                        </td>
+                    </tr> 
 
+
+
+                    <tr> 
+                        <td colspan="2">
+                            <input type="submit" class="btn btn-success" value="Simpan"> 
+                            
+                        </td> 
+                    </tr> 
+                </table> 
+            </form> 
+            <?php } ?>
+        </div> 
+    </div> 
+    <!-- /panel --> 
+</div>

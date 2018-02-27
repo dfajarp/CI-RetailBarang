@@ -116,7 +116,7 @@
 
 
                     <li class="">
-                        <a href="<?= base_url("crud/vsupplier"); ?>">
+                        <a href="<?= base_url("member/vmember"); ?>">
                             <i class="glyphicon glyphicon-user"></i>
                             <span class="menu-text"> Member </span>
                         </a>
