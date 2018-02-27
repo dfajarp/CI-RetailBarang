@@ -17,6 +17,11 @@ class Welcome extends CI_Controller{
 		$this->load->view("home");
 	}
 
+		public function belibarang()
+	{
+		$this->load->view("barang/belibarang");
+	}
+
 
 
 

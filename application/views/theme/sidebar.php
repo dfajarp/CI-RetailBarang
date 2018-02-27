@@ -124,7 +124,7 @@
                             </li>
 
                             <li class="">
-                                <a href="jqgrid.html">
+                                <a href="<?= base_url("welcome/belibarang"); ?>">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Beli Barang
                                 </a>
