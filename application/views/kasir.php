@@ -1,5 +1,5 @@
-<?php $this->load->view('theme/header'); ?>
-<?php $this->load->view('theme/sidebar'); ?>
+<?php $this->load->view('theme/header_kasir'); ?>
+<?php $this->load->view('theme/sidebar_kasir'); ?>
 
 
             <div class="main-content">
@@ -8,7 +8,7 @@
                         <ul class="breadcrumb">
                             <li>
                                 <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="<?= base_url("welcome/home"); ?>">Home</a>
+                                <a href="<?= base_url("kasir"); ?>">Home</a>
                             </li>
                             <li class="active">Dashboard</li>
                         </ul><!-- /.breadcrumb -->

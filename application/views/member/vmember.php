@@ -1,5 +1,5 @@
-<?php $this->load->view('theme/header'); ?>
-<?php $this->load->view('theme/sidebar'); ?>
+<?php $this->load->view('theme/header_kasir'); ?>
+<?php $this->load->view('theme/sidebar_kasir'); ?>
 
             <div class="main-content">
                 <div class="main-content-inner">

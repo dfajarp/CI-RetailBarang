@@ -83,4 +83,3 @@
     </div>
 </body>
 </html>
-<?php $this->load->view('theme/setting_down'); ?>
