@@ -327,8 +327,8 @@
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                                 <img class="nav-user-photo" src="<?= base_url()?>/assets/images/user.png" alt="Gudang's Photo" />
                                 <span class="user-info">
-                                    <small>Selamat <br>Datang</small>
-                                
+                                    <small>Welcome</small>
+                                    <p>Gudang</p>
                                 </span>
 
                                 <i class="ace-icon fa fa-caret-down"></i>

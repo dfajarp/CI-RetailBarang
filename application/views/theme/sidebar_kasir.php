@@ -96,7 +96,7 @@
                 <ul class="nav nav-list">
                     <li class="active">
                         <a href="<?= base_url("kasir"); ?>">
-                            <i class="fa fa-dashboard fa-fw"></i>
+                            <i class="glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
 
@@ -107,7 +107,7 @@
 
                         <li class="">
                         <a href="widgets.html">
-                            <i class="fa fa-edit fa-fw"></i>
+                            <i class="glyphicon glyphicon-transfer"></i>
                             <span class="menu-text"> Transaksi  </span>
                         </a>
 
