@@ -4,9 +4,6 @@ class M_stok extends CI_Model{
 	public function __construct(){
 		parent::__construct();
 	}
-	
-	//function datastok()
-	//{
 		function tampil(){
 			$this->db->select('barang.*, kategori.nama_kategori');
 			$this->db->from('barang');
@@ -14,6 +11,5 @@ class M_stok extends CI_Model{
 			$data = $this->db->get();
 			return $data->result();
 		}
-		//return $this->db->get('barang');
 	
 	}
