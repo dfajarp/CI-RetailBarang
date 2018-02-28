@@ -10,7 +10,8 @@ class Pemesanan extends CI_Controller{
 
      function belibarang()
 	{
-		$data['beli_barang'] = $this->m_pemesanan->tampil_data()->result();
+		$data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0))->result();
+		$data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1))->result();
 		$this->load->view("/barang/belibarang",$data);
 	}
 
@@ -24,14 +25,12 @@ class Pemesanan extends CI_Controller{
      	$id_pembelian = $this->input->post('id_pembelian');
      	$id_supplier = $this->input->post('id_supplier');
      	$tanggal_beli = $this->input->post('tanggal_beli');
-     	$username = $this->input->post('username');
      	$status = $this->input->post('status');
 
      	$data = array(
      		'id_pembelian' => $id_pembelian,
      		'id_supplier' => $id_supplier,
      		'tanggal_beli' => $tanggal_beli,
-     		'username' => $username,
      		'status' => $status
      		);
      	$this->m_pemesanan->input_data($data, "beli_barang");
