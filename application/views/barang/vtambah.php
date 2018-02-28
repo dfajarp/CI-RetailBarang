@@ -99,11 +99,70 @@
                     </tr> 
                     <tr> 
                         <td colspan="2">
-                            <input type="submit" class="btn btn-success" value="Simpan"> 
-                            <button type="reset" class="btn btn-default">Reset</button> 
                         </td> 
                     </tr> 
                 </table> 
+
+
+                <div class="col-md-6">
+                	<div class="panel panel-default">
+                		<div class="panel-heading">Barang 1</div>
+                		<div class="panel-body">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                		</div>
+                	</div>
+                </div>
+                <div class="col-md-6">
+                	<div class="panel panel-default">
+                		<div class="panel-heading">Barang 1</div>
+                		<div class="panel-body">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                		</div>
+                	</div>
+                </div>
+                <div class="col-md-6">
+                	<div class="panel panel-default">
+                		<div class="panel-heading">Barang 1</div>
+                		<div class="panel-body">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                		</div>
+                	</div>
+                </div>
+                <div class="col-md-6">
+                	<div class="panel panel-default">
+                		<div class="panel-heading">Barang 1</div>
+                		<div class="panel-body">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                			<input type="" name="" placeholder="nama barang">
+                		</div>
+                	</div>
+                </div>
+                <div class="col-md-6">
+                	<div class="panel panel-default">
+                		<div class="panel-body">
+                			Tambah barang lagi
+                		</div>
+                	</div>
+                </div>
+
+                
+                            <input type="submit" class="btn btn-success" value="Simpan"> 
+                            <button type="reset" class="btn btn-default">Reset</button> 
             </form> 
         </div> 
     </div> 

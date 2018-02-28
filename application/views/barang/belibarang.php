@@ -35,14 +35,13 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
 									<div class="col-xs-12">
-
 <div class="panel panel-info">
 	<div class="panel-heading">
 		Data Barang
+<a href="<?= base_url("pemesanan/vtambah"); ?>" class="btn btn-sm btn-primary pull-right" >
+		<i class="glyphicon glyphicon-shopping-cart"></i> Beli Barang</a>
 	</div>
 <div class="panel-body">
-	<a href="<?= base_url("pemesanan/vtambah"); ?>" class="btn btn-sm btn-primary">
-		<i class="glyphicon glyphicon-plus"></i> Tambah</a>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -50,26 +49,19 @@
 					<th>Id Pembelian</th>
 					<th>Supplier</th>
 					<th>Tanggal Beli</th>
-					<th>Username</th>
 					<th>Status</th>
 				</tr>
 			</thead>
 		<?php
 		$no = 1;
-		foreach ($beli_barang as $p){
+		foreach ($beli_barang_pending as $p){
 			?>
 			<tr>
 				<td><?php echo $no++ ?></td>
-				<td><?php echo $p->id_pembelian ?></td>
+				<td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
 				<td><?php echo $p->id_supplier ?></td>
 				<td><?php echo $p->tanggal_beli ?></td>
-				<td><?php echo $p->username ?></td>
 				<td><?php echo $p->status ?></td>
-				<td>
-					<a href="<?php echo base_url('pemesanan/edit/'.$p->id_pembelian); ?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
-
-					 <a href="<?php echo base_url('pemesanan/hapus/'.$p->id_pembelian); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')"><i class="glyphicon glyphicon-trash"></i></a>
-					</td>
 				</tr>
 				<?php } ?>
 
@@ -86,13 +78,11 @@
 								<div class="row">
 									<div class="col-xs-12">
 
-<div class="panel panel-default">
+<div class="panel panel-success">
 	<div class="panel-heading">
 		Data Barang
 	</div>
 <div class="panel-body">
-	<a href="<?= base_url("pemesanan/vtambah"); ?>" class="btn btn-sm btn-primary">
-		<i class="glyphicon glyphicon-plus"></i> Tambah</a>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -106,20 +96,14 @@
 			</thead>
 		<?php
 		$no = 1;
-		foreach ($beli_barang as $p){
+		foreach ($beli_barang_sukses as $p){
 			?>
 			<tr>
 				<td><?php echo $no++ ?></td>
-				<td><?php echo $p->id_pembelian ?></td>
+				<td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
 				<td><?php echo $p->id_supplier ?></td>
 				<td><?php echo $p->tanggal_beli ?></td>
-				<td><?php echo $p->username ?></td>
 				<td><?php echo $p->status ?></td>
-				<td>
-					<a href="<?php echo base_url('pemesanan/edit/'.$p->id_pembelian); ?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
-
-					 <a href="<?php echo base_url('pemesanan/hapus/'.$p->id_pembelian); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')"><i class="glyphicon glyphicon-trash"></i></a>
-					</td>
 				</tr>
 				<?php } ?>
 
