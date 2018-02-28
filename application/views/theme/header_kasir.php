@@ -353,7 +353,7 @@
                                 <li class="divider"></li>
 
                                 <li>
-                                    <a href="<?= base_url("login/keluar"); ?>">
+                                    <a href="<?= base_url("auth/keluar"); ?>">
                                         <i class="ace-icon fa fa-power-off"></i>
                                         Logout
                                     </a>

@@ -24,8 +24,8 @@
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="<?= base_url("login/masuk") ?>" method="post">
-						<input type="text"  value="User name" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
+					 <form action="<?= base_url("auth/cek_login") ?>" method="post">
+						<input type="text"  value="User name" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"/>
 					<input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
 						<div class="remember">
 			             <span class="checkbox1">
@@ -53,7 +53,7 @@
 <?php
 if($this->session->flashdata('pesan') <> ''){
 ?>
-	<div class="alert alert-dismissible alert-danger">
+	<div class="alert alert-danger">s
 		<?php echo $this->session->flashdata('pesan');?>
 	</div>
 	<?php
