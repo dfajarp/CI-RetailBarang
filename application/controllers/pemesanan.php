@@ -20,6 +20,11 @@ class Pemesanan extends CI_Controller{
      	$this->load->view("/barang/vtambah");
      }
 
+     function add_barang()
+     {
+          $this->load->view("ad_brng");
+     }
+
      function tembah_aksi()
      {
      	$id_pembelian = $this->input->post('id_pembelian');

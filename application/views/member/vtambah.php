@@ -1,5 +1,5 @@
-<?php $this->load->view('theme/header'); ?>
-<?php $this->load->view('theme/sidebar'); ?>
+<?php $this->load->view('theme/header_kasir'); ?>
+<?php $this->load->view('theme/sidebar_kasir'); ?>
 
             <div class="main-content">
                 <div class="main-content-inner">
@@ -100,8 +100,13 @@
                         <td>Valid Date</td> 
                         <td> 
                             <div class="col-sm-6"> 
-                                <input type="date" name="valid_date" class="form-control" value=""> 
+                                <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar bigger-110"></i>
+                                </span>
+                                <input type="date" name="valid_date" class="form-control" id="id-date-range-picker-1"> 
                             </div> 
+                        </div>
                         </td>
                     </tr> 
 
@@ -116,3 +121,4 @@
     </div> 
     <!-- /panel --> 
 </div>
+
