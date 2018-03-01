@@ -10,8 +10,8 @@ class Pemesanan extends CI_Controller{
 
      function belibarang()
 	{
-		$data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0))->result();
-		$data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1))->result();
+		$data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0));
+		$data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
 		$this->load->view("/barang/belibarang",$data);
 	}
 
@@ -42,17 +42,23 @@ class Pemesanan extends CI_Controller{
      	redirect('barang/belibarang');
      }
 
-     function hapus($id_pembelian)
-     {
-     	$where = array('id_pembelian' => $id_pembelian);
-     	$this->m_pemesanan->hapus_data($where, 'beli_barang');
-     	redirect('belibarang/belibarang');
-     }
-
      function edit($id_pembelian)
      {
      	$where = array('id_pembelian' => $id_pembelian);
      	$data['beli_barang'] = $this->m_pemesanan->edit_data($where, 'beli_barang')->result();
      	$this->load->view('barang/belibarang', $data);
+     }
+
+     function detail($id_pembelian)
+     {
+     	$data['detail'] = 'Detail Pembelian';
+     	$data['data'] = $this->m_pemesanan->detail_barang($id_pembelian);
+     	$this->load->view('barang/vdetbarang', $data);
+     }
+
+     function activebarang($id_pembelian)
+     {
+          $this->m_pemesanan->activebarang($id_pembelian);
+          redirect('pemesanan/belibarang');
      }
 }

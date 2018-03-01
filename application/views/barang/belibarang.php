@@ -37,7 +37,7 @@
 									<div class="col-xs-12">
 <div class="panel panel-info">
 	<div class="panel-heading">
-		Data Barang
+		<b>Data Barang Pending</b>
 <a href="<?= base_url("pemesanan/vtambah"); ?>" class="btn btn-sm btn-primary pull-right" >
 		<i class="glyphicon glyphicon-shopping-cart"></i> Beli Barang</a>
 	</div>
@@ -49,7 +49,7 @@
 					<th>Id Pembelian</th>
 					<th>Supplier</th>
 					<th>Tanggal Beli</th>
-					<th>Status</th>
+					<th>Aksi</th>
 				</tr>
 			</thead>
 		<?php
@@ -59,9 +59,13 @@
 			<tr>
 				<td><?php echo $no++ ?></td>
 				<td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
-				<td><?php echo $p->id_supplier ?></td>
+				<td><?php echo $p->nama_supplier ?></td>
 				<td><?php echo $p->tanggal_beli ?></td>
-				<td><?php echo $p->status ?></td>
+				<td>
+					<a href="<?php echo base_url() ?>pemesanan/activebarang/<?php echo $p->id_pembelian ?>" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-ok"></i></a>
+					<a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in
+						"></i></a>
+				</td>
 				</tr>
 				<?php } ?>
 
@@ -80,7 +84,7 @@
 
 <div class="panel panel-success">
 	<div class="panel-heading">
-		Data Barang
+		<b>Data Barang Sukses</b>
 	</div>
 <div class="panel-body">
 		<table class="table table-striped">
@@ -90,8 +94,7 @@
 					<th>Id Pembelian</th>
 					<th>Supplier</th>
 					<th>Tanggal Beli</th>
-					<th>Username</th>
-					<th>Status</th>
+					<th>Aksi</th>
 				</tr>
 			</thead>
 		<?php
@@ -101,9 +104,10 @@
 			<tr>
 				<td><?php echo $no++ ?></td>
 				<td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
-				<td><?php echo $p->id_supplier ?></td>
+				<td><?php echo $p->nama_supplier ?></td>
 				<td><?php echo $p->tanggal_beli ?></td>
-				<td><?php echo $p->status ?></td>
+				<td><a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-success btn-sm""><i class="glyphicon glyphicon-zoom-in
+						"></i></a></td>	
 				</tr>
 				<?php } ?>
 
