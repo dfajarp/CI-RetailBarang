@@ -1,170 +1,122 @@
 <?php $this->load->view('theme/header'); ?>
 <?php $this->load->view('theme/sidebar'); ?>
 
-			<div class="main-content">
-				<div class="main-content-inner">
-					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-						<ul class="breadcrumb">
-							<li>
-								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="<?= base_url("welcome/home"); ?>">Home</a>
-							</li>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="<?php echo base_url("welcome/home"); ?>">Home</a>
+                </li>   
 
-							<li>
-								<a href="#">Barang</a>
-							</li>
-							<li>
-								<a href="#">Beli Barang</a>
-							</li>
-							<li>
-								<a href="#">Data Barang</a>
-							</li>	
-							<li class="active">Beli Barang</li>
-						</ul><!-- /.breadcrumb -->
+                <li>
+                    <a href="#">Barang</a>
+                </li>
+                <li>
+                    <a href="#">Beli Barang</a>
+                </li>
+                <li>
+                    <a href="#">Data Barang</a>
+                </li>   
+                <li class="active">Beli Barang</li>
+            </ul><!-- /.breadcrumb -->
+        </div>
+
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    Data Barang
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i>
+                        Beli Barang
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- /.row -->
+                    <div class="row">
+                        <!-- PAGE CONTENT BEGINS -->
+
+                        <form action="<?php echo base_url("pemesanan/tambah_aksi"); ?>" method="post" class="form-horizontal" role="form" id="box">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Supplier </label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tanggal Beli </label>
+
+                                <div class="col-sm-9">
+                                    <input type="date" id="form-field-1"  class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
+
+
+
+                            <div class="hr hr-24"></div>
+                        </form>
+
+                    </div>
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="button">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                Submit
+                            </button>
+
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="reset">
+                                <i class="ace-icon fa fa-undo bigger-110"></i>
+                                Reset
+                            </button>
+
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn btn-default" id="tombol_app">Tambah</button>
+                        </div>
                     </div>
 
-                    <div class="page-content">
-                        <div class="ace-settings-container" id="ace-settings-container">
-                            <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-                                <i class="ace-icon fa fa-cog bigger-130"></i>
-                            </div>
-<?php $this->load->view('theme/setting'); ?>
-                        </div><!-- /.ace-settings-container -->
-
-                        <div class="page-header">
-                            <h1>
-                                Data Barang
-                                <small>
-                                    <i class="ace-icon fa fa-angle-double-right"></i>
-                                    Beli Barang
-                                </small>
-                            </h1>
-                        </div><!-- /.page-header -->
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <!-- PAGE CONTENT BEGINS -->
-                                <div class="row">
-                                    <div class="col-xs-12">
-
-
-                   <h1 class="page-header">Beli Barang</h1>
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Beli barang
-                        </div>
-    <div class="panel-body">
-            <?php echo $this->session->flashdata('pesan'); ?> 
-            <form action="<?= base_url("pemesanan/tambah_aksi"); ?>" method="post">
-                <table class="table table-striped">
-                     <tr> 
-                        <td>Id Pembelian</td> 
-                        <td> 
-                            <div class="col-sm-6"> 
-                                <input type="text" name="id_pembelian" class="form-control" value=""> 
-                            </div>
-                        </td>
-                    </tr> 
-                    <tr> 
-                        <td>Nama Supplier</td> 
-                        <td> 
-                            <div class="col-sm-6"> 
-                                <input type="text" name="id_supplier" class="form-control" value=""> 
-                            </div>
-                        </td>
-                    </tr> 
-                    <tr>
-                    </tr> 
-                      <tr> 
-                        <td>Tanggal Beli</td> 
-                        <td> 
-                            <div class="col-sm-4"> 
-                                <input type="text" name="tanggal_beli" class="form-control" value="">
-                            </div>
-                        </td>
-                    </tr> 
-                    <tr> 
-                        <td>Username</td> 
-                        <td> 
-                            <div class="col-sm-6"> 
-                                <input type="text" name="username" class="form-control" value=""> 
-                            </div> 
-                        </td>
-                    </tr> 
-                    <tr> 
-                        <td colspan="2">
-                        </td> 
-                    </tr> 
-                </table> 
-
-
-                <div class="col-md-6">
-                	<div class="panel panel-default">
-                		<div class="panel-heading">Barang 1</div>
-                		<div class="panel-body">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                		</div>
-                	</div>
-                </div>
-                <div class="col-md-6">
-                	<div class="panel panel-default">
-                		<div class="panel-heading">Barang 1</div>
-                		<div class="panel-body">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                		</div>
-                	</div>
-                </div>
-                <div class="col-md-6">
-                	<div class="panel panel-default">
-                		<div class="panel-heading">Barang 1</div>
-                		<div class="panel-body">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                		</div>
-                	</div>
-                </div>
-                <div class="col-md-6">
-                	<div class="panel panel-default">
-                		<div class="panel-heading">Barang 1</div>
-                		<div class="panel-body">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                			<input type="" name="" placeholder="nama barang">
-                		</div>
-                	</div>
-                </div>
-                <div class="col-md-6">
-                	<div class="panel panel-default">
-                		<div class="panel-body">
-                			Tambah barang lagi
-                		</div>
-                	</div>
-                </div>
-
-                
-                            <input type="submit" class="btn btn-success" value="Simpan"> 
-                            <button type="reset" class="btn btn-default">Reset</button> 
-            </form> 
-        </div> 
-    </div> 
-    <!-- /panel --> 
+        </div>
+    </div>
 </div>
+
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+        var frm = 1;
+        $("#tombol_app").click(function () {
+            $("#box").append("<div class='frm_barang" + frm + "'></div>");
+            $(".frm_barang" + frm).load('<?php echo base_url("pemesanan/add_barang"); ?>');
+            frm++;
+        });
+
+        // $('#id-input-file-1 , #id-input-file-2').ace_file_input({
+        //     no_file:'No File ...',
+        //     btn_choose:'Choose',
+        //     btn_change:'Change',
+        //     droppable:false,
+        //     onchange:null,
+        //     thumbnail:false //| true | large
+        //     //whitelist:'gif|png|jpg|jpeg'
+        //     //blacklist:'exe|php'
+        //     //onchange:''
+        //     //
+        // });
+    });
+</script>
+
+
+

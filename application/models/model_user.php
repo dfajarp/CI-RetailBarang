@@ -1,12 +1,15 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-	class Model_user extends CI_Model{
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
-		function cek_user($data) {
-			$query = $this->db->get_where('user', $data);
-			return $query;
-		}
+class Model_user extends CI_Model {
 
-	}
+    function cek_user($data) {
+        $query = $this->db->get_where('user', $data);
+        return $query;
+    }
+
+}
 
 ?>
