@@ -44,7 +44,7 @@
 
                         <form action="<?php echo base_url("pemesanan/tambah_aksi"); ?>" method="post" class="form-horizontal" role="form" id="box">
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Barang </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Supplier </label>
 
                                 <div class="col-sm-9">
                                     <input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" />
@@ -52,20 +52,14 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Harga Barang </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tanggal Beli </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" />
+                                    <input type="date" id="form-field-1"  class="col-xs-10 col-sm-5" />
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Jumlah Barang </label>
 
-                                <div class="col-sm-9">
-                                    <input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" />
-                                </div>
-                            </div>
 
                             <div class="hr hr-24"></div>
                         </form>
