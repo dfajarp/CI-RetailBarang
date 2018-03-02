@@ -31,9 +31,6 @@
 			             <span class="checkbox1">
 							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
 						 </span>
-						 <div class="forgot">
-						 	<h6><a href="#">Forgot Password?</a></h6>
-						 </div>
 						<div class="clear"> </div>
 					  </div>
 					   

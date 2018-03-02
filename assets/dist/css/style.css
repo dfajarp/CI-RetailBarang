@@ -163,7 +163,7 @@ span.login-color {
     font-family: 'Roboto Condensed', sans-serif;
 }
 .header-left-bottom input[type="submit"]:hover {
-    background: #3B62A3;
+    background: #3366ff;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
@@ -479,7 +479,7 @@ span.sin-color {
     color:#efe8e8;
 }
 .forgot h6 a:hover{
-    color:#ff3366;
+    color:#3366ff;
 }
 .log-user h6 {
     font-size: 1em;
@@ -566,7 +566,7 @@ span.sin-color {
   color: #fff;
 }
 .copyright p a:hover{
-	color:#ff3366;
+	color:#3366ff;
 	text-decoration:none;
 }
 /*--footer end here--*/

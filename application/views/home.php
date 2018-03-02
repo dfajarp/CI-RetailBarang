@@ -22,7 +22,7 @@
                                 Dashboard
                                 <small>
                                     <i class="ace-icon fa fa-angle-double-right"></i>
-                                    overview &amp; stats
+                                    Data &amp; Statistik
                                 </small>
                             </h1>
                         </div><!-- /.page-header -->
@@ -42,34 +42,6 @@
                                     <div class="space-6"></div>
 
                                     <div class="col-sm-7 infobox-container">
-                                        <div class="infobox infobox-green">
-                                            <div class="infobox-icon">
-                                                <i class="ace-icon fa fa-comments"></i>
-                                            </div>
-
-                                            <div class="infobox-data">
-                                                <span class="infobox-data-number">32</span>
-                                                <div class="infobox-content">comments + 2 reviews</div>
-                                            </div>
-
-                                            <div class="stat stat-success">8%</div>
-                                        </div>
-
-                                        <div class="infobox infobox-blue">
-                                            <div class="infobox-icon">
-                                                <i class="ace-icon fa fa-twitter"></i>
-                                            </div>
-
-                                            <div class="infobox-data">
-                                                <span class="infobox-data-number">11</span>
-                                                <div class="infobox-content">new followers</div>
-                                            </div>
-
-                                            <div class="badge badge-success">
-                                                +32%
-                                                <i class="ace-icon fa fa-arrow-up"></i>
-                                            </div>
-                                        </div>
 
                                         <div class="infobox infobox-pink">
                                             <div class="infobox-icon">
@@ -107,23 +79,6 @@
                                             <div class="badge badge-success">
                                                 7.2%
                                                 <i class="ace-icon fa fa-arrow-up"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="infobox infobox-blue2">
-                                            <div class="infobox-progress">
-                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
-                                                    <span class="percent">42</span>%
-                                                </div>
-                                            </div>
-
-                                            <div class="infobox-data">
-                                                <span class="infobox-text">traffic used</span>
-
-                                                <div class="infobox-content">
-                                                    <span class="bigger-110">~</span>
-                                                    58GB remaining
-                                                </div>
                                             </div>
                                         </div>
 
@@ -191,21 +146,21 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#">
+                                                                <a href="#" class="blue">
                                                                     <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
                                                                     Last Week
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a href="#">
+                                                                <a href="#" class="blue">
                                                                     <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
                                                                     This Month
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a href="#">
+                                                                <a href="#" class="blue">
                                                                     <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
                                                                     Last Month
                                                                 </a>
@@ -260,7 +215,7 @@
                                             <div class="widget-header widget-header-flat">
                                                 <h4 class="widget-title lighter">
                                                     <i class="ace-icon fa fa-star orange"></i>
-                                                    Popular Domains
+                                                    Penjualan Populer
                                                 </h4>
 
                                                 <div class="widget-toolbar">

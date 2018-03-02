@@ -324,32 +324,15 @@
                         </li>
 
                         <li class="light-blue dropdown-modal">
-                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <a data-toggle>
                                 <img class="nav-user-photo" src="<?= base_url()?>/assets/images/user.png" alt="Gudang's Photo" />
                                 <span class="user-info">
                                     <small>Welcome</small>
                                     <p>Gudang</p>
                                 </span>
-
-                                <i class="ace-icon fa fa-caret-down"></i>
+<i class="ace-icon"></i>
                             </a>
-
-                            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                                <li>
-                                    <a href="#">
-                                        <i class="ace-icon fa fa-cog"></i>
-                                        Settings
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="profile.html">
-                                        <i class="ace-icon fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-
-                                <li class="divider"></li>
+                                
 
                                 <li>
                                     <a href="<?= base_url("auth/keluar"); ?>">
