@@ -13,8 +13,7 @@ class Welcome extends CI_Controller{
 	}
 		public function gudang()
 	{
-		$konten['menu_aktif'] = array("beranda");
-		$this->load->view("home", $konten);
+		$this->load->view("home");
 	}
 		public function kasir()
 	{

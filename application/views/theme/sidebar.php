@@ -94,7 +94,7 @@
                 </div><!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
-                    <li class="<?= (in_array("beranda",$menu_aktif)) ? "active" : "" ?>">
+                    <li class="">
                         <a href="<?= base_url("welcome/gudang"); ?>">
                             <i class="menu-icon fa fa-dashboard fa-fw"></i>
                             <span class="menu-text"> Beranda </span>
@@ -152,7 +152,7 @@
 
                         <b class="arrow"></b>
                     </li>
-                    <li class="<?= (in_array("coba",$menu_aktif)) ? "active" : "" ?>">
+                    <li class="">
                         <a href="<?= base_url("welcome/coba"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-user"></i>
                             <span class="menu-text"> Coba </span>
