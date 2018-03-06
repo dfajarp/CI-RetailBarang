@@ -103,7 +103,7 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="<?= (in_array("barang",$menu_aktif)) ? "active" : "" ?>">
+                    <li class="">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon glyphicon glyphicon-briefcase"></i>
                             <span class="menu-text"> Barang </span>
@@ -114,16 +114,16 @@
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-                            <li class="<?= (in_array("stok",$menu_aktif)) ? "active open" : "" ?>">
+                            <li class="">
                                 <a href="<?= base_url("stok/vbarang"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Barang
+                                    Stok Barang
                                 </a>
 
                                 <b class="arrow"></b>
                             </li>
 
-                            <li class="<?= (in_array("beli",$menu_aktif)) ? "active open" : "" ?>">
+                            <li class="">
                                 <a href="<?= base_url("pemesanan/belibarang"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Beli Barang
