@@ -11,7 +11,7 @@ class Auth extends CI_Controller {
 
     public function cek_login() {
         $data = array('username' => $this->input->post('username', TRUE),
-            'password' => md5($this->input->post('password', TRUE))
+                      'password' => md5($this->input->post('password', TRUE))
         );
         $this->load->model('model_user'); // load model_user
         $hasil = $this->model_user->cek_user($data);
@@ -23,9 +23,12 @@ class Auth extends CI_Controller {
                 $this->session->set_userdata($sess_data);
             }
             if ($this->session->userdata('tipe_user') == 'gudang') {
-                redirect('welcome');
+                redirect('gudang');
             } else if ($this->session->userdata('tipe_user') == 'kasir') {
                 redirect('kasir');
+            }
+              else if ($this->session->userdata('tipe_user') == 'manajemen') {
+                redirect('manajemen');
             }
         } else {
             echo "<script>alert('Gagal login: Cek username, password!');history.go(-1);</script>";

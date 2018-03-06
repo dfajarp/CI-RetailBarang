@@ -1,19 +1,32 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller{
+	public function index()
+	{
+		$this->load->view('home');
+	}
 
-    public function index() {
-        $this->load->view('home');
-    }
-
-    public function login() {
-        $this->load->view("admin/login");
-    }
-
-    public function home() {
-        $this->load->view("home");
-    }
-
+	public function login()
+	{
+		$this->load->view("admin/login");
+	}
+		public function gudang()
+	{
+		$konten['menu_aktif'] = array("beranda","barang","stok","beli");
+		$this->load->view("home", $konten);
+	}
+		public function kasir()
+	{
+		$this->load->view("kasir");
+	}
+		public function manajemen()
+	{
+		$this->load->view("manajemen");
+	}
+		public function coba()
+	{
+		$konten['menu_aktif'] = array("coba");
+		$this->load->view("home", $konten);
+	}
 }

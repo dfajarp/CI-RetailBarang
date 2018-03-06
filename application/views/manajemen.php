@@ -1,5 +1,5 @@
-<?php $this->load->view('theme/header_kasir'); ?>
-<?php $this->load->view('theme/sidebar_kasir'); ?>
+<?php $this->load->view('theme/header_manajemen'); ?>
+<?php $this->load->view('theme/sidebar_manajemen'); ?>
 
 
             <div class="main-content">
@@ -7,13 +7,13 @@
                     <div class="breadcrumbs ace-save-state" id="breadcrumbs">
                         <ul class="breadcrumb">
                             <li>
-                                <i class="glyphicon glyphicon-home"></i>
-                                <a href="<?= base_url("kasir"); ?>">Home</a>
+                                <i class="ace-icon fa fa-home home-icon"></i>
+                                <a href="<?= base_url("welcome/home"); ?>">Home</a>
                             </li>
                             <li class="active">Dashboard</li>
                         </ul><!-- /.breadcrumb -->
 
-
+                       
                     </div>
 
                     <div class="page-content">

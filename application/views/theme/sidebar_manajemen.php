@@ -94,19 +94,19 @@
                 </div><!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
-                    <li class="<?= (in_array("beranda",$menu_aktif)) ? "active" : "" ?>">
-                        <a href="<?= base_url("welcome/gudang"); ?>">
-                            <i class="menu-icon fa fa-dashboard fa-fw"></i>
+                    <li class="active">
+                        <a href="<?= base_url("kasir"); ?>" class="dropdown-toggle">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
 
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="<?= (in_array("barang",$menu_aktif)) ? "active" : "" ?>">
+                    <li class="">
                         <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon glyphicon glyphicon-briefcase"></i>
-                            <span class="menu-text"> Barang </span>
+                            <i class="menu-icon fa fa-print"></i>
+                            <span class="menu-text"> Laporan </span>
 
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
@@ -114,53 +114,33 @@
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-                            <li class="<?= (in_array("stok",$menu_aktif)) ? "active open" : "" ?>">
-                                <a href="<?= base_url("stok/vbarang"); ?>" class="button">
+                            <li class="">
+                                <a href="#" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Stok Barang
+                                    <span class="menu-text">Stok</span>
                                 </a>
 
                                 <b class="arrow"></b>
                             </li>
 
-                            <li class="<?= (in_array("beli",$menu_aktif)) ? "active open" : "" ?>">
-                                <a href="<?= base_url("pemesanan/belibarang"); ?>" class="button">
+                            <li class="">
+                                <a href="#" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Beli Barang
+                                    <span class="menu-text">Display</span>
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="#" class="button">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    <span class="menu-text">Transaksi</span>
                                 </a>
 
                                 <b class="arrow"></b>
                             </li>
                         </ul>
                     </li>
-
-                        <li class="">
-                        <a href="<?= base_url("katalog/katalog"); ?>" class="button">
-                            <i class="menu-icon fa fa-edit fa-fw"></i>
-                            <span class="menu-text"> Catalog Display </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-
-                    <li class="">
-                        <a href="<?= base_url("crud/vsupplier"); ?>" class="button">
-                            <i class="menu-icon glyphicon glyphicon-user"></i>
-                            <span class="menu-text"> Supplier </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-                    <li class="<?= (in_array("coba",$menu_aktif)) ? "active" : "" ?>">
-                        <a href="<?= base_url("welcome/coba"); ?>" class="button">
-                            <i class="menu-icon glyphicon glyphicon-user"></i>
-                            <span class="menu-text"> Coba </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-                        </ul>
                  
                <!-- /.nav-list -->
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

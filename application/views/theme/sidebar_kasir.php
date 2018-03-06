@@ -95,8 +95,8 @@
 
                 <ul class="nav nav-list">
                     <li class="active">
-                        <a href="<?= base_url("kasir"); ?>">
-                            <i class="glyphicon glyphicon-home"></i>
+                        <a href="<?= base_url("welcome/kasir"); ?>" class="dropdown-toggle">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
 
@@ -106,8 +106,8 @@
               
 
                         <li class="">
-                        <a href="widgets.html">
-                            <i class="glyphicon glyphicon-transfer"></i>
+                        <a href="widgets.html" class="button">
+                            <i class="menu-icon glyphicon glyphicon-transfer"></i>
                             <span class="menu-text"> Transaksi  </span>
                         </a>
 
@@ -116,14 +116,14 @@
 
 
                     <li class="">
-                        <a href="<?= base_url("member/vmember"); ?>">
-                            <i class="glyphicon glyphicon-user"></i>
+                        <a href="<?= base_url("member/vmember"); ?>" class="button">
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
                             <span class="menu-text"> Member </span>
                         </a>
 
                         <b class="arrow"></b>
-                    </li>
-                        </ul>
+                    </ul>
+                </li>
                  
                <!-- /.nav-list -->
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
