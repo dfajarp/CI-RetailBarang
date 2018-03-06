@@ -117,7 +117,7 @@
                             <li class="">
                                 <a href="<?= base_url("stok/vbarang"); ?>">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Stok Barang
+                                    Barang
                                 </a>
 
                                 <b class="arrow"></b>

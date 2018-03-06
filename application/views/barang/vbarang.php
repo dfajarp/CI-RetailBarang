@@ -13,20 +13,17 @@
                 <li>
                     <a href="<?= base_url("stok/vbarang"); ?>">Barang</a>
                 </li>
-                <li>
-                    <a href="<?= base_url("stok/vbarang"); ?>">Stok Barang</a>
-                </li>
-                <li class="active">Data Stok</li>
+                <li class="active">Data Barang</li>
             </ul><!-- /.breadcrumb -->
         </div>
 
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Stok Barang
+                    Barang
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        Data Stok
+                        Data Barang
                     </small>
                 </h1>
             </div><!-- /.page-header -->

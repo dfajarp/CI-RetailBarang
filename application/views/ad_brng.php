@@ -16,46 +16,31 @@
 
         <div class="widget-body">
             <div class="widget-main">
-                <div>
-                    <label for="form-field-8">ID Barang</label>
-
-                    <input class="form-control" id="form-field-8">
-                </div>
 
 
+<p><h5>ID Barang</h5></p>
+    <input type="text" name="id_barang[]" class="form-control">
 
-                <div>
-                    <label for="form-field-9">Nama Barang</label>
+<p><h5>Kategori</h5></p>
+<select class="form-control" name="id_kategori[]" >
+    <?php foreach ($data_kategori as $k) : ?>
+        <option value="<?php echo $k->id_kategori ?>"><?php echo $k->nama_kategori ?></option>
+<?php endforeach; ?>
+</select>
+<p><h5>Nama Barang</h5></p>
+    <input type="text" name="nama_barang[]" class="form-control">
 
-                    <input class="form-control limited" id="form-field-9" maxlength="50">
-                </div>
+<p><h5>Harga Barang</h5></p>
+    <input type="text" name="harga_barang[]" class="form-control">
 
+<p><h5>Jumlah Barang</h5></p>
+    <input type="text" name="jumlah_barang[]" class="form-control">
 
+<p><h5>Deskripsi Barang</h5></p>
+    <input type="text" name="deskripsi_barang[]" class="form-control">
 
-                <div>
-                    <label for="form-field-11">Harga Barang</label>
-
-                    <input id="form-field-11" class="autosize-transition form-control">
-                </div>
-
-
-
-                <div>
-                    <label for="form-field-11">Jumlah Barang</label>
-
-                    <input id="form-field-11" class="autosize-transition form-control">
-                </div>
-
-                <div class="widget-body">
-                    <div class="widget-main">
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <input type="file" class="id-input-file-2" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+<p><h5>Gambar Barang</h5></p>
+    <input type="file" class="id-input-file-2" name="foto[]">
 
             </div>
         </div>
