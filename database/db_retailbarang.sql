@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 Feb 2018 pada 07.40
+-- Generation Time: 06 Mar 2018 pada 08.51
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -52,10 +52,17 @@ INSERT INTO `barang` (`id_barang`, `id_kategori`, `deskripsi_barang`, `gambar_ba
 CREATE TABLE `beli_barang` (
   `id_pembelian` int(11) NOT NULL,
   `id_supplier` int(11) NOT NULL,
-  `tanggal_beli` datetime NOT NULL,
+  `tanggal_beli` date NOT NULL,
   `username` varchar(20) NOT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `beli_barang`
+--
+
+INSERT INTO `beli_barang` (`id_pembelian`, `id_supplier`, `tanggal_beli`, `username`, `status`) VALUES
+(106, 1278382, '2018-03-21', 'admin1', 1);
 
 -- --------------------------------------------------------
 
@@ -67,10 +74,20 @@ CREATE TABLE `dbb` (
   `id_dbb` int(11) NOT NULL,
   `id_bb` int(11) NOT NULL,
   `id_brg` varchar(20) NOT NULL,
+  `id_kategori` varchar(20) NOT NULL,
   `nama_brg` varchar(20) NOT NULL,
   `harga_brg` int(11) NOT NULL,
-  `jumlah_brg` int(11) NOT NULL
+  `jumlah_brg` int(11) NOT NULL,
+  `deskripsi_barang` text NOT NULL,
+  `gambar_barang` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `dbb`
+--
+
+INSERT INTO `dbb` (`id_dbb`, `id_bb`, `id_brg`, `id_kategori`, `nama_brg`, `harga_brg`, `jumlah_brg`, `deskripsi_barang`, `gambar_barang`) VALUES
+(106, 0, '9797', '03', 'laptop', 2147483647, 6, 'limited', '');
 
 -- --------------------------------------------------------
 
@@ -164,6 +181,7 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_telepon`) VALUES
+(5675, 'reechese', 'jl.mana', '0987999'),
 (1278382, 'Indofood', 'Jl.cimareme', '022-654321'),
 (648265267, 'ultrajaya', 'jl.gadobangkong', '022-673974');
 
@@ -214,9 +232,7 @@ ALTER TABLE `dbb`
   ADD PRIMARY KEY (`id_dbb`),
   ADD KEY `id_brg` (`id_brg`),
   ADD KEY `id_bb` (`id_bb`),
-  ADD KEY `nama_brg` (`nama_brg`),
-  ADD KEY `harga_brg` (`harga_brg`),
-  ADD KEY `jumlah_brg` (`jumlah_brg`);
+  ADD KEY `id_kategori` (`id_kategori`);
 
 --
 -- Indexes for table `djb`
@@ -274,7 +290,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `beli_barang`
 --
 ALTER TABLE `beli_barang`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65888;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `jual_brg`
@@ -309,15 +325,15 @@ ALTER TABLE `beli_barang`
 -- Ketidakleluasaan untuk tabel `dbb`
 --
 ALTER TABLE `dbb`
-  ADD CONSTRAINT `dbb_ibfk_1` FOREIGN KEY (`id_brg`) REFERENCES `barang` (`id_barang`),
-  ADD CONSTRAINT `dbb_ibfk_2` FOREIGN KEY (`id_dbb`) REFERENCES `beli_barang` (`id_pembelian`);
+  ADD CONSTRAINT `dbb_ibfk_2` FOREIGN KEY (`id_dbb`) REFERENCES `beli_barang` (`id_pembelian`),
+  ADD CONSTRAINT `dbb_ibfk_3` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`);
 
 --
 -- Ketidakleluasaan untuk tabel `djb`
 --
 ALTER TABLE `djb`
   ADD CONSTRAINT `djb_ibfk_1` FOREIGN KEY (`id_jual_brg`) REFERENCES `jual_brg` (`id_jual_brg`),
-  ADD CONSTRAINT `djb_ibfk_2` FOREIGN KEY (`id_brg`) REFERENCES `barang` (`id_barang`);
+  ADD CONSTRAINT `djb_ibfk_2` FOREIGN KEY (`id_katalog`) REFERENCES `katalog` (`id_katalog`);
 
 --
 -- Ketidakleluasaan untuk tabel `jual_brg`
