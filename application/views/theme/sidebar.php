@@ -117,7 +117,7 @@
                             <li class="<?= (in_array("stok",$menu_aktif)) ? "active open" : "" ?>">
                                 <a href="<?= base_url("stok/vbarang"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Stok Barang
+                                    Barang
                                 </a>
 
                                 <b class="arrow"></b>

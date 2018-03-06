@@ -26,12 +26,29 @@ class M_pemesanan extends CI_Model {
         }
     }
 
+    function hapus_data($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
     function activebarang($id_pembelian) {
         $set = array('status' => 1);
         $where = array('id_pembelian' => $id_pembelian);
         $this->db->set($set);
         $this->db->where($where);
         $this->db->update('beli_barang');
+    }
+
+    function tampil() {
+        $data = $this->db->query("SELECT * FROM supplier");
+        return $data->result();
+    }
+
+    function get_kategori()
+    {
+        $data = $this->db->get('kategori');
+        return $data->result();
     }
 
 }

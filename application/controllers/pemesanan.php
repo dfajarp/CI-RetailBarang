@@ -6,6 +6,9 @@ class Pemesanan extends CI_Controller {
         parent::__construct();
         $this->load->model('m_pemesanan');
         $this->load->helper('url');
+        if (empty($_SESSION['username'])){
+            redirect(base_url());
+        }
     }
 
     function belibarang() {
@@ -15,33 +18,56 @@ class Pemesanan extends CI_Controller {
     }
 
     function vtambah() {
-        $this->load->view("/barang/vtambah");
+        $data['data_beli_barang'] = $this->m_pemesanan->tampil();
+        $this->load->view("/barang/vtambah", $data);
     }
 
     function add_barang() {
-        $this->load->view("ad_brng");
+        $data['data_kategori'] = $this->m_pemesanan->get_kategori();
+        $this->load->view("ad_brng", $data);
     }
 
-    function tembah_aksi() {
-        $id_pembelian = $this->input->post('id_pembelian');
+    function tambah_aksi() {
         $id_supplier = $this->input->post('id_supplier');
-        $tanggal_beli = $this->input->post('tanggal_beli');
-        $status = $this->input->post('status');
+        $tanggal_beli = $this->input->post('tanggal_beli');  
 
         $data = array(
-            'id_pembelian' => $id_pembelian,
-            'id_supplier' => $id_supplier,
-            'tanggal_beli' => $tanggal_beli,
-            'status' => $status
-        );
-        $this->m_pemesanan->input_data($data, "beli_barang");
-        redirect('barang/belibarang');
+             'id_supplier' => $id_supplier,
+             'tanggal_beli' => $tanggal_beli,
+             'username' => $this->session->username
+         );
+         $this->m_pemesanan->input_data($data, 'beli_barang');
+
+         $id_dbb = $this->db->insert_id();
+
+         $jml = count($_POST['id_barang']);
+         $result = array();
+         for ($i = 0; $i < $jml; $i++) {
+             $result[] = array(
+                "id_dbb" => $id_dbb,
+                "id_brg" => $_POST['id_barang'][$i],
+                "id_kategori" => $_POST['id_kategori'][$i],
+                "nama_brg" => $_POST['nama_barang'][$i],
+                "harga_brg" => $_POST['harga_barang'][$i],
+                "jumlah_brg" => $_POST['jumlah_barang'][$i],
+                "deskripsi_barang" => $_POST['deskripsi_barang'][$i]
+            );
+         }
+         $this->db->insert_batch('dbb', $result);
+         redirect('/pemesanan/belibarang');
     }
 
     function edit($id_pembelian) {
         $where = array('id_pembelian' => $id_pembelian);
         $data['beli_barang'] = $this->m_pemesanan->edit_data($where, 'beli_barang')->result();
         $this->load->view('barang/belibarang', $data);
+    }
+
+    function hapus($id_pembelian)
+    {
+        $where = array('id_pembelian' => $id_pembelian);
+        $this->m_pemesanan->hapus_data($where, 'beli_barang');
+        redirect('pemesanan/belibarang');
     }
 
     function detail($id_pembelian) {

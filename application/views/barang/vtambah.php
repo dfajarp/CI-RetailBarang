@@ -36,18 +36,22 @@
             </div><!-- /.page-header -->
 
 
+
             <div class="row">
                 <div class="col-xs-12">
                     <!-- /.row -->
-                    <div class="row">
+                    <form action="<?php echo base_url("pemesanan/tambah_aksi"); ?>" enctype="multipart/form-data" method="post" class="form-horizontal" role="form">
+                    <div class="row" id="box">
                         <!-- PAGE CONTENT BEGINS -->
-
-                        <form action="<?php echo base_url("pemesanan/tambah_aksi"); ?>" method="post" class="form-horizontal" role="form" id="box">
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Supplier </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1" > Supplier </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" />
+                                    <select class="col-xs-10 col-sm-5" name="id_supplier">
+                                        <?php foreach ($data_beli_barang as $d) : ?>
+                                            <option value="<?php echo $d->id_supplier ?>"><?php echo $d->nama_supplier ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
 
@@ -55,19 +59,18 @@
                                 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tanggal Beli </label>
 
                                 <div class="col-sm-9">
-                                    <input type="date" id="form-field-1"  class="col-xs-10 col-sm-5" />
+                                    <input type="date" id="form-field-1" name="tanggal_beli"  class="col-xs-10 col-sm-5" />
                                 </div>
                             </div>
 
 
 
                             <div class="hr hr-24"></div>
-                        </form>
 
                     </div>
                     <div class="clearfix form-actions">
                         <div class="col-md-offset-3 col-md-9">
-                            <button class="btn btn-info" type="button">
+                            <button class="btn btn-info" type="submit">
                                 <i class="ace-icon fa fa-check bigger-110"></i>
                                 Submit
                             </button>
@@ -79,9 +82,10 @@
                             </button>
 
                             &nbsp; &nbsp; &nbsp;
-                            <button class="btn btn-default" id="tombol_app">Tambah</button>
+                            <button type="button" class="btn btn-default" id="tombol_app">Tambah</button>
                         </div>
                     </div>
+                    </form>
 
                 </div>
             </div>
@@ -97,6 +101,10 @@
 
     $(document).ready(function () {
         var frm = 1;
+        $("#box").append("<div class='frm_barang" + frm + "'></div>");
+        $(".frm_barang" + frm).load('<?php echo base_url("pemesanan/add_barang"); ?>');
+        frm++;
+            
         $("#tombol_app").click(function () {
             $("#box").append("<div class='frm_barang" + frm + "'></div>");
             $(".frm_barang" + frm).load('<?php echo base_url("pemesanan/add_barang"); ?>');
