@@ -28,6 +28,7 @@ class Pemesanan extends CI_Controller {
     }
 
     function tambah_aksi() {
+
         $id_supplier = $this->input->post('id_supplier');
         $tanggal_beli = $this->input->post('tanggal_beli');  
 
@@ -38,20 +39,36 @@ class Pemesanan extends CI_Controller {
          );
          $this->m_pemesanan->input_data($data, 'beli_barang');
 
-         $id_dbb = $this->db->insert_id();
+         $id_bb = $this->db->insert_id();
 
-         $jml = count($_POST['id_barang']);
-         $result = array();
+        $jml = count($_POST['id_barang']);
+        $result = array();
+        $config['upload_path']          = './assets/images/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $this->load->library('upload', $config);
+
          for ($i = 0; $i < $jml; $i++) {
-             $result[] = array(
-                "id_dbb" => $id_dbb,
-                "id_brg" => $_POST['id_barang'][$i],
-                "id_kategori" => $_POST['id_kategori'][$i],
-                "nama_brg" => $_POST['nama_barang'][$i],
-                "harga_brg" => $_POST['harga_barang'][$i],
-                "jumlah_brg" => $_POST['jumlah_barang'][$i],
-                "deskripsi_barang" => $_POST['deskripsi_barang'][$i]
-            );
+            $_FILES['gambar']['name'] = $_FILES['gambar_barang']['name'][$i];
+            $_FILES['gambar']['type'] = $_FILES['gambar_barang']['type'][$i];
+            $_FILES['gambar']['tmp_name'] = $_FILES['gambar_barang']['tmp_name'][$i];
+            $_FILES['gambar']['error'] = $_FILES['gambar_barang']['error'][$i];
+            $_FILES['gambar']['size'] = $_FILES['gambar_barang']['size'][$i];
+            if ($this->upload->do_upload('gambar'))
+            {
+                 $result[] = array(
+                    "id_bb" => $id_bb,
+                    "id_brg" => $_POST['id_barang'][$i],
+                    "id_kategori" => $_POST['id_kategori'][$i],
+                    "nama_brg" => $_POST['nama_barang'][$i],
+                    "harga_brg" => $_POST['harga_barang'][$i],
+                    "jumlah_brg" => $_POST['jumlah_barang'][$i],
+                    "deskripsi_barang" => $_POST['deskripsi_barang'][$i],
+                    "gambar_barang" => base_url("assets/images/" . $_FILES['gambar_barang']['name'][$i])
+                );
+
+            } else {
+                $error = array('error' => $this->upload->display_errors());
+            }
          }
          $this->db->insert_batch('dbb', $result);
          redirect('/pemesanan/belibarang');
@@ -80,5 +97,4 @@ class Pemesanan extends CI_Controller {
         $this->m_pemesanan->activebarang($id_pembelian);
         redirect('pemesanan/belibarang');
     }
-
 }

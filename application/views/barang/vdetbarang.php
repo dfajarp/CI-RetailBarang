@@ -51,6 +51,7 @@
                                 <td>Tanggal Beli</td>
                                 <td><?php echo $data->tanggal_beli; ?></td>
                             </tr>
+                            
                         </table>
                     </div>
                 </div>

@@ -40,7 +40,7 @@
     <input type="text" name="deskripsi_barang[]" class="form-control">
 
 <p><h5>Gambar Barang</h5></p>
-    <input type="file" class="id-input-file-2" name="foto[]">
+    <input type="file" class="id-input-file-2" name="gambar_barang[]">
 
             </div>
         </div>
