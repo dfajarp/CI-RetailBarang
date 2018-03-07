@@ -82,6 +82,8 @@ class Pemesanan extends CI_Controller {
 
     function hapus($id_pembelian)
     {
+        $where = array('id_bb' => $id_pembelian);
+        $this->m_pemesanan->hapus_data($where, 'dbb');
         $where = array('id_pembelian' => $id_pembelian);
         $this->m_pemesanan->hapus_data($where, 'beli_barang');
         redirect('pemesanan/belibarang');
