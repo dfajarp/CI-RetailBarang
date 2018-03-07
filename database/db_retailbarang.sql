@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Mar 2018 pada 08.51
--- Versi Server: 10.1.28-MariaDB
+-- Generation Time: Mar 07, 2018 at 03:18 AM
+-- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,28 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `barang`
 --
 
 CREATE TABLE `barang` (
   `id_barang` varchar(20) NOT NULL,
   `id_kategori` varchar(20) NOT NULL,
   `deskripsi_barang` text NOT NULL,
-  `gambar_barang` varchar(200) NOT NULL
+  `gambar_barang` varchar(200) NOT NULL,
+  `nama_brg` varchar(20) NOT NULL,
+  `harga_brg` int(11) NOT NULL,
+  `jumlah_brg` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `id_kategori`, `deskripsi_barang`, `gambar_barang`) VALUES
-('7659938', '02', 'Ultra Milk Full Cream :\r\n-200ml\r\n-24 packs', ''),
-('983903', '01', 'Indomie goreng :\r\n-Bumbu\r\n-Minyak\r\n-Kecap Manis\r\n-Saus Cabe \r\n-Bawang Goreng', '');
+INSERT INTO `barang` (`id_barang`, `id_kategori`, `deskripsi_barang`, `gambar_barang`, `nama_brg`, `harga_brg`, `jumlah_brg`) VALUES
+('7659938', '02', 'Ultra Milk Full Cream :\r\n-200ml\r\n-24 packs', '', 'susu', 7500, 500),
+('983903', '01', 'Indomie goreng :\r\n-Bumbu\r\n-Minyak\r\n-Kecap Manis\r\n-Saus Cabe \r\n-Bawang Goreng', '', 'mie', 2500, 700);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `beli_barang`
+-- Table structure for table `beli_barang`
 --
 
 CREATE TABLE `beli_barang` (
@@ -58,7 +61,7 @@ CREATE TABLE `beli_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `beli_barang`
+-- Dumping data for table `beli_barang`
 --
 
 INSERT INTO `beli_barang` (`id_pembelian`, `id_supplier`, `tanggal_beli`, `username`, `status`) VALUES
@@ -67,7 +70,7 @@ INSERT INTO `beli_barang` (`id_pembelian`, `id_supplier`, `tanggal_beli`, `usern
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dbb`
+-- Table structure for table `dbb`
 --
 
 CREATE TABLE `dbb` (
@@ -83,7 +86,7 @@ CREATE TABLE `dbb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dbb`
+-- Dumping data for table `dbb`
 --
 
 INSERT INTO `dbb` (`id_dbb`, `id_bb`, `id_brg`, `id_kategori`, `nama_brg`, `harga_brg`, `jumlah_brg`, `deskripsi_barang`, `gambar_barang`) VALUES
@@ -92,7 +95,7 @@ INSERT INTO `dbb` (`id_dbb`, `id_bb`, `id_brg`, `id_kategori`, `nama_brg`, `harg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `djb`
+-- Table structure for table `djb`
 --
 
 CREATE TABLE `djb` (
@@ -106,7 +109,7 @@ CREATE TABLE `djb` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jual_brg`
+-- Table structure for table `jual_brg`
 --
 
 CREATE TABLE `jual_brg` (
@@ -119,7 +122,7 @@ CREATE TABLE `jual_brg` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `katalog`
+-- Table structure for table `katalog`
 --
 
 CREATE TABLE `katalog` (
@@ -132,7 +135,7 @@ CREATE TABLE `katalog` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -141,7 +144,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -152,7 +155,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `member`
+-- Table structure for table `member`
 --
 
 CREATE TABLE `member` (
@@ -163,10 +166,18 @@ CREATE TABLE `member` (
   `valid_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`member_no`, `email`, `nama`, `no_telepon`, `valid_date`) VALUES
+(121536815, 'dikfajar06@gmail,com', 'Dikdik fajar permadi', 2147483647, '2018-05-31'),
+(2147483647, 'dhik.doank06@gmail.com', 'fajar dikdik', 2147483647, '2018-03-27');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -177,7 +188,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier`
+-- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_telepon`) VALUES
@@ -188,7 +199,7 @@ INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_telepon`) 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -198,7 +209,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `tipe_user`) VALUES
@@ -305,45 +316,45 @@ ALTER TABLE `katalog`
   MODIFY `id_katalog` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `barang`
+-- Constraints for table `barang`
 --
 ALTER TABLE `barang`
   ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`);
 
 --
--- Ketidakleluasaan untuk tabel `beli_barang`
+-- Constraints for table `beli_barang`
 --
 ALTER TABLE `beli_barang`
   ADD CONSTRAINT `beli_barang_ibfk_1` FOREIGN KEY (`id_supplier`) REFERENCES `supplier` (`id_supplier`),
   ADD CONSTRAINT `beli_barang_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
 
 --
--- Ketidakleluasaan untuk tabel `dbb`
+-- Constraints for table `dbb`
 --
 ALTER TABLE `dbb`
   ADD CONSTRAINT `dbb_ibfk_2` FOREIGN KEY (`id_dbb`) REFERENCES `beli_barang` (`id_pembelian`),
   ADD CONSTRAINT `dbb_ibfk_3` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`);
 
 --
--- Ketidakleluasaan untuk tabel `djb`
+-- Constraints for table `djb`
 --
 ALTER TABLE `djb`
   ADD CONSTRAINT `djb_ibfk_1` FOREIGN KEY (`id_jual_brg`) REFERENCES `jual_brg` (`id_jual_brg`),
   ADD CONSTRAINT `djb_ibfk_2` FOREIGN KEY (`id_katalog`) REFERENCES `katalog` (`id_katalog`);
 
 --
--- Ketidakleluasaan untuk tabel `jual_brg`
+-- Constraints for table `jual_brg`
 --
 ALTER TABLE `jual_brg`
   ADD CONSTRAINT `jual_brg_ibfk_1` FOREIGN KEY (`member_no`) REFERENCES `member` (`member_no`),
   ADD CONSTRAINT `jual_brg_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
 
 --
--- Ketidakleluasaan untuk tabel `katalog`
+-- Constraints for table `katalog`
 --
 ALTER TABLE `katalog`
   ADD CONSTRAINT `katalog_ibfk_1` FOREIGN KEY (`id_brg`) REFERENCES `barang` (`id_barang`);
