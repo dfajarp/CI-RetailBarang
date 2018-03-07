@@ -80,7 +80,7 @@
                                 </button>
 
                                 &nbsp; &nbsp; &nbsp;
-                                <button type="button" class="btn btn-default" >Tambah</button>
+                                <button type="button" class="btn btn-default" id="tombol_app">Tambah</button>
                             </div>
                         </div>
                     </form>
@@ -97,13 +97,12 @@
     if ('ontouchstart' in document.documentElement)
         document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
-<script src="<?= base_url() ?>/assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
 
 <!-- ace scripts -->
 <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
-<script src="<?= base_url() ?>/assets/js/ace.min.js"></script>
+
 <script>
 
     $(document).ready(function () {
