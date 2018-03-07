@@ -95,7 +95,7 @@
 
                 <ul class="nav nav-list">
                     <li class="active">
-                        <a href="<?= base_url("kasir"); ?>" class="dropdown-toggle">
+                        <a href="<?= base_url("manajemen"); ?>" class="dropdown-toggle">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
@@ -115,7 +115,7 @@
 
                         <ul class="submenu">
                             <li class="">
-                                <a href="#" class="button">
+                                <a href="<?= base_url("stok/vstok"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     <span class="menu-text">Stok</span>
                                 </a>
@@ -126,15 +126,15 @@
                             <li class="">
                                 <a href="#" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    <span class="menu-text">Display</span>
+                                    <span class="menu-text">Penjualan</span>
                                 </a>
 
                                 <b class="arrow"></b>
                             </li>
                             <li class="">
-                                <a href="#" class="button">
+                                <a href="<?= base_url("pemesanan/laporbeli"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    <span class="menu-text">Transaksi</span>
+                                    <span class="menu-text">Pembelian</span>
                                 </a>
 
                                 <b class="arrow"></b>

@@ -16,6 +16,11 @@ class Pemesanan extends CI_Controller {
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/belibarang", $data);
     }
+    function laporbeli() {
+        $data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0));
+        $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
+        $this->load->view("/barang/laporbeli", $data);
+    }
 
     function vtambah() {
         $data['data_beli_barang'] = $this->m_pemesanan->tampil();

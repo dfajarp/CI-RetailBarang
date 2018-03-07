@@ -152,14 +152,6 @@
 
                         <b class="arrow"></b>
                     </li>
-                    <li class="">
-                        <a href="<?= base_url("welcome/coba"); ?>" class="button">
-                            <i class="menu-icon glyphicon glyphicon-user"></i>
-                            <span class="menu-text"> Coba </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
                         </ul>
                  
                <!-- /.nav-list -->
