@@ -122,7 +122,7 @@
                 if ('ontouchstart' in document.documentElement)
                     document.write("<script src='<?= base_url() ?>/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
             </script>
-            <script src="<?= base_url() ?>/assets/js/bootstrap.min.js"></script>
+          
 
             <!-- page specific plugin scripts -->
             <script src="<?= base_url() ?>/assets/js/jquery.dataTables.min.js"></script>
@@ -136,7 +136,7 @@
 
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
-            <script src="<?= base_url() ?>/assets/js/ace.min.js"></script>
+
 
             <!-- inline scripts related to this page -->
             <!-- inline scripts related to this page -->
