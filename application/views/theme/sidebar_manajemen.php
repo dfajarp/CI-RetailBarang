@@ -95,7 +95,7 @@
 
                 <ul class="nav nav-list">
                     <li class="active">
-                        <a href="<?= base_url("manajemen"); ?>" class="dropdown-toggle">
+                        <a href="<?= base_url("manajemen"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
@@ -124,7 +124,7 @@
                             </li>
 
                             <li class="">
-                                <a href="#" class="button">
+                                <a href=""<?= base_url("pemesanan/laporbeli"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     <span class="menu-text">Penjualan</span>
                                 </a>

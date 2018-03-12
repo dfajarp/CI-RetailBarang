@@ -11,21 +11,20 @@
                 </li>
 
                 <li>
-                    <a href="#">Barang</a>
+                    <a href="#">Laporan</a>
                 </li>
                 <li>
-                    <a href="#">Beli Barang</a>
+                    <a href="#">Pembelian</a>
                 </li>	
-                <li class="active">Data Barang</li>
             </ul><!-- /.breadcrumb -->
 
             <div class="page-content">
                 <div class="page-header">
                     <h1>
-                        Beli Barang
+                        Laporan
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            Data Barang
+                            Pembelian
                         </small>
                     </h1>
                 </div><!-- /.page-header -->
@@ -60,9 +59,7 @@
                                                     <td><?php echo $p->nama_supplier ?></td>
                                                     <td><?php echo $p->tanggal_beli ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url() ?>pemesanan/activebarang/<?php echo $p->id_pembelian ?>" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-ok"></i></a>
-                                                        <a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
-                                                        <a href="<?php echo base_url('pemesanan/hapus/'.$p->id_pembelian); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin Membatalkan Pemesanan Ini?')"><i class="glyphicon glyphicon-trash"></i></a>
+                                                        <a href="<?php echo base_url() ?>laporan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -104,8 +101,7 @@
                                                     <td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
                                                     <td><?php echo $p->nama_supplier ?></td>
                                                     <td><?php echo $p->tanggal_beli ?></td>
-                                                    <td><a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-success btn-sm""><i class="glyphicon glyphicon-zoom-in
-                                                                                                                                                                             "></i></a></td>	
+                                                    <td><a href="<?php echo base_url() ?>Laporan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-success btn-sm""><i class="glyphicon glyphicon-zoom-in                                                                                                                                                                             "></i></a></td>	
                                                 </tr>
                                             <?php } ?>
 

@@ -16,7 +16,6 @@
 
 
 
-
        <!-- bootstrap & fontawesome -->
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="<?= base_url()?>/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -106,7 +105,7 @@
               
 
                         <li class="">
-                        <a href="widgets.html" class="button">
+                        <a href="<?= base_url("transaksi"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-transfer"></i>
                             <span class="menu-text"> Transaksi  </span>
                         </a>
