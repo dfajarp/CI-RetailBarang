@@ -97,6 +97,26 @@ class Pemesanan extends CI_Controller {
     }
     function activebarang($id_pembelian) {
         $this->m_pemesanan->activebarang($id_pembelian);
+        $where = array('id_bb' => $id_pembelian);
+        $barang = $this->m_pemesanan->get_data_barang($where, 'dbb');
+        foreach ($barang as $b) {
+            $data['id_barang'] = $b->id_brg;
+            $data['id_kategori'] = $b->id_kategori;
+            $data['nama_brg'] = $b->nama_brg;
+            $data['harga_brg'] = $b->harga_brg;
+            $data['jumlah_brg'] = $b->jumlah_brg;
+            $data['deskripsi_barang'] = $b->deskripsi_barang;
+            $data['gambar_barang'] = $b->gambar_barang;
+
+            $where = array('id_barang' => $b->id_brg);
+            if($this->m_pemesanan->get_data_barang($where, 'barang')){
+                $this->m_pemesanan->update($data);
+            } else {
+                $this->m_pemesanan->insert($data);
+            }
+        }
+
+
         redirect('pemesanan/belibarang');
     }
 }
