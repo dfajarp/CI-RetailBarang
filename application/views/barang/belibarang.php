@@ -56,15 +56,19 @@
                                             $no = 1;
                                             foreach ($beli_barang_pending as $p) {
                                                 ?>
-                                                <tr>
+                                                <tr data-id='$p[id_pembelian]'>
                                                     <td><?php echo $no++ ?></td>
                                                     <td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
                                                     <td><?php echo $p->nama_supplier ?></td>
                                                     <td><?php echo $p->tanggal_beli ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url() ?>pemesanan/activebarang/<?php echo $p->id_pembelian ?>" class="btn btn-primary btn-sm" onclick="return confirm('Apakah Anda Yakin ?')"><i class="glyphicon glyphicon-ok"></i></a>
+
+                                                        <a class="btn btn-primary btn-sm pindahkan" data-id='<?php echo $p->id_pembelian; ?>'><i class="glyphicon glyphicon-ok" ></i></a>
+
                                                         <a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
-                                                        <a href="<?php echo base_url('pemesanan/hapus/'.$p->id_pembelian); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin Membatalkan Pemesanan Ini?')"><i class="glyphicon glyphicon-trash"></i></a>
+                                                        
+                                                        <a class='btn btn-danger btn-sm  hapus-member' data-id='<?php echo $p->id_pembelian; ?>'><i class='glyphicon glyphicon-trash'></i></a>
+                                                        
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -128,3 +132,44 @@
 </div><!-- /.page-content -->
 </div>
 </div><!-- /.main-content -->
+<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
+
+<script type="text/javascript">
+    
+    $(function(){
+
+        $(document).on("click",".hapus-member",function(){
+    var id_pembelian=$(this).attr("data-id");
+    swal({
+        title:"Hapus Pesanan",
+        text:"Yakin akan membatalkan pesanan?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        closeOnConfirm: true,
+    },
+        function(){
+            window.location.href= '<?php echo base_url('pemesanan/hapus/'); ?>' + id_pembelian;
+        });
+    });
+
+    $(document).on("click",".pindahkan",function(){
+    var id_pembelian=$(this).attr("data-id");
+    swal({
+        title:"Aktifkan Barang",
+        text:"Yakin akan mengaktifkan barang?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Aktifkan",
+        closeOnConfirm: true,
+    },
+        function(){
+            window.location.href= '<?php echo base_url('pemesanan/activebarang/'); ?>' + id_pembelian;
+        });
+    });
+
+
+});
+</script>
