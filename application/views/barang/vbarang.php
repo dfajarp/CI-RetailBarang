@@ -88,6 +88,7 @@
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
                                         <td><?php echo $b->gambar_barang ?></td>
+                                        
      
                                         
                                     </tr>
