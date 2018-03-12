@@ -137,7 +137,7 @@
                         <li class="">
                         <a href="<?= base_url("katalog/katalog"); ?>" class="button">
                             <i class="menu-icon fa fa-edit fa-fw"></i>
-                            <span class="menu-text"> Catalog Display </span>
+                            <span class="menu-text"> Katalog Harga </span>
                         </a>
 
                         <b class="arrow"></b>
