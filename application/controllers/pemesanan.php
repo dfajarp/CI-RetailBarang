@@ -48,7 +48,7 @@ class Pemesanan extends CI_Controller {
 
         $jml = count($_POST['id_barang']);
         $result = array();
-        $config['upload_path']          = './assets/images/';
+        $config['upload_path']          = './assets/images/gambar barang/';
         $config['allowed_types']        = 'gif|jpg|png';
         $this->load->library('upload', $config);
 
@@ -68,7 +68,7 @@ class Pemesanan extends CI_Controller {
                     "harga_brg" => $_POST['harga_barang'][$i],
                     "jumlah_brg" => $_POST['jumlah_barang'][$i],
                     "deskripsi_barang" => $_POST['deskripsi_barang'][$i],
-                    "gambar_barang" => base_url("assets/images/" . $_FILES['gambar_barang']['name'][$i])
+                    "gambar_barang" => base_url("assets/images/gambar barang/" . $_FILES['gambar_barang']['name'][$i])
                 );
 
             } else {
@@ -96,10 +96,10 @@ class Pemesanan extends CI_Controller {
 
     function detail($id_pembelian) {
         $data['detail'] = 'Detail Pembelian';
-        $data['data'] = $this->m_pemesanan->detail_barang($id_pembelian);
+        $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
+        $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
         $this->load->view('barang/vdetbarang', $data);
     }
-
     function activebarang($id_pembelian) {
         $this->m_pemesanan->activebarang($id_pembelian);
         redirect('pemesanan/belibarang');

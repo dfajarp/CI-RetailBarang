@@ -153,11 +153,6 @@
 
 
 
-            <!--[if !IE]> -->
-
-
-            <!-- <![endif]-->
-
             <!--[if IE]>
     <script src="<?= base_url() ?>/assets/js/jquery-1.11.3.min.js"></script>
     <![endif]-->
@@ -179,7 +174,7 @@
 
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
-            <script src="<?= base_url() ?>/assets/js/ace.min.js"></script>
+
 
             <!-- inline scripts related to this page -->
             <script type="text/javascript">
