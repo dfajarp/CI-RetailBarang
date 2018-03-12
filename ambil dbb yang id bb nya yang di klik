@@ -1,0 +1,5 @@
+ambil dbb yang id bb nya yang di klik
+bikin foreach di controller di setiap akhir for each na masukeun ka table barang
+
+jika id barang sudah ad di tabel barang maka stok barangnya di update (ditambahkan stok pembelian baru)
+kalo id barangnya belum ada baru id insert.
