@@ -95,8 +95,8 @@
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>
 
-                                                <a class="red" href="<?php echo base_url('crud/hapus/'.$u->id_supplier); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')">
-                                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                 <a class='red  hapus-data' data-id='<?php echo $u->id_supplier; ?>'><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
+
                                                 </a>
                                             </div>
 
@@ -152,6 +152,9 @@
 
 
 
+<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
             <!--[if IE]>
     <script src="<?= base_url() ?>/assets/js/jquery-1.11.3.min.js"></script>
@@ -174,6 +177,25 @@
 
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+         $(document).on("click",".hapus-data",function(){
+    var id_supplier=$(this).attr("data-id");
+    swal({
+        title:"Hapus Supplier",
+        text:"Yakin akan menghapus data supplier?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        closeOnConfirm: true,
+    },
+        function(){                 
+            window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
+        });
+    });
+    });
+</script>
 
 
             <!-- inline scripts related to this page -->
@@ -403,21 +425,6 @@
                     });
                     /***************/
 
-
-
-
-
-                    /**
-                     //add horizontal scrollbars to a simple table
-                     $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
-                     {
-                     horizontal: true,
-                     styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
-                     size: 2000,
-                     mouseWheelLock: true
-                     }
-                     ).css('padding-top', '12px');
-                     */
 
 
                 })

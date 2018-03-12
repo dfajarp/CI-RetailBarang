@@ -56,7 +56,7 @@
                                             $no = 1;
                                             foreach ($beli_barang_pending as $p) {
                                                 ?>
-                                                <tr data-id='$p[id_pembelian]'>
+                                                <tr >
                                                     <td><?php echo $no++ ?></td>
                                                     <td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
                                                     <td><?php echo $p->nama_supplier ?></td>
