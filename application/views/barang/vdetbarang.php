@@ -89,7 +89,7 @@
                             </div><!-- /.span -->
                         </div><!-- /.row -->
                         <div class="hr hr-18 dotted hr-double"></div>
-                        <div class="col-xs-">
+                        <div class="col-xs-6">
                             <div class="clearfix">
                                 <div class="pull-right tableTools-container"></div>
                             </div>
