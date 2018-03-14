@@ -63,6 +63,7 @@
                                     <th>Jumlah</th>
                                     <th>Deskripsi</th>
                                     <th>Gambar</th>
+                                    <th>Aksi</th>
                                     
 
 
@@ -88,8 +89,21 @@
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
                                         <td><center><img src="<?php echo $b->gambar_barang; ?>" width="150"></center></td>
-     
-                                        
+                                       <td>
+                                            <div class="hidden-sm hidden-xs action-buttons">
+                                                <a class="green" href="">
+                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                </a>
+
+                                                 <a class='red  hapus-data' data-id=''><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
+
+                                            
+                                            </div>
+                                        </td>
+
+                                            
+
+
                                     </tr>
                               
                                 <?php } ?>
@@ -150,7 +164,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null, null, null,
+                                    null, null, null, null, null, null, null,null,
                                     {"bSortable": false}
                                 ],
                                 "aaSorting": [],
