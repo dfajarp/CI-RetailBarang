@@ -63,6 +63,7 @@
                                     <th>Jumlah</th>
                                     <th>Deskripsi</th>
                                     <th>Gambar</th>
+                                    <th>Aksi</th>
                                     
 
 
@@ -88,6 +89,13 @@
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
                                         <td><center><img src="<?php echo $b->gambar_barang; ?>" width="150"></center></td>
+                                        <td>
+                                            <div class="hidden-sm hidden-xs action-buttons">
+                                                <a class="green" href="<?php echo base_url('crud/edit/' . $b->id_barang); ?>">
+                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                </a>
+                                            </div>
+                                        </td>
      
                                         
                                     </tr>
@@ -150,8 +158,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null, null, null,
-                                    {"bSortable": false}
+                                    null, null, null, null, null, null, null,null
                                 ],
                                 "aaSorting": [],
 
@@ -187,7 +194,7 @@
                                 "extend": "colvis",
                                 "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
                                 "className": "btn btn-white btn-primary btn-bold",
-                                columns: ':not(:first):not(:last)'
+                                columns: ':not(:first)'
                             },
                             {
                                 "extend": "copy",
