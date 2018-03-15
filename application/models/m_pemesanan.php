@@ -61,4 +61,26 @@ class M_pemesanan extends CI_Model {
         return $data->result();
     }
 
+    function get_data_barang($where, $table)
+    {
+        $this->db->where($where);
+        $data = $this->db->get($table);
+        return $data->result();
+    }
+
+    function update($data) {
+        $where = array('id_barang' => $data['id_barang']);
+        $brg = $this->db->get_where('barang', $where)->row();
+        $data['jumlah_brg'] = $brg->jumlah_brg + $data['jumlah_brg'];
+        $this->db->set($data);
+        $this->db->where($where);
+        $this->db->update('barang');
+        return TRUE;
+    }
+
+    function insert($data) {
+        $this->db->insert('barang', $data);
+        return TRUE;
+    }
+
 }
