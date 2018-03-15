@@ -8,11 +8,7 @@ class Stok extends CI_Controller {
         $this->load->helper('url');
     }
 
-    function vbarang() {
-        $data['barang'] = $this->m_stok->tampil();
-        $this->load->view("/barang/vbarang", $data);
-    }
-    function vstok() {
+    function index() {
         $data['barang'] = $this->m_stok->tampil();
         $this->load->view("/barang/vstok", $data);
     }
