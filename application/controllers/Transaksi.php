@@ -2,7 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Transaksi extends CI_Controller {
-
+	function __construct(){
+		parent::__construct();
+		$this->load->model('m_barang');
+		$this->load->helper('url');
+		$this->load->database();
+	}
 	public function index()
 	{
 		$this->load->model('M_barang');
@@ -35,7 +40,7 @@ class Transaksi extends CI_Controller {
 
 			echo '<div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="nama_barang">Nama Barang :</label>
+				      	for="nama_barang">Nama </label>
 				      <div class="col-md-8">
 				        <input type="text" class="form-control reset" 
 				        	name="nama_barang" id="nama_barang" 
@@ -45,7 +50,7 @@ class Transaksi extends CI_Controller {
 				    </div>
 				    <div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="harga_barang">Harga (Rp) :</label>
+				      	for="harga_barang">Harga </label>
 				      <div class="col-md-8">
 				        <input type="text" class="form-control reset" id="harga_barang" name="harga_barang" 
 				        	value="'.number_format( $barang->harga_brg, 0 ,
@@ -54,7 +59,7 @@ class Transaksi extends CI_Controller {
 				    </div>
 				    <div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="qty">Quantity :</label>
+				      	for="qty">Quantity </label>
 				      <div class="col-md-4">
 				        <input type="number" class="form-control reset" 
 				        	name="qty" placeholder="Isi qty..." autocomplete="off" 
@@ -67,7 +72,7 @@ class Transaksi extends CI_Controller {
 
 	    	echo '<div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="nama_barang">Nama Barang :</label>
+				      	for="nama_barang">Nama </label>
 				      <div class="col-md-8">
 				        <input type="text" class="form-control reset" 
 				        	name="nama_barang" id="nama_barang" 
@@ -100,38 +105,49 @@ class Transaksi extends CI_Controller {
 	public function ajax_list_transaksi()
 	{
 
-		$data = array();
+		// $data = array();
 
-		$no = 1; 
+		// $no = 1; 
+		// $this->cart->remove('90f700cd5fd417d11a13db731ae92461');
+		$no=1; 
+		foreach ($this->cart->contents() as $value):
+				echo '<tr>';
+				echo '<th>' . $no . '</th>';
+				echo '<th>' . $value['name'] . '</th>';
+				echo '<th>' . $value['qty'] . '</th>';
+				echo '<th>' . $value['qty'] * $value['price'] . '</th>';
+				echo '<th><button type="button" name="delete" data-id="'.$value['rowid'].'" class=" btn btn-danger btn-xs delete">Hapus</button></th>';
+				echo '</tr>';
+			$no++; endforeach;
         
-        foreach ($this->cart->contents() as $items){
+   //      foreach ($this->cart->contents() as $items){
         	
-			$row = array();
-			$row[] = $no;
-			$row[] = $items["id"];
-			$row[] = $items["name"];
-			$row[] = 'Rp. ' . number_format( $items['price'], 
-                    0 , '' , '.' ) . ',-';
-			$row[] = $items["qty"];
-			$row[] = 'Rp. ' . number_format( $items['subtotal'], 
-					0 , '' , '.' ) . ',-';
+			// $row = array();
+			// $row[] = $no;
+			// $row[] = $items["id"];
+			// $row[] = $items["name"];
+			// $row[] = 'Rp. ' . number_format( $items['price'], 
+   //                  0 , '' , '.' ) . ',-';
+			// $row[] = $items["qty"];
+			// $row[] = 'Rp. ' . number_format( $items['subtotal'], 
+			// 		0 , '' , '.' ) . ',-';
 
-			//add html for action
-			$row[] = '<a 
-				href="javascript:void()" style="color:rgb(255,128,128);
-				text-decoration:none" onclick="deletebarang('
-					."'".$items["rowid"]."'".','."'".$items['subtotal'].
-					"'".')"> <i class="fa fa-close"></i> Delete</a>';
+			// //add html for action
+			// $row[] = '<a 
+			// 	href="javascript:void()" style="color:rgb(255,128,128);
+			// 	text-decoration:none" onclick="deletebarang('
+			// 		."'".$items["rowid"]."'".','."'".$items['subtotal'].
+			// 		"'".')"> <i class="fa fa-close"></i> Delete</a>';
 		
-			$data[] = $row;
-			$no++;
-        }
+			// $data[] = $row;
+			// $no++;
+   //      }
 
-		$output = array(
-						"data" => $data,
-				);
-		//output to json format
-		echo json_encode($output);
+		// $output = array(
+		// 				"data" => $data,
+		// 		);
+		// //output to json format
+		// echo json_encode($output);
 	}
 
 	public function addbarang()
@@ -148,12 +164,7 @@ class Transaksi extends CI_Controller {
 		echo json_encode(array("status" => TRUE));
 	}
 
-	public function deletebarang($rowid) 
-	{
-
-		$this->cart->update(array(
-				'rowid'=>$rowid,
-				'qty'=>0,));
-		echo json_encode(array("status" => TRUE));
+	function delete($id){
+		$this->cart->remove($id);
 	}
 }

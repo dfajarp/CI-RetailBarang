@@ -28,5 +28,4 @@ class M_barang extends CI_Model{
 	  	return $this->db->get($this->table_name)->row();
 	
 	}
-
 }

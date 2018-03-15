@@ -38,8 +38,6 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
 		Katalog Harga
-<a href="<?= base_url("pemesanan/vtambah"); ?>" class="btn btn-sm btn-primary pull-right" >
-		<i class="glyphicon glyphicon-shopping-cart"></i> Beli Barang</a>
 	</div>
 <div class="panel-body">
 		<table class="table table-striped">

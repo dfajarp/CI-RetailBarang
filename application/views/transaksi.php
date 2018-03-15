@@ -20,106 +20,19 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Transaki
+                    Transaksi
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
                         Transaksi Barang
                     </small>
                 </h1>
             </div><!-- /.page-header -->
-
-              	<style type="text/css">
-	  	#header,#footer{
-	  		background-color: #337ab7;
-	  		color: #fff;
-	  		text-align: center;
-	  	}
-	  	#header{
-	  		margin-bottom: 30px;
-	  	}
-	  	#header h1{
-	  		margin: 0;
-	  		padding: 15px;
-	  	}
-	  	#footer{
-	  		padding: 3px;
-	  	}
-	  	.btn{
-			border-radius: 2px;
-		}
-		.btn-kecil{
-			padding: 0 6px 0 6px;
-		}
-		.form-control[disabled], .form-control[readonly], 
-		fieldset[disabled] .form-control{
-			background-color: #EBF2F8;
-		}
-		.besar{
-			font-size: 20px;
-			font-weight: 300;
-		}
-		table th,table td{
-			text-align: center;
-		}
-		form{
-			margin-top: 20px;
-		}
-		.mb{
-			margin-bottom: 30px;
-		}
-		.nav ul li{
-			list-style: none;
-		}
-		.nav ul{
-			padding-left: 20px;
-			
-		}
-		.nav ul li a{
-			text-decoration: none;
-			display: block;
-			padding: 4px;
-			margin: 3px;
-		}
-		.nav ul li a:hover{
-			text-decoration: none;
-			color: #fff;
-			background-color: #337ab7;
-			border-radius: 2px;
-		}
-		.nav>li>a:hover{
-			background-color: #337ab7;
-			color: #fff;
-		}
-		.nav ul .active{
-			background-color: #337ab7;
-			border-radius: 2px;
-		}
-		.nav ul .active a{
-			color: #fff;
-		}
-		.nav li a:active,.nav li a:focus{
-			background-color: #337ab7;
-			border-radius: 2px;
-			color: #fff;
-		}
-  	</style>
     
 	<div class="col-md-12">
 		<div class="panel panel-default">
 		 <div class="panel-body">
 		 	<form class="form-horizontal" id="form_transaksi" role="form">
-	      	<div class="col-md-6">
-			    <!-- <div class="panel panel-default">
-				  <div class="panel-body"> -->
-	      		<!-- <div class="form-group">
-			      <label class="control-label col-md-4" 
-			      	for="tgl_transaksi">Tgl.Transaksi :</label>
-			      <div class="col-md-5">
-			        <input type="text" class="form-control" 
-			        	name="tgl_transaksi" value="<?= date('d-m-Y') ?>" 
-			        	readonly="readonly">
-			      </div>
-			    </div> -->
+	      	<div class="col-md-4">
 			    <div class="form-group">
 			      <label class="control-label col-md-3" 
 			      	for="id_barang">Id Barang </label>
@@ -143,7 +56,7 @@
 			    <div id="barang">
 				    <div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="nama_barang">Nama Barang</label>
+				      	for="nama_barang">Nama</label>
 				      <div class="col-md-8">
 				        <input type="text" class="form-control reset" 
 				        	name="nama_barang" id="nama_barang" 
@@ -172,14 +85,13 @@
 			    </div><!-- end id barang -->
 			    <div class="form-group">
 			      <label class="control-label col-md-3" 
-			      	for="sub_total">Sub-Total</label>
+			      	for="sub_total">Total</label>
 			      <div class="col-md-8">
 			        <input type="text" class="form-control reset" 
 			        	name="sub_total" id="sub_total" 
 			        	readonly="readonly">
 			      </div>
 			    </div>
-			    <br>
 			    <div class="form-group">
 			    	<div class="col-md-offset-3 col-md-3">
 			      		<button type="button" class="btn btn-primary" 
@@ -190,9 +102,9 @@
 			      <!-- </div>
 			    </div> --><!-- end panel-->
 	      	</div><!-- end col-md-8 -->
-				<div class="col-md-6">
+				<div class="col-md-3">
 				  	<div class="form-group">
-				      <label for="total" class="besar">Total (Rp) :</label>
+				      <label for="total" class="besar">Total Pembayaran (Rp) :</label>
 				      	<input type="text" class="form-control input-lg" 
 			        	name="total" id="total" placeholder="0"
 			        	readonly="readonly"  value="<?= number_format( 
@@ -211,32 +123,30 @@
 			        	readonly="readonly">
 				    </div>
 				</div>
-	      	</div><!-- end col-md-4 -->
-	      	<div class="clearfix">
-	<div class="col-xs-12">
-		<br>
-		  <div class="panel-body">
-	      	<div class="row">
-                        <div class="row">
-                            <div class="col-xs-12">
+	<div class="col-md-5">
+		 <div class="panel-body">
+		 	<form class="form-horizontal" id="form_transaksi" role="form">
+	      	<div class="col-md-12">
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
                                         <b>List Pembelian</b>
                                     </div>
                                     <div class="panel-body">
-                                        <table class="table table-striped">
+                                    	<!-- <pre> -->
+                                    		<!-- <?php print_r($this->cart->contents()); ?> -->
+                                    	<!-- </pre> -->
+                                        <table id="listBarang" class="table table-striped">
 				<thead>
 				 	<tr>
 					   	<th>No</th>
-					   	<th>Id Barang</th>
 					   	<th>Nama Barang</th>
-					   	<th>Harga</th>
 					   	<th>Quantity</th>
-					   	<th>Sub-Total</th>
+					   	<th>Sub Total</th>
 					   	<th>Aksi</th>
 				 	</tr>
 				</thead>
-				<tbody>
+				<tbody id="dataCart">
+				
 				</tbody>
 			</table>
 
@@ -245,9 +155,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="clearfix">
-			    <div class="form-group">
-			    <div class="col-md-offset-10 col-md-9">
+			    <div class="col-md-offset-10">
 				<button type="button" class="btn btn-primary btn-lg" 
 				id="selesai" disabled="disabled" 
 				onclick="alert('Belum ada action untuk save pejualan')">
@@ -264,7 +172,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal cari barang dengan AJAX</h4>
+          <h4 class="modal-title">Cari Barang</h4>
         </div>
         <div class="modal-body">
           <div class="form-group">
@@ -274,15 +182,15 @@
           	</div>
           	<table class="table">
           		<thead>
-          			<tr>
-          				<th>asd</th>
-          				<th>asd</th>
-          				<th>asd</th>
-          				<th>asd</th>
-          				<th>asd</th>
-          				<th>asd</th>
-          			</tr>
-          		</thead>
+				 	<tr>
+					   	<th>No</th>
+					   	<th>Nama Barang</th>
+					   	<th>Quantity</th>
+					   	<th>SubTotal</th>
+					   	<th>Aksi</th>
+				 	</tr>
+				</thead>
+				<tbody id="dataCart">
           	</table>
 		  </div>
         </div>
@@ -294,7 +202,15 @@
     </div>
   </div>
 
+<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
+
 	<script type="text/javascript">
+
+	$(function(){
+		list();
+	});
 
 	function showBarang(str) 
 	{
@@ -347,35 +263,35 @@
 	
 	}
 
-	var table;
-    $(document).ready(function() {
+	// var table;
+ //    $(document).ready(function() {
 
-      showKembali($('#bayar').val());
+ //      // showKembali($('#bayar').val());
 
-      table = $('#table_transaksi').DataTable({ 
-        paging: false,
-        "info": false,
-        "searching": false,
-        "processing": true, //Feature control the processing indicator.
-        "serverSide": true, //Feature control DataTables' 
-        // server-side processing mode.
+ //       table = $('#table_transaksi').DataTable({ 
+ //         paging: false,
+ //         "info": false,
+ //         "searching": false,
+ //         "processing": true, //Feature control the processing indicator.
+ //         "serverSide": true, //Feature control DataTables' 
+ //         // server-side processing mode.
         
-        // Load data for the table's content from an Ajax source
-        "ajax": {
-            "url": "<?= site_url('transaksi/ajax_list_transaksi')?>",
-            "type": "POST"
-        },
+ //         // Load data for the table's content from an Ajax source
+ //         "ajax": {
+ //             "url": "<?= site_url('transaksi/ajax_list_transaksi')?>",
+ //             "type": "POST"
+ //         },
 
-        //Set column definition initialisation properties.
-        "columnDefs": [
-        { 
-          "targets": [ 0,1,2,3,4,5,6 ], //last column
-          "orderable": false, //set not orderable
-        },
-        ],
+ //         //Set column definition initialisation properties.
+ //         "columnDefs": [
+ //        { 
+ //           "targets": [ 0,1,2,3,4,5,6 ], //last column
+ //           "orderable": false, //set not orderable
+ //         },
+ //         ],
 
-      });
-    });
+ //       });
+ //    });
 
     function reload_table()
     {
@@ -402,7 +318,9 @@
             success: function(data)
             {
                //reload ajax table
-               reload_table();
+               // reload_table();
+               $('#dataCart').html();
+               list();
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
@@ -417,28 +335,41 @@
         };
     }
 
-    function deletebarang(id,sub_total)
-    {
-        // ajax delete data to database
+    function list() {
+    	$('#dataCart').load('<?= base_url('transaksi/ajax_list_transaksi') ?>');
+    	$('#listBarang').on("click", '.delete', 
+
+    		function(){
+    		// alert("Delete nu ieu " +  $(this).attr("data-id"));
+    		var id=$(this).attr("data-id");
+    		swal({
+				title:"Hapus List",
+				text:"Yakin akan menghapus list ini?",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonText: "Hapus",
+				closeOnConfirm: true,
+	},
+			function(){
+			deletebarang(id);
+    	});
+   
+    	
+    	
+
+
+
+    	});
+    }
+    
+
+    function deletebarang(id){
           $.ajax({
-            url : "<?= site_url('transaksi/deletebarang')?>/"+id,
-            type: "POST",
-            dataType: "JSON",
-            success: function(data)
-            {
-               reload_table();
-            },
-            error: function (jqXHR, textStatus, errorThrown)
-            {
-                alert('Error deleting data');
+            url: "<?php echo base_url('transaksi/delete')?>/" + id,
+            success: function(data){
+            	list();
             }
         });
-
-          var ttl = $('#total').val().replace(".", "");
-
-          $('#total').val(convertToRupiah(ttl-sub_total));
-
-          showKembali($('#bayar').val());
     }
 
     function showTotal()
@@ -452,12 +383,12 @@
 
   	}
 
-  	//maskMoney
-	$('.uang').maskMoney({
-		thousands:'.', 
-		decimal:',', 
-		precision:0
-	});
+ //  	//maskMoney
+	// $('.uang').maskMoney({
+	// 	thousands:'.', 
+	// 	decimal:',', 
+	// 	precision:0
+	// });
 
 	function showKembali(str)
   	{

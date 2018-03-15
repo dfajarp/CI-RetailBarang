@@ -186,7 +186,7 @@
 
                                 <li>
                                     <a href="<?= base_url("auth/keluar"); ?>">
-                                        <i class="ace-icon fa fa-power-off"></i>
+                                        <i class="glyphicon glyphicon-log-out"></i>
                                         Logout
                                     </a>
 
