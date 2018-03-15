@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>User Login Of LoveMarket</title>
+<title>Login Market</title>
     <link href="<?= base_url()?>/assets/dist/js/jquery.min.js" rel="stylesheet">
 <!-- Custom Theme files -->
     <link href="<?= base_url()?>/assets/dist/css/style.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
-		       <h1>LoveMarket Login</h1>
+		       <h1>Login Market</h1>
 			<div class="header-bottom">
 				<div class="header-right w3agile">
 					
@@ -45,7 +45,7 @@
 </div>
 <!--header end here-->
 <div class="copyright">
-	<p>© 2018 LoveMarket Login Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">  LoveMarket </a></p>
+	<p>© 2018 SoftMarket Login Form. All rights reserved | Design by <a href="" target="_blank">  SoftMarket </a></p>
 </div>
 <?php
 if($this->session->flashdata('pesan') <> ''){
