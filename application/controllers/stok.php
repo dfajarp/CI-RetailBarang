@@ -13,4 +13,37 @@ class Stok extends CI_Controller {
         $this->load->view("/barang/vbarang", $data);
     }
 
+    function edit($id_barang) {
+        $where = array('id_barang' => $id_barang);
+        $data['barang'] = $this->m_stok->edit_data($where, 'barang')->result();
+        $this->load->view('barang/vedit', $data);
+    }
+
+    function update() {
+        $id_barang = $this->input->post('id_barang');
+        $nama_brg = $this->input->post('nama_brg');
+        $deskripsi_barang = $this->input->post('deskripsi_barang');
+
+        $result = array();
+        $config['upload_path']          = './assets/images/gambar barang/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('gambar_barang')){
+        	$result = array(
+            	'nama_brg' => $nama_brg,
+            	'deskripsi_barang' => $deskripsi_barang,
+            	'gambar_barang' => base_url("assets/images/gambar barang/" . $_FILES['gambar_barang']['name'])
+        	);
+    	}else {
+    		$error = array('error' => $this->upload->display_errors());
+    	}
+
+    	$where = array(
+    		'id_barang' => $id_barang,
+        );
+
+        $this->m_stok->update_data($where, $result, 'barang');
+        redirect('stok/vbarang');
+    }
+
 }

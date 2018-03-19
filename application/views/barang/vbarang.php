@@ -36,7 +36,7 @@
                         <div class="pull-right tableTools-container"></div>
                     </div>
                     <div class="table-header">
-                        Results for "Data Barang"
+                        Hasil Untuk "Data Barang"
                         
                     </div>
 
@@ -85,19 +85,15 @@
                                         <td><?php echo $b->id_barang ?></td>
                                         <td><?php echo $b->nama_kategori ?></td>
                                         <td><?php echo $b->nama_brg ?></td>
-                                        <td><?php echo $b->harga_brg ?></td>
+                                        <td><?php echo "Rp" .number_format($b->harga_brg, "2", ",", "."); ?></td>
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
                                         <td><center><img src="<?php echo $b->gambar_barang; ?>" width="150"></center></td>
                                        <td>
                                             <div class="hidden-sm hidden-xs action-buttons">
-                                                <a class="green" href="">
+                                                <a class="green" href="<?php echo base_url('stok/edit/' .$b->id_barang); ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>
-
-                                                 <a class='red  hapus-data' data-id=''><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
-
-                                            
                                             </div>
                                         </td>
 

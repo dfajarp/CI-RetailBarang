@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="table-header">
                                     Data Supplier
-                                    <a href="<?php echo base_url() ?>pemesanan/belibarang" class="btn btn-sm btn-primary pull-right">
+                                    <a href="<?php echo base_url() ?>pemesanan/belibarang" class="btn btn-sm btn-danger pull-right">
                                         <i class="glyphicon glyphicon-repeat"></i> Kembali</a>
                                 </div>
                                 <table id="simple-table" class="table  table-bordered table-hover">
@@ -108,7 +108,7 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Harga Barang</th>
-                                    <td class="center"><?php echo $p->harga_brg; ?></td>
+                                    <td class="center"><?php echo "Rp" .number_format($p->harga_brg, "2", ",", "."); ?></td>
                                 </tr>
                                 <tr>
 
