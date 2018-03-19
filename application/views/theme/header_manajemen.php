@@ -58,7 +58,7 @@
                 </button>
 
                 <div class="navbar-header pull-left">
-                    <a href="<?= base_url("kasir"); ?>" class="navbar-brand">
+                    <a href="<?= base_url("Manajemen"); ?>" class="navbar-brand">
                         <small>
                             <i class="fa fa-leaf"></i>
                             (RB) Retail Barang
@@ -174,7 +174,7 @@
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="<?= base_url()?>/assets/images/kasir.png" alt="Gudang's Photo" />
+                                <img class="nav-user-photo" src="<?= base_url()?>/assets/images/manajemen.png" alt="Gudang's Photo" />
                                 <span class="user-info">
                                     <small>Welcome</small>
                                     <p>Manajemen</p>
@@ -186,7 +186,7 @@
 
                                 <li>
                                     <a href="<?= base_url("auth/keluar"); ?>">
-                                        <i class="ace-icon fa fa-power-off"></i>
+                                        <i class="glyphicon glyphicon-log-out"></i>
                                         Logout
                                     </a>
 

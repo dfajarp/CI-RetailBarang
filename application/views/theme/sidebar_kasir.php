@@ -1,19 +1,9 @@
   <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-
     <title>Aplikasi Retail Barang</title>
             <meta name="description" content="overview &amp; stats" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
 
 
 
@@ -106,7 +96,7 @@
               
 
                         <li class="">
-                        <a href="widgets.html" class="button">
+                        <a href="<?= base_url("transaksi"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-transfer"></i>
                             <span class="menu-text"> Transaksi  </span>
                         </a>

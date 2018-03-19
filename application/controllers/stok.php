@@ -12,6 +12,10 @@ class Stok extends CI_Controller {
         $data['barang'] = $this->m_stok->tampil();
         $this->load->view("/barang/vbarang", $data);
     }
+    function vstok() {
+        $data['barang'] = $this->m_stok->tampil();
+        $this->load->view("/barang/vstok", $data);
+    }
 
     function edit($id_barang) {
         $where = array('id_barang' => $id_barang);
