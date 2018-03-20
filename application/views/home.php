@@ -38,9 +38,14 @@
                               <!-- small box -->
                               <div class="small-box bg-aqua">
                                 <div class="inner">
-                                  <h3>150</h3>
+                                  <h3>
+                                      <?php
+                                      $this->db->from('barang');
+                                      echo $this->db->count_all_results();
+                                      ?>
+                                  </h3>
 
-                                  <p>New Orders</p>
+                                  <p>Produk</p>
                                 </div>
                                 <div class="icon">
                                   <i class="ion ion-bag"></i>
@@ -53,12 +58,16 @@
                               <!-- small box -->
                               <div class="small-box bg-green">
                                 <div class="inner">
-                                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                  <h3><?php
 
-                                  <p>Bounce Rate</p>
+                                  $this->db->from('supplier');
+                                  echo $this->db->count_all_results();
+                                  ?></h3>
+
+                                  <p>Supplier</p>
                                 </div>
                                 <div class="icon">
-                                  <i class="ion ion-stats-bars"></i>
+                                  <i class="ion ion-android-car"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                               </div>
@@ -68,9 +77,13 @@
                               <!-- small box -->
                               <div class="small-box bg-yellow">
                                 <div class="inner">
-                                  <h3>44</h3>
+                                  <h3><?php
 
-                                  <p>User Registrations</p>
+                                  $this->db->from('member');
+                                  echo $this->db->count_all_results();
+                                  ?></h3>
+
+                                  <p>Member</p>
                                 </div>
                                 <div class="icon">
                                   <i class="ion ion-person-add"></i>
@@ -83,9 +96,12 @@
                               <!-- small box -->
                               <div class="small-box bg-red">
                                 <div class="inner">
-                                  <h3>65</h3>
+                                  <h3><?php
+                                      $this->db->from('jual_brg');
+                                      echo $this->db->count_all_results();
+                                      ?></h3>
 
-                                  <p>Unique Visitors</p>
+                                  <p>Barang yang Terjual</p>
                                 </div>
                                 <div class="icon">
                                   <i class="ion ion-pie-graph"></i>
@@ -536,7 +552,7 @@
 
                     </div><!-- /.page-content -->
           </div>
-    
+
 
           <!-- jQuery 3 -->
           <script src="<?= base_url()?>/assets/bower_components/jquery/dist/jquery.min.js"></script>

@@ -91,7 +91,7 @@
                 <div class="navbar-header pull-left">
                     <a href="<?= base_url("welcome/home"); ?>" class="navbar-brand">
                         <small>
-                            <i class="fa fa-leaf"></i>
+                            <i class="fa fa-shopping-cart"></i>
                             (RB) Retail Barang
                         </small>
                     </a>
