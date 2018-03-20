@@ -84,10 +84,10 @@
                                         <td><?php echo $b->id_barang ?></td>
                                         <td><?php echo $b->nama_kategori ?></td>
                                         <td><?php echo $b->nama_brg ?></td>
-                                        <td><?php echo $b->harga_brg ?></td>
+                                        <td><?php echo "Rp" .number_format($b->harga_brg, "2", ",", "."); ?></td>
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
-                                        <td><?php echo $b->gambar_barang ?></td>
+                                        <td><center><img src="<?php echo $b->gambar_barang; ?>" width="150"></center></td>
      
                                         
                                     </tr>

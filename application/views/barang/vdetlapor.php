@@ -17,8 +17,8 @@
                     <a href="#">Pembelian</a>
                 </li>
                 <li>
-                    <a href="#">Detail Barang</a>
-                </li>	
+                    <a class="active">Detail Barang</a>
+                </li> 
             </ul><!-- /.breadcrumb -->
             <div class="page-content">
                 <div class="page-header">
@@ -31,32 +31,104 @@
                     </h1>
                 </div><!-- /.page-header -->
 
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Detail Barang
-                    </div>
-                    <div class="panel-body">
-                        <p><a href="<?php echo base_url() ?>laporan/laporbeli" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-repeat"></i> Kembali</a></p>
-                        <table class="table table-striped">
-                            <tr>
-                                <td>Id Pembelian</td>
-                                <td><?php echo "TR-" . str_pad($data->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
-                            </tr>
-                            <tr>
-                                <td>Supplier</td>
-                                <td><?php echo $data->nama_supplier; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Tanggal Beli</td>
-                                <td><?php echo $data->tanggal_beli; ?></td>
-                            </tr>
-                            
-                        </table>
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="clearfix">
+                                    <div class="pull-right tableTools-container"></div>
+                                </div>
+                                <div class="table-header">
+                                    Data Supplier
+                                    <a href="<?php echo base_url() ?>laporan/laporbeli" class="btn btn-sm btn-danger pull-right">
+                                        <i class="glyphicon glyphicon-repeat"></i> Kembali</a>
+                                </div>
+                                <table id="simple-table" class="table  table-bordered table-hover">
+                                    <thead>
+                                            <th class="center">ID Pembelian</th>
+                                            <th class="center">Supplier</th>
+                                            <th class="center">Tanggal Beli</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                            <td class="center"><?php echo "TR-" . str_pad($data_pembelian->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
+
+                                            <td class="center"><?php echo $data_pembelian->nama_supplier; ?></td>
+                                            <td class="center"><?php echo $data_pembelian->tanggal_beli; ?></td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div><!-- /.span -->
+                        </div><!-- /.row -->
+                        <div class="hr hr-18 dotted hr-double"></div>
+                        <?php
+                                            foreach ($data_barang as $p) {
+                                ?>
+                        <div class="col-xs-4">
+                            <div class="clearfix">
+                                <div class="pull-right tableTools-container"></div>
+                            </div>
+                            <center><div class="table-header">
+                                Barang
+                            </div></center>
+
+
+                          <table id="simple-table" class="table  table-bordered table-hover">
+                                <td colspan="2">
+                               <img src="<?php echo $p->gambar_barang; ?>" width="100%" >
+                                </td>
+                               <tr>
+                                    <th class="center"  bgcolor="CCCCCC" width="130">ID Barang</th>
+                                    <td class="center"><?php echo $p->id_brg; ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Kategori</th>
+                                    <td class="center"><?php echo $p->nama_kategori; ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Nama Barang</th>
+                                    <td class="center"><?php echo $p->nama_brg; ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Harga Barang</th>
+                                    <td class="center"><?php echo "Rp" .number_format($p->harga_brg, "2", ",", "."); ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Jumlah Barang</th>
+                                    <td class="center"><?php echo $p->jumlah_brg; ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Deskripsi Barang</th>
+                                    <td class="center"><?php echo $p->deskripsi_barang; ?></td>
+                                </tr>
+                            </table>
+
+
+
+
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>

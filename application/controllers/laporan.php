@@ -16,9 +16,10 @@ class Laporan extends CI_Controller {
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/laporbeli", $data);
     }
-    function detail($id_pembelian) {
+   function detail($id_pembelian) {
         $data['detail'] = 'Detail Pembelian';
-        $data['data'] = $this->m_pemesanan->detail_barang($id_pembelian);
+        $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
+        $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
         $this->load->view('barang/vdetlapor', $data);
     }
 }
