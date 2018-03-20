@@ -14,4 +14,20 @@ class M_stok extends CI_Model {
         return $data->result();
     }
 
+    function edit_data($where, $table) {
+        return $this->db->get_where($table, $where);
+    }
+
+    function update_data($where, $result, $table) {
+        $this->db->set($result);
+        $this->db->where($where);
+        $this->db->update($table);
+    }
+
+    function gambar($id_barang)
+    {
+        $this->db->where('id_barang', $id_barang);
+        return $this->db->get('barang')->row();
+    }
+
 }

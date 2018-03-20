@@ -135,12 +135,18 @@
 </div><!-- /.page-content -->
 </div>
 </div><!-- /.main-content -->
+
 <script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
 <script type="text/javascript">
     
+    function pad (str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+    }
+
     $(function(){
 
         $(document).on("click",".hapus-member",function(){
@@ -159,10 +165,13 @@
     });
 
     $(document).on("click",".pindahkan",function(){
+
+        
+
     var id_pembelian=$(this).attr("data-id");
     swal({
         title:"Aktifkan Barang",
-        text:"Yakin akan mengaktifkan barang?",
+        text:"Apakah Anda Yakin Akan Mengaktifkan Barang Dengan Id_Pembelian : TR-"+ pad(id_pembelian, 4) +" ?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Aktifkan",
