@@ -112,8 +112,18 @@
                         </a>
 
                         <b class="arrow"></b>
+                </li>
+                                        <li class="">
+                        <a href="<?= base_url("transaksi"); ?>" class="button">
+                            <i class="menu-icon glyphicon glyphicon-transfer"></i>
+                            <span class="menu-text"> List Penjualan  </span>
+                        </a>
+
+                        <b class="arrow"></b>
                     </ul>
                 </li>
+
+
                  
                <!-- /.nav-list -->
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

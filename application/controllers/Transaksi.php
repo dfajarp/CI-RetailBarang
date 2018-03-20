@@ -7,9 +7,13 @@ class Transaksi extends CI_Controller {
 		$this->load->model('m_barang');
 		$this->load->helper('url');
 		$this->load->database();
+		if (empty($_SESSION['username'])){
+            redirect(base_url());
+        }
 	}
 	public function index()
 	{
+		$data['menu_aktif'] = array("transaksi");
 		$this->load->model('M_barang');
 
 		$data['barang'] = $this->M_barang->get();
@@ -81,7 +85,7 @@ class Transaksi extends CI_Controller {
 				    </div>
 				    <div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="harga_barang">Harga (Rp) :</label>
+				      	for="harga_barang">Harga </label>
 				      <div class="col-md-8">
 				        <input type="text" class="form-control reset" 
 				        	name="harga_barang" id="harga_barang" 
@@ -90,7 +94,7 @@ class Transaksi extends CI_Controller {
 				    </div>
 				    <div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="qty">Quantity :</label>
+				      	for="qty">Quantity </label>
 				      <div class="col-md-4">
 				        <input type="number" class="form-control reset" 
 				        	autocomplete="off" onchange="subTotal(this.value)" 
@@ -116,6 +120,7 @@ class Transaksi extends CI_Controller {
 				echo '<th>' . $value['name'] . '</th>';
 				echo '<th>' . $value['qty'] . '</th>';
 				echo '<th>' . $value['qty'] * $value['price'] . '</th>';
+				echo '<th>' . $value['name'] . '</th>';
 				echo '<th><button type="button" name="delete" data-id="'.$value['rowid'].'" class=" btn btn-danger btn-xs delete">Hapus</button></th>';
 				echo '</tr>';
 			$no++; endforeach;
@@ -141,8 +146,8 @@ class Transaksi extends CI_Controller {
 		
 			// $data[] = $row;
 			// $no++;
-   //      }
 
+   //      }
 		// $output = array(
 		// 				"data" => $data,
 		// 		);
@@ -158,7 +163,8 @@ class Transaksi extends CI_Controller {
 				'name' => $this->input->post('nama_barang'),
 				'price' => str_replace('.', '', $this->input->post(
 					'harga_barang')),
-				'qty' => $this->input->post('qty')
+				'qty' => $this->input->post('qty'),
+				'kategori' => $this->input->post('nama_barang')
 			);
 		$insert = $this->cart->insert($data);
 		echo json_encode(array("status" => TRUE));

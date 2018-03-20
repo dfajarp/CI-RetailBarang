@@ -6,9 +6,13 @@ class Crud extends CI_Controller {
         parent::__construct();
         $this->load->model('m_data');
         $this->load->helper('url');
+        if (empty($_SESSION['username'])){
+            redirect(base_url());
+        }
     }
 
     function vsupplier() {
+        $data['menu_aktif'] = array("supplier");
         $data['supplier'] = $this->m_data->tampil_data()->result();
         $this->load->view("/supplier/vsupplier", $data);
     }

@@ -180,7 +180,8 @@
 
 <script type="text/javascript">
     $(function(){
-         $(document).on("click",".hapus-data",function(){
+         $(document).on("click",".hapus-data",
+         function(){
     var id_supplier=$(this).attr("data-id");
     swal({
         title:"Hapus Supplier",
@@ -190,7 +191,7 @@
         confirmButtonText: "Hapus",
         closeOnConfirm: true,
     },
-        function(){                 
+        function(){
             window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
         });
     });

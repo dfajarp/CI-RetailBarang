@@ -9,6 +9,28 @@
         <meta name="description" content="overview &amp; stats" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
+
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/Ionicons/css/ionicons.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/dist/css/skins/_all-skins.min.css">
+        <!-- Morris chart -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/morris.js/morris.css">
+        <!-- jvectormap -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/jvectormap/jquery-jvectormap.css">
+        <!-- Date Picker -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link rel="stylesheet" href="<?= base_url()?>/assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
         <!-- bootstrap & fontawesome -->
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="<?= base_url()?>/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -58,9 +80,9 @@
                 </button>
 
                 <div class="navbar-header pull-left">
-                    <a href="<?= base_url("kasir"); ?>" class="navbar-brand">
+                    <a href="<?= base_url("Manajemen"); ?>" class="navbar-brand">
                         <small>
-                            <i class="fa fa-leaf"></i>
+                            <i class="fa fa-shopping-cart"></i>
                             (RB) Retail Barang
                         </small>
                     </a>
@@ -174,7 +196,7 @@
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="<?= base_url()?>/assets/images/kasir.png" alt="Gudang's Photo" />
+                                <img class="nav-user-photo" src="<?= base_url()?>/assets/images/manajemen.png" alt="Gudang's Photo" />
                                 <span class="user-info">
                                     <small>Welcome</small>
                                     <p>Manajemen</p>

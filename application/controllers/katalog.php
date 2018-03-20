@@ -10,6 +10,7 @@ class Katalog extends CI_Controller{
 
      function katalog()
      {
+      $data['menu_aktif'] = array("katalog");
           $data['katalog_pending'] = $this->m_katalog->tampil(array("status" => 0))->result();
           $data['katalog_sukses'] = $this->m_katalog->tampil(array("status" => 1))->result();
           $this->load->view("/barang/katalog",$data);
