@@ -1,0 +1,47 @@
+{
+content: "";
+position: fixed;
+top: 10px;
+left: 550px;
+
+z-index: -1;
+background-size:cover;
+background-position:center top;
+display: block;
+background-image: url(../images/banner2.jpg);
+width: 50%;
+height: 400px;
+filter: blur(5px) ;
+-webkit-filter: blur(5px) ;
+}
+
+.warna{
+
+  background:rgba(255, 255, 255,0.3);
+
+}
+
+.kotak {
+
+border-radius: 8px;
+position: relative;
+top: 30px;
+left: 0px;
+border:5px #fff solid;
+padding:20px 10px
+
+}
+.kotak2 {
+border-radius: 8px;
+position: relative;
+top: 10px;
+left: 0px;
+
+border:5px #fff solid;
+
+padding:10px
+
+
+}
+#title {
+  text-align:center;}

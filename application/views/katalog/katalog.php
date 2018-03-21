@@ -11,9 +11,15 @@
                 </li>
 
                 <li>
+<<<<<<< HEAD
                     <a href="<?= base_url("katalog/katalog"); ?>">Barang</a>
                 </li>
                 <li class="active">Katalog</li>
+=======
+                    <a href="<?= base_url("crud/vsupplier"); ?>">Katalog</a>
+                </li>
+                <li class="active">Katalog Harga</li>
+>>>>>>> 6e0338c87ae7a6612a7b8aac8c4d49b3fc957219
             </ul><!-- /.breadcrumb -->
 
 
@@ -22,10 +28,17 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
+<<<<<<< HEAD
                     Barang
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
                         Katalog
+=======
+                    Katalog
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i>
+                        Katalog Harga
+>>>>>>> 6e0338c87ae7a6612a7b8aac8c4d49b3fc957219
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -38,7 +51,11 @@
                         <div class="pull-right tableTools-container"></div>
                     </div>
                     <div class="table-header">
+<<<<<<< HEAD
                         Hasil Untuk "Katalog"
+=======
+                        Results for "Katalog Harga"
+>>>>>>> 6e0338c87ae7a6612a7b8aac8c4d49b3fc957219
                         <a href="<?= base_url("katalog/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
                             <i class="glyphicon glyphicon-plus"></i> Tambah</a>
                     </div>
@@ -99,7 +116,7 @@
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>
 
-                                                 <a class='red  hapus-data' data-id=''><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
+                                                <a class='red  hapus-data' data-id=''><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
 
                                                 </a>
                                             </div>
@@ -156,9 +173,9 @@
 
 
 
-<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
             <!--[if IE]>
     <script src="<?= base_url() ?>/assets/js/jquery-1.11.3.min.js"></script>
@@ -182,25 +199,25 @@
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
 
-<script type="text/javascript">
-    $(function(){
-         $(document).on("click",".hapus-data",
-         function(){
-    var id_supplier=$(this).attr("data-id");
-    swal({
-        title:"Hapus Supplier",
-        text:"Yakin akan menghapus data supplier?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Hapus",
-        closeOnConfirm: true,
-    },
-        function(){
-            window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
-        });
-    });
-    });
-</script>
+            <script type="text/javascript">
+                $(function () {
+                    $(document).on("click", ".hapus-data",
+                            function () {
+                                var id_supplier = $(this).attr("data-id");
+                                swal({
+                                    title: "Hapus Supplier",
+                                    text: "Yakin akan menghapus data supplier?",
+                                    type: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonText: "Hapus",
+                                    closeOnConfirm: true,
+                                },
+                                        function () {
+                                            window.location.href = '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
+                                        });
+                            });
+                });
+            </script>
 
 
             <!-- inline scripts related to this page -->
