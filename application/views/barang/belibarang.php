@@ -62,7 +62,9 @@
                                                     <td><?php echo $p->nama_supplier ?></td>
                                                     <td><?php echo $p->tanggal_beli ?></td>
                                                     <td>
+
                                                         <a class="btn btn-primary btn-sm pindahkan" data-id='<?php echo $p->id_pembelian; ?>'><i class="glyphicon glyphicon-ok" ></i></a>
+
                                                         <a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                                         
                                                         <a class='btn btn-danger btn-sm  hapus-member' data-id='<?php echo $p->id_pembelian; ?>'><i class='glyphicon glyphicon-trash'></i></a>

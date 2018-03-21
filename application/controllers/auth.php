@@ -23,12 +23,12 @@ class Auth extends CI_Controller {
                 $this->session->set_userdata($sess_data);
             }
             if ($this->session->userdata('tipe_user') == 'gudang') {
-                redirect('gudang');
+                redirect('welcome/gudang');
             } else if ($this->session->userdata('tipe_user') == 'kasir') {
-                redirect('kasir');
+                redirect('welcome/kasir');
             }
               else if ($this->session->userdata('tipe_user') == 'manajemen') {
-                redirect('manajemen');
+                redirect('welcome/manajemen');
             }
         } else {
             echo "<script>alert('Gagal login: Cek username, password!');history.go(-1);</script>";
