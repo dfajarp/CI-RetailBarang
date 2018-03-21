@@ -11,15 +11,9 @@
                 </li>
 
                 <li>
-<<<<<<< HEAD
                     <a href="<?= base_url("katalog/katalog"); ?>">Barang</a>
                 </li>
                 <li class="active">Katalog</li>
-=======
-                    <a href="<?= base_url("crud/vsupplier"); ?>">Katalog</a>
-                </li>
-                <li class="active">Katalog Harga</li>
->>>>>>> 6e0338c87ae7a6612a7b8aac8c4d49b3fc957219
             </ul><!-- /.breadcrumb -->
 
 
@@ -28,17 +22,10 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
-<<<<<<< HEAD
                     Barang
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
                         Katalog
-=======
-                    Katalog
-                    <small>
-                        <i class="ace-icon fa fa-angle-double-right"></i>
-                        Katalog Harga
->>>>>>> 6e0338c87ae7a6612a7b8aac8c4d49b3fc957219
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -51,11 +38,7 @@
                         <div class="pull-right tableTools-container"></div>
                     </div>
                     <div class="table-header">
-<<<<<<< HEAD
                         Hasil Untuk "Katalog"
-=======
-                        Results for "Katalog Harga"
->>>>>>> 6e0338c87ae7a6612a7b8aac8c4d49b3fc957219
                         <a href="<?= base_url("katalog/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
                             <i class="glyphicon glyphicon-plus"></i> Tambah</a>
                     </div>
