@@ -6,9 +6,13 @@ class Member extends CI_Controller {
         parent::__construct();
         $this->load->model('m_member');
         $this->load->helper('url');
+        if (empty($_SESSION['username'])){
+            redirect(base_url());
+        }
     }
 
     function vmember() {
+        $data['menu_aktif'] = array("member", "tambah");
         $data['member'] = $this->m_member->tampil_data()->result();
         $this->load->view("/member/vmember", $data);
     }

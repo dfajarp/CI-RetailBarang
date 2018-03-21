@@ -12,11 +12,13 @@ class Pemesanan extends CI_Controller {
     }
 
     function belibarang() {
+        $data['menu_aktif'] = array("belibarang");
         $data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0));
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/belibarang", $data);
     }
     function laporbeli() {
+        $data['menu_aktif'] = array("laporbeli");
         $data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0));
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/laporbeli", $data);

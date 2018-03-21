@@ -94,7 +94,7 @@
                 </div><!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
-                    <li class="active">
+                    <li class="">
                         <a href="<?= base_url("manajemen"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
@@ -124,9 +124,9 @@
                             </li>
 
                             <li class="">
-                                <a href=""<?= base_url("pemesanan/laporbeli"); ?>" class="button">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    <span class="menu-text">Penjualan</span>
+                                <a href="<?= base_url("laporan/listpenjualan"); ?>" class="button">
+                                    <i class="menu-icon fa a-caret-right"></i>
+                                    <span class="menu-textf">Penjualan</span>
                                 </a>
 
                                 <b class="arrow"></b>
