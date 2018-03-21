@@ -14,7 +14,7 @@ class Katalog extends CI_Controller {
     }
 
     function vtambah() {
-        $this->load->view("/supplier/vtambah");
+        $this->load->view("/katalog/vtambah");
     }
 
     function tambah_aksi() {

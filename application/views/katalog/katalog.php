@@ -39,7 +39,7 @@
                     </div>
                     <div class="table-header">
                         Results for "Katalog Harga"
-                        <a href="<?= base_url("crud/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
+                        <a href="<?= base_url("katalog/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
                             <i class="glyphicon glyphicon-plus"></i> Tambah</a>
                     </div>
 
