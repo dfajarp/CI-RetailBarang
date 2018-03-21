@@ -10,7 +10,7 @@ class Auth extends CI_Controller {
     }
 
     public function cek_login() {
-        $data = array('username' => $this->input->post('username', TRUE),
+        $data = array('username' => $this->input->post('email', TRUE),
                       'password' => md5($this->input->post('password', TRUE))
         );
         $this->load->model('model_user'); // load model_user

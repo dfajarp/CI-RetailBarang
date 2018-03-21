@@ -25,8 +25,8 @@
 					<div class="header-left-bottom agileinfo">
 						
 					 <form action="<?= base_url("auth/cek_login") ?>" method="post">
-						<input type="text"  value="User name" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"/>
-					<input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
+						<input type="text" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"/>
+					<input type="password"  name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
 						<div class="remember">
 			             <span class="checkbox1">
 							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
