@@ -11,9 +11,9 @@
                 </li>
 
                 <li>
-                    <a href="<?= base_url("crud/vsupplier"); ?>">Supplier</a>
+                    <a href="<?= base_url("katalog/katalog"); ?>">Barang</a>
                 </li>
-                <li class="active">Data Supplier</li>
+                <li class="active">Katalog</li>
             </ul><!-- /.breadcrumb -->
 
 
@@ -22,10 +22,10 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Supplier
+                    Barang
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        Data Supplier
+                        Katalog
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -38,8 +38,8 @@
                         <div class="pull-right tableTools-container"></div>
                     </div>
                     <div class="table-header">
-                        Results for "Data Supplier"
-                        <a href="<?= base_url("crud/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
+                        Hasil Untuk "Katalog"
+                        <a href="<?= base_url("katalog/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
                             <i class="glyphicon glyphicon-plus"></i> Tambah</a>
                     </div>
 
@@ -65,6 +65,7 @@
                                     <th>Gambar Barang</th>
                                     <th>Harga Beli</th>
                                     <th>Harga Jual</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
 
 
@@ -84,12 +85,13 @@
                                             </label>
                                         </td>
                                         <td><?php echo $no++ ?></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?php echo $u->id_barang?></td>
+                                        <td><?php echo $u->nama_brg?></td>
+                                        <td><?php echo $u->deskripsi_barang?></td>
+                                        <td><center><img src="<?php echo $u->gambar_barang; ?>" width="150"></center></td>
+                                        <td><?php echo "Rp" .number_format($u->harga_brg, "2", ",", ".");?></td>
+                                        <td><?php echo "Rp" .number_format($u->harga_jual, "2", ",", ".");?></td>
+                                        <td><?php echo $u->status?></td>
 
                                         <td>
                                             <div class="hidden-sm hidden-xs action-buttons">
@@ -212,7 +214,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null, null, null,
+                                    null, null, null, null, null, null, null, null,
                                     {"bSortable": false}
                                 ],
                                 "aaSorting": [],
