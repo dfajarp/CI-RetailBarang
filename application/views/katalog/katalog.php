@@ -91,7 +91,11 @@
                                         <td><center><img src="<?php echo $u->gambar_barang; ?>" width="150"></center></td>
                                         <td><?php echo "Rp" .number_format($u->harga_brg, "2", ",", ".");?></td>
                                         <td><?php echo "Rp" .number_format($u->harga_jual, "2", ",", ".");?></td>
-                                        <td><?php echo $u->status?></td>
+                                        <td><?php if($u->status === '1'){
+                                            echo'<span class="label label-success arrowed">Aktif</span>';
+                                        }else if($u->status === '0'){
+                                            echo '<span class="label label-danger arrowed">Tidak Aktif</span>';
+                                        } ?></td>
 
                                         <td>
                                             <div class="hidden-sm hidden-xs action-buttons">

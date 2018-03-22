@@ -80,13 +80,17 @@
                       <tr> 
                         <td>Status</td> 
                         <td> 
-                            <div class="col-sm-4"> 
-                                <input type="text" name="status" class="form-control" value="">
+                                <div class="col-xs-3">
+                                                    <label>
+                                                        <input id="aktifkan" name="status" value="" class="ace ace-switch ace-switch-7" type="checkbox" />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </div>
                             </div>
                         </td>
                     </tr> 
                         <td colspan="2">
-                            <input type="submit" class="btn btn-success" value="Simpan"> 
+                            <input type="submit" name="simpan" class="btn btn-success" value="Simpan"> 
                             <button type="reset" class="btn btn-default">Reset</button> 
                         </td> 
                     </tr> 
@@ -96,3 +100,14 @@
     </div> 
     <!-- /panel --> 
 </div>
+
+<script type="text/javascript">
+    $(function(){
+    $(document).ready(function(){
+        $('#aktifkan').click(function(){
+            $("#aktifkan").val("1");
+    
+        });     
+    });
+});
+</script>
