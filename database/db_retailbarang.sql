@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2018 at 03:18 AM
+-- Generation Time: Mar 22, 2018 at 03:35 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -31,20 +31,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `barang` (
   `id_barang` varchar(20) NOT NULL,
   `id_kategori` varchar(20) NOT NULL,
-  `deskripsi_barang` text NOT NULL,
-  `gambar_barang` varchar(200) NOT NULL,
   `nama_brg` varchar(20) NOT NULL,
   `harga_brg` int(11) NOT NULL,
-  `jumlah_brg` int(11) NOT NULL
+  `jumlah_brg` int(11) NOT NULL,
+  `deskripsi_barang` text NOT NULL,
+  `gambar_barang` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `id_kategori`, `deskripsi_barang`, `gambar_barang`, `nama_brg`, `harga_brg`, `jumlah_brg`) VALUES
-('7659938', '02', 'Ultra Milk Full Cream :\r\n-200ml\r\n-24 packs', '', 'susu', 7500, 500),
-('983903', '01', 'Indomie goreng :\r\n-Bumbu\r\n-Minyak\r\n-Kecap Manis\r\n-Saus Cabe \r\n-Bawang Goreng', '', 'mie', 2500, 700);
+INSERT INTO `barang` (`id_barang`, `id_kategori`, `nama_brg`, `harga_brg`, `jumlah_brg`, `deskripsi_barang`, `gambar_barang`) VALUES
+('18664', '01', 'barang saya', 2000, 12, 'dcsjhkhs', 'http://localhost/admindash/assets/images/gambar barang/kecap.jpg'),
+('59295898', '01', 'ahh', 2500, 14, 'hnte ', 'http://localhost/admindash/assets/images/gambar barang/siip-35g.jpg');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,8 @@ CREATE TABLE `beli_barang` (
 --
 
 INSERT INTO `beli_barang` (`id_pembelian`, `id_supplier`, `tanggal_beli`, `username`, `status`) VALUES
-(106, 1278382, '2018-03-21', 'admin1', 1);
+(1, 41646841, '2018-03-14', 'admin1', 1),
+(2, 41646841, '2018-03-08', 'admin1', 1);
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,8 @@ CREATE TABLE `dbb` (
 --
 
 INSERT INTO `dbb` (`id_dbb`, `id_bb`, `id_brg`, `id_kategori`, `nama_brg`, `harga_brg`, `jumlah_brg`, `deskripsi_barang`, `gambar_barang`) VALUES
-(106, 0, '9797', '03', 'laptop', 2147483647, 6, 'limited', '');
+(1, 1, '59295898', '01', 'ahh', 2500, 7, 'hnte ', 'http://localhost/admindash/assets/images/gambar barang/siip-35g.jpg'),
+(2, 2, '18664', '01', 'barang saya', 2000, 12, 'dcsjhkhs', 'http://localhost/admindash/assets/images/gambar barang/kecap.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,10 +129,19 @@ CREATE TABLE `jual_brg` (
 
 CREATE TABLE `katalog` (
   `id_katalog` int(11) NOT NULL,
-  `id_brg` varchar(20) NOT NULL,
+  `id_barang` varchar(20) NOT NULL,
   `harga_jual` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `katalog`
+--
+
+INSERT INTO `katalog` (`id_katalog`, `id_barang`, `harga_jual`, `status`) VALUES
+(481287507, '59295898', 512121, 1),
+(481287517, '59295898', 512121, 0),
+(481287525, '59295898', 512121, 0);
 
 -- --------------------------------------------------------
 
@@ -171,8 +182,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_no`, `email`, `nama`, `no_telepon`, `valid_date`) VALUES
-(121536815, 'dikfajar06@gmail,com', 'Dikdik fajar permadi', 2147483647, '2018-05-31'),
-(2147483647, 'dhik.doank06@gmail.com', 'fajar dikdik', 2147483647, '2018-03-27');
+(114716878, 'dhik.doank06@gmail.com', 'Dikdik fajar permadi', 2147483647, '2018-03-20');
 
 -- --------------------------------------------------------
 
@@ -192,9 +202,11 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_telepon`) VALUES
-(5675, 'reechese', 'jl.mana', '0987999'),
-(1278382, 'Indofood', 'Jl.cimareme', '022-654321'),
-(648265267, 'ultrajaya', 'jl.gadobangkong', '022-673974');
+(981738, 'PT.Indofood', 'Jl.Cimareme', '022-362389762'),
+(6736547, 'PT.Ultra Jaya', 'Jl.Gadobangkong', '022-356251324'),
+(41646841, 'saya sendiri', 'cipatat', '089845612516'),
+(1641614641, 'PT. Djarum Coklat', 'cibereum', '0891205450454'),
+(2147483647, 'PT. Gudang Garam', 'cipatat', '089674258931');
 
 -- --------------------------------------------------------
 
@@ -267,7 +279,7 @@ ALTER TABLE `jual_brg`
 --
 ALTER TABLE `katalog`
   ADD PRIMARY KEY (`id_katalog`),
-  ADD KEY `id_brg` (`id_brg`);
+  ADD KEY `id_brg` (`id_barang`);
 
 --
 -- Indexes for table `kategori`
@@ -301,7 +313,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `beli_barang`
 --
 ALTER TABLE `beli_barang`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `dbb`
+--
+ALTER TABLE `dbb`
+  MODIFY `id_dbb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jual_brg`
@@ -313,7 +331,7 @@ ALTER TABLE `jual_brg`
 -- AUTO_INCREMENT for table `katalog`
 --
 ALTER TABLE `katalog`
-  MODIFY `id_katalog` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_katalog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=481287526;
 
 --
 -- Constraints for dumped tables
@@ -336,8 +354,8 @@ ALTER TABLE `beli_barang`
 -- Constraints for table `dbb`
 --
 ALTER TABLE `dbb`
-  ADD CONSTRAINT `dbb_ibfk_2` FOREIGN KEY (`id_dbb`) REFERENCES `beli_barang` (`id_pembelian`),
-  ADD CONSTRAINT `dbb_ibfk_3` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`);
+  ADD CONSTRAINT `dbb_ibfk_3` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`),
+  ADD CONSTRAINT `dbb_ibfk_4` FOREIGN KEY (`id_bb`) REFERENCES `beli_barang` (`id_pembelian`);
 
 --
 -- Constraints for table `djb`
@@ -357,7 +375,7 @@ ALTER TABLE `jual_brg`
 -- Constraints for table `katalog`
 --
 ALTER TABLE `katalog`
-  ADD CONSTRAINT `katalog_ibfk_1` FOREIGN KEY (`id_brg`) REFERENCES `barang` (`id_barang`);
+  ADD CONSTRAINT `katalog_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
