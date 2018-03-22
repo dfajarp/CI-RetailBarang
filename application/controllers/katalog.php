@@ -25,7 +25,7 @@ class Katalog extends CI_Controller {
         $data = array(
             'id_barang' => $id_barang,
             'harga_jual' => $harga_jual,
-            'status' => $status
+            'status' => ($status != "") ? $status : 0
             );
         $this->m_katalog->input_data($data, "katalog");
         redirect('katalog/katalog');

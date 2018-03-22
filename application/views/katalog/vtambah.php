@@ -80,21 +80,17 @@
                       <tr> 
                         <td>Status</td> 
                         <td> 
-                            <div class="col-sm-4"> 
-                                <select name="status" class="form-control">
-                                    <?php if ($status==1){?>
-                                        <option value="1" selected="selected">Aktif</option>
-                                        <option value="0">Tidak Aktif</option>
-                                <?php }else{?>
-                                        <option value="1">Aktif</option>
-                                        <option value="0" selected="selected">Tidak Aktif</option>
-                                <?php }?>
-                                </select>
+                                <div class="col-xs-3">
+                                                    <label>
+                                                        <input id="aktifkan" name="status" value="" class="ace ace-switch ace-switch-7" type="checkbox" />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </div>
                             </div>
                         </td>
                     </tr> 
                         <td colspan="2">
-                            <input type="submit" class="btn btn-success" value="Simpan"> 
+                            <input type="submit" name="simpan" class="btn btn-success" value="Simpan"> 
                             <button type="reset" class="btn btn-default">Reset</button> 
                         </td> 
                     </tr> 
@@ -104,3 +100,14 @@
     </div> 
     <!-- /panel --> 
 </div>
+
+<script type="text/javascript">
+    $(function(){
+    $(document).ready(function(){
+        $('#aktifkan').click(function(){
+            $("#aktifkan").val("1");
+    
+        });     
+    });
+});
+</script>
