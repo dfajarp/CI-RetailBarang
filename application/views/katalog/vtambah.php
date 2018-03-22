@@ -81,7 +81,15 @@
                         <td>Status</td> 
                         <td> 
                             <div class="col-sm-4"> 
-                                <input type="text" name="status" class="form-control" value="">
+                                <select name="status" class="form-control">
+                                    <?php if ($status==1){?>
+                                        <option value="1" selected="selected">Aktif</option>
+                                        <option value="0">Tidak Aktif</option>
+                                <?php }else{?>
+                                        <option value="1">Aktif</option>
+                                        <option value="0" selected="selected">Tidak Aktif</option>
+                                <?php }?>
+                                </select>
                             </div>
                         </td>
                     </tr> 
