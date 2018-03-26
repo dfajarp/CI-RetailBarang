@@ -89,7 +89,7 @@
 
                     <span class="btn btn-info"></span>
 
-<<<<<<< HEAD
+
                 <ul class="nav nav-list">
                     <li class="<?= (in_array("beranda",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("welcome/gudang"); ?>">
@@ -98,25 +98,18 @@
                         </a>
 =======
                     <span class="btn btn-warning"></span>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
+
 
                     <span class="btn btn-danger"></span>
                 </div>
             </div><!-- /.sidebar-shortcuts -->
-
-<<<<<<< HEAD
-                    <li class="<?= (in_array("stok",$menu_aktif)) ? "active" : "" ?>">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon glyphicon glyphicon-briefcase"></i>
-                            <span class="menu-text"> Barang </span>
-=======
             <ul class="nav nav-list">
                 <li class="">
                     <a href="<?= base_url("welcome/gudang"); ?>">
                         <i class="menu-icon fa fa-dashboard fa-fw"></i>
                         <span class="menu-text"> Beranda </span>
                     </a>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
+
 
                     <b class="arrow"></b>
                 </li>
@@ -126,7 +119,7 @@
                         <i class="menu-icon glyphicon glyphicon-briefcase"></i>
                         <span class="menu-text"> Barang </span>
 
-<<<<<<< HEAD
+
                         <ul class="submenu">
                             <li class="<?= (in_array("stok",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("stok/vbarang"); ?>" class="button">
@@ -136,11 +129,11 @@
 =======
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
+
 
                     <b class="arrow"></b>
 
-<<<<<<< HEAD
+
                             <li class="<?= (in_array("belibarang",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("pemesanan/belibarang"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
@@ -153,12 +146,11 @@
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Stok Barang
                             </a>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
+
 
                             <b class="arrow"></b>
                         </li>
 
-<<<<<<< HEAD
                         <li class="<?= (in_array("katalog",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("katalog/katalog"); ?>" class="button">
                             <i class="menu-icon fa fa-edit fa-fw"></i>
@@ -218,7 +210,7 @@
             <!-- /.nav-list -->
             <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
                 <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
+
             </div>
         </div>
 
