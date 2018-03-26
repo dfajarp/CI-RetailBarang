@@ -76,7 +76,7 @@
                         </div><!-- /.row -->
                         <div class="hr hr-18 dotted hr-double"></div>
                         <?php
-                                            foreach ($data_barang as $p) {
+                             foreach ($data_barang as $p) {
                                 ?>
                         <div class="col-xs-4">
                             <div class="clearfix">
