@@ -24,8 +24,7 @@ class M_stok extends CI_Model {
         $this->db->update($table);
     }
 
-    function gambar($id_barang)
-    {
+    function gambar($id_barang) {
         $this->db->where('id_barang', $id_barang);
         return $this->db->get('barang')->row();
     }

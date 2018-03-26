@@ -6,7 +6,7 @@ class Crud extends CI_Controller {
         parent::__construct();
         $this->load->model('m_data');
         $this->load->helper('url');
-        if (empty($_SESSION['username'])){
+        if (empty($_SESSION['username'])) {
             redirect(base_url());
         }
     }
@@ -44,6 +44,7 @@ class Crud extends CI_Controller {
     }
 
     function edit($id_supplier) {
+        $data['menu_aktif'] = array("edit");
         $where = array('id_supplier' => $id_supplier);
         $data['supplier'] = $this->m_data->edit_data($where, 'supplier')->result();
         $this->load->view('supplier/vedit', $data);

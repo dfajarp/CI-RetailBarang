@@ -7,13 +7,13 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="<?= base_url("welcome/home"); ?>">Home</a>
+                    <a href="<?= base_url("welcome/kasir"); ?>">Home</a>
                 </li>
 
                 <li>
-                    <a href="<?= base_url("crud/vsupplier"); ?>">Member</a>
+                    <a href="<?= base_url("kasir/listpenjualan"); ?>">Laporan</a>
                 </li>
-                <li class="active">Data Member</li>
+                <li class="active">List Penjualan</li>
             </ul><!-- /.breadcrumb -->
 
 
@@ -22,10 +22,10 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Member
+                    Laporan
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        Data Member
+                        List Penjualan
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -38,9 +38,7 @@
                         <div class="pull-right tableTools-container"></div>
                     </div>
                     <div class="table-header">
-                        Results for "Data Member"
-                        <a href="<?= base_url("member/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
-                            <i class="glyphicon glyphicon-plus"></i> Tambah</a>
+                        Results for "List Penjualan"
                     </div>
 
                     <!-- div.table-responsive -->
@@ -54,17 +52,16 @@
                                 <tr>
                                     <th class="center">
                                         <label class="pos-rel">
-                                            <input type="checkbox" class="ace" />
                                             <span class="lbl"></span>
                                         </label>
                                     </th>
-                                    <th>No</th> 
-                                    <th>No. Member</th> 
-                                    <th>Nama</th> 
-                                    <th>No.Tlp</th> 
-                                    <th>Email</th> 
-                                    <th>Valid date</th> 
+                                    <th>No</th>
+                                    <th>ID Jual Barang</th>
+                                    <th>Tanggal</th>
+                                    <th>No. Member</th>
                                     <th>Aksi</th>
+
+
 
                                 </tr>
                             </thead>
@@ -72,30 +69,22 @@
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($member as $u) {
+                                foreach ($djb as $value) {
                                     ?>
                                     <tr>
                                         <td class="center">
                                             <label class="pos-rel">
-                                                <input type="checkbox" class="ace" />
                                                 <span class="lbl"></span>
                                             </label>
                                         </td>
                                         <td><?php echo $no++ ?></td>
-                                        <td><?php echo $u->member_no ?></td>
-                                        <td><?php echo $u->nama ?></td>
-                                        <td><?php echo $u->no_telepon ?></td>
-                                        <td><?php echo $u->email ?></td>
-                                        <td><?php echo $u->valid_date ?></td>
+                                        <td><?php echo $value->id_jual_brg ?></td>
+                                        <td><?php echo $value->tgl ?></td>
+                                        <td><?php echo $value->member_no ?></td>
+
                                         <td>
                                             <div class="hidden-sm hidden-xs action-buttons">
-                                                <a class="green" href="<?php echo base_url('member/edit/' . $u->member_no); ?>">
-                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                </a>
-
-                                                <a class="red" href="<?php echo base_url('member/hapus/' . $u->member_no); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin menghapus data ini?')">
-                                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                                </a>
+                                                        <a href="<?php echo base_url() ?>kasir/detail/<?php echo $value->id_jual_brg ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                             </div>
 
                                             <div class="hidden-md hidden-lg">
@@ -150,11 +139,9 @@
 
 
 
-
-            <!--[if !IE]> -->
-
-
-            <!-- <![endif]-->
+<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
             <!--[if IE]>
     <script src="<?= base_url() ?>/assets/js/jquery-1.11.3.min.js"></script>
@@ -177,7 +164,26 @@
 
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
-            <script src="<?= base_url() ?>/assets/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+         $(document).on("click",".hapus-data",function(){
+    var id_supplier=$(this).attr("data-id");
+    swal({
+        title:"Hapus Supplier",
+        text:"Yakin akan menghapus data supplier?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        closeOnConfirm: true,
+    },
+        function(){                 
+            window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
+        });
+    });
+    });
+</script>
+
 
             <!-- inline scripts related to this page -->
             <script type="text/javascript">
@@ -190,8 +196,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null, null,
-                                    {"bSortable": false}
+                                    null, null, null, null, null,                                    {"bSortable": false}
                                 ],
                                 "aaSorting": [],
 
@@ -408,20 +413,7 @@
 
 
 
-
-
-                    /**
-                     //add horizontal scrollbars to a simple table
-                     $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
-                     {
-                     horizontal: true,
-                     styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
-                     size: 2000,
-                     mouseWheelLock: true
-                     }
-                     ).css('padding-top', '12px');
-                     */
-
-
                 })
             </script>
+
+

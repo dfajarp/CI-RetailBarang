@@ -1,5 +1,5 @@
-<?php $this->load->view('theme/header_manajemen'); ?> 
-<?php $this->load->view('theme/sidebar_manajemen'); ?>
+<?php $this->load->view('theme/header_kasir'); ?> 
+<?php $this->load->view('theme/sidebar_kasir'); ?>
 
 <div class="main-content"> 
     <div class="main-content-inner">
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="table-header">
                                     Data Penjualan
-                                    <a href="<?php echo base_url() ?>laporan/listpenjualan" class="btn btn-sm btn-danger pull-right">
+                                    <a href="<?php echo base_url() ?>kasir/listpenjualan" class="btn btn-sm btn-danger pull-right">
                                         <i class="glyphicon glyphicon-repeat"></i> Kembali</a>
                                 </div>
                                 <table id="simple-table" class="table  table-bordered table-hover">
@@ -115,7 +115,17 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Total Pembayaran</th>
-                                    <td class="center"><?php echo $p->sub_total; ?></td>
+                                    <td class="center"><?php echo $p->sub_total; ?></td>    
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Bayar</th>
+                                    <td class="center"><?php echo $p->bayar; ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Kembalian</th>
+                                    <td class="center"><?php echo $p->kembalian; ?></td>
                                 </tr>
                             </table>
 
@@ -173,7 +183,7 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null,
+                        null, null, null, null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],

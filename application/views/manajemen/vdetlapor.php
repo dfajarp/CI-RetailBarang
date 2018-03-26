@@ -7,7 +7,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="<?= base_url("welcome/home"); ?>">Home</a>
+                    <a href="<?= base_url("welcome/manajemen"); ?>">Home</a>
                 </li>
 
                 <li>
@@ -94,11 +94,6 @@
                                 </tr>
                                 <tr>
 
-                                    <th class="center" bgcolor="CCCCCC" width="130">ID Katalog</th>
-                                    <td class="center"><?php echo $p->id_katalog; ?></td>
-                                </tr>
-                                <tr>
-
                                     <th class="center" bgcolor="CCCCCC" width="130">Nama Barang</th>
                                     <td class="center"><?php echo $p->nama_brg; ?></td>
                                 </tr>
@@ -115,7 +110,17 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Total Pembayaran</th>
-                                    <td class="center"><?php echo $p->sub_total; ?></td>
+                                    <td class="center"><?php echo $p->nilai_transaksi; ?></td>    
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Bayar</th>
+                                    <td class="center"><?php echo $p->bayar; ?></td>
+                                </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Kembalian</th>
+                                    <td class="center"><?php echo $p->kembalian; ?></td>
                                 </tr>
                             </table>
 
@@ -173,7 +178,7 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null,
+                        null, null, null, null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],

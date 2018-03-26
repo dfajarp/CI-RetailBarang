@@ -7,7 +7,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="<?= base_url("welcome/home"); ?>">Home</a>
+                    <a href="<?= base_url("welcome/manajemen"); ?>">Home</a>
                 </li>
 
                 <li>
@@ -47,25 +47,25 @@
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
                                 <div class="table-header">
-                                    Data Penjualan
-                                    <a href="<?php echo base_url() ?>laporan/listpenjualan" class="btn btn-sm btn-danger pull-right">
+                                    Data Supplier
+                                    <a href="<?php echo base_url() ?>pemesanan/belibarang" class="btn btn-sm btn-danger pull-right">
                                         <i class="glyphicon glyphicon-repeat"></i> Kembali</a>
                                 </div>
                                 <table id="simple-table" class="table  table-bordered table-hover">
                                     <thead>
-                                            <th class="center">ID Jual Barang</th>
-                                            <th class="center">Tanggal</th>
-                                            <th class="center">No. Member</th>
+                                            <th class="center">ID Pembelian</th>
+                                            <th class="center">Supplier</th>
+                                            <th class="center">Tanggal Beli</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
 
-                                            <td class="center"><?php echo $data_penjualan->id_jual_brg ?></td>
+                                            <td class="center"><?php echo "TR-" . str_pad($data_pembelian->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
 
-                                            <td class="center"><?php echo $data_penjualan->tgl; ?></td>
-                                            <td class="center"><?php echo $data_penjualan->member_no; ?></td>
+                                            <td class="center"><?php echo $data_pembelian->nama_supplier; ?></td>
+                                            <td class="center"><?php echo $data_pembelian->tanggal_beli; ?></td>
                                         </tr>
 
 
@@ -88,14 +88,17 @@
 
 
                           <table id="simple-table" class="table  table-bordered table-hover">
+                                <td colspan="2">
+                               <img src="<?php echo $p->gambar_barang; ?>" width="100%" >
+                                </td>
                                <tr>
                                     <th class="center"  bgcolor="CCCCCC" width="130">ID Barang</th>
                                     <td class="center"><?php echo $p->id_barang; ?></td>
                                 </tr>
                                 <tr>
 
-                                    <th class="center" bgcolor="CCCCCC" width="130">ID Katalog</th>
-                                    <td class="center"><?php echo $p->id_katalog; ?></td>
+                                    <th class="center" bgcolor="CCCCCC" width="130">Kategori</th>
+                                    <td class="center"><?php echo $p->nama_kategori; ?></td>
                                 </tr>
                                 <tr>
 
@@ -110,12 +113,12 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Jumlah Barang</th>
-                                    <td class="center"><?php echo $p->unit; ?></td>
+                                    <td class="center"><?php echo $p->jumlah_brg; ?></td>
                                 </tr>
                                 <tr>
 
-                                    <th class="center" bgcolor="CCCCCC" width="130">Total Pembayaran</th>
-                                    <td class="center"><?php echo $p->sub_total; ?></td>
+                                    <th class="center" bgcolor="CCCCCC" width="130">Deskripsi Barang</th>
+                                    <td class="center"><?php echo $p->deskripsi_barang; ?></td>
                                 </tr>
                             </table>
 

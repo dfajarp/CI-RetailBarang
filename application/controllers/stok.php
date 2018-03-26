@@ -6,7 +6,7 @@ class Stok extends CI_Controller {
         parent::__construct();
         $this->load->model('m_stok');
         $this->load->helper('url');
-        if (empty($_SESSION['username'])){
+        if (empty($_SESSION['username'])) {
             redirect(base_url());
         }
     }
@@ -16,13 +16,15 @@ class Stok extends CI_Controller {
         $data['barang'] = $this->m_stok->tampil();
         $this->load->view("/barang/vbarang", $data);
     }
+
     function vstok() {
-        $data['menu_aktif'] = array("laporan","vstok");
+        $data['menu_aktif'] = array("laporan", "vstok");
         $data['barang'] = $this->m_stok->tampil();
         $this->load->view("/barang/vstok", $data);
     }
 
     function edit($id_barang) {
+        $data['menu_aktif'] = array("edit");
         $where = array('id_barang' => $id_barang);
         $data['barang'] = $this->m_stok->edit_data($where, 'barang')->result();
         $this->load->view('barang/vedit', $data);
@@ -34,21 +36,21 @@ class Stok extends CI_Controller {
         $deskripsi_barang = $this->input->post('deskripsi_barang');
 
         $result = array();
-        $config['upload_path']          = './assets/images/gambar barang/';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['upload_path'] = './assets/images/gambar barang/';
+        $config['allowed_types'] = 'gif|jpg|png';
         $this->load->library('upload', $config);
-        if ($this->upload->do_upload('gambar_barang')){
-        	$result = array(
-            	'nama_brg' => $nama_brg,
-            	'deskripsi_barang' => $deskripsi_barang,
-            	'gambar_barang' => base_url("assets/images/gambar barang/" . $_FILES['gambar_barang']['name'])
-        	);
-    	}else {
-    		$error = array('error' => $this->upload->display_errors());
-    	}
+        if ($this->upload->do_upload('gambar_barang')) {
+            $result = array(
+                'nama_brg' => $nama_brg,
+                'deskripsi_barang' => $deskripsi_barang,
+                'gambar_barang' => base_url("assets/images/gambar barang/" . $_FILES['gambar_barang']['name'])
+            );
+        } else {
+            $error = array('error' => $this->upload->display_errors());
+        }
 
-    	$where = array(
-    		'id_barang' => $id_barang,
+        $where = array(
+            'id_barang' => $id_barang,
         );
 
         $this->m_stok->update_data($where, $result, 'barang');
