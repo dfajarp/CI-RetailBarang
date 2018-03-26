@@ -19,8 +19,7 @@ class Transaksi extends CI_Controller {
 		$data['barang'] = $this->M_barang->get();
 
 		$this->load->view('transaksi',$data);
-	}
-
+	}	
 	public function getbarang($id)
 	{
 
@@ -116,11 +115,9 @@ class Transaksi extends CI_Controller {
 		$no=1; 
 		foreach ($this->cart->contents() as $value):
 				echo '<tr>';
-				echo '<th>' . $no . '</th>';
 				echo '<th>' . $value['name'] . '</th>';
 				echo '<th>' . $value['qty'] . '</th>';
 				echo '<th>' . $value['qty'] * $value['price'] . '</th>';
-				echo '<th>' . $value['name'] . '</th>';
 				echo '<th><button type="button" name="delete" data-id="'.$value['rowid'].'" class=" btn btn-danger btn-xs delete">Hapus</button></th>';
 				echo '</tr>';
 			$no++; endforeach;
@@ -173,4 +170,15 @@ class Transaksi extends CI_Controller {
 	function delete($id){
 		$this->cart->remove($id);
 	}
+	function savebarang()
+    {
+        $data = array(
+                'id_jual_brg' => $this->input->post('id_jual_brg'),
+                'tgl' => $this->input->post('tgl'),
+                'member_no' => str_replace('.', '', $this->input->post(
+                    'member_no')),
+            );
+        $insert = $this->view->insert($data);
+        echo json_encode(array("status" => TRUE));
+    }
 }

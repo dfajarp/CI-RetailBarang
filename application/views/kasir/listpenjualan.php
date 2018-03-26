@@ -1,5 +1,5 @@
-<?php $this->load->view('theme/header'); ?>
-<?php $this->load->view('theme/sidebar'); ?>
+<?php $this->load->view('theme/header_kasir'); ?>
+<?php $this->load->view('theme/sidebar_kasir'); ?>
 
 <div class="main-content">
     <div class="main-content-inner">
@@ -7,13 +7,13 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="<?= base_url("welcome/home"); ?>">Home</a>
+                    <a href="<?= base_url("welcome/kasir"); ?>">Home</a>
                 </li>
 
                 <li>
-                    <a href="<?= base_url("crud/vsupplier"); ?>">Supplier</a>
+                    <a href="<?= base_url("kasir/listpenjualan"); ?>">Laporan</a>
                 </li>
-                <li class="active">Data Supplier</li>
+                <li class="active">List Penjualan</li>
             </ul><!-- /.breadcrumb -->
 
 
@@ -22,10 +22,10 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Supplier
+                    Laporan
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        Data Supplier
+                        List Penjualan
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -38,9 +38,7 @@
                         <div class="pull-right tableTools-container"></div>
                     </div>
                     <div class="table-header">
-                        Results for "Data Supplier"
-                        <a href="<?= base_url("crud/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
-                            <i class="glyphicon glyphicon-plus"></i> Tambah</a>
+                        Results for "List Penjualan"
                     </div>
 
                     <!-- div.table-responsive -->
@@ -54,17 +52,15 @@
                                 <tr>
                                     <th class="center">
                                         <label class="pos-rel">
-                                            <input type="checkbox" class="ace" />
                                             <span class="lbl"></span>
                                         </label>
                                     </th>
                                     <th>No</th>
-                                    <th>ID Supplier</th>
-                                    <th>Nama Supplier</th>
-                                    <th>Alamat</th>
-
-                                    <th>No.Tlp</th>
+                                    <th>ID Jual Barang</th>
+                                    <th>Tanggal</th>
+                                    <th>No. Member</th>
                                     <th>Aksi</th>
+
 
 
                                 </tr>
@@ -73,34 +69,23 @@
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($supplier as $u) {
+                                foreach ($djb as $value) {
                                     ?>
                                     <tr>
                                         <td class="center">
                                             <label class="pos-rel">
-                                                <input type="checkbox" class="ace" />
                                                 <span class="lbl"></span>
                                             </label>
                                         </td>
                                         <td><?php echo $no++ ?></td>
-                                        <td><?php echo $u->id_supplier ?></td>
-                                        <td class="hidden-480"><?php echo $u->nama_supplier ?></td>
-                                        <td><?php echo $u->alamat ?></td>
-
-                                        <td class="hidden-480"><?php echo $u->no_telepon ?></td>
+                                        <td><?php echo $value->id_jual_brg ?></td>
+                                        <td><?php echo $value->tgl ?></td>
+                                        <td><?php echo $value->member_no ?></td>
 
                                         <td>
-                                         <div class="<?= (in_array("edit",$menu_aktif)) ? "active" : "" ?>">
                                             <div class="hidden-sm hidden-xs action-buttons">
-                                                <a class="green" href="<?php echo base_url('crud/edit/' . $u->id_supplier); ?>">
-                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                </a>
-
-                                                 <a class='red  hapus-data' data-id='<?php echo $u->id_supplier; ?>'><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
-
-                                                </a>
+                                                        <a href="<?php echo base_url() ?>kasir/detail/<?php echo $value->id_jual_brg ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                             </div>
-                                         </div>
 
                                             <div class="hidden-md hidden-lg">
                                                 <div class="inline pos-rel">
@@ -182,8 +167,7 @@
 
 <script type="text/javascript">
     $(function(){
-         $(document).on("click",".hapus-data",
-         function(){
+         $(document).on("click",".hapus-data",function(){
     var id_supplier=$(this).attr("data-id");
     swal({
         title:"Hapus Supplier",
@@ -193,7 +177,7 @@
         confirmButtonText: "Hapus",
         closeOnConfirm: true,
     },
-        function(){
+        function(){                 
             window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
         });
     });
@@ -212,8 +196,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null,
-                                    {"bSortable": false}
+                                    null, null, null, null, null,                                    {"bSortable": false}
                                 ],
                                 "aaSorting": [],
 
@@ -432,3 +415,5 @@
 
                 })
             </script>
+
+

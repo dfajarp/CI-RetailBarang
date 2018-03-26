@@ -28,4 +28,7 @@ class M_barang extends CI_Model{
 	  	return $this->db->get($this->table_name)->row();
 	
 	}
+	function input_data($data, $table){
+		$this->db->insert($table, $data);
+	}
 }

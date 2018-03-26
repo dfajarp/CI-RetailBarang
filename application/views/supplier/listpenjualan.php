@@ -58,11 +58,9 @@
                                     <th>No</th>
                                     <th>ID Jual Barang</th>
                                     <th>Tanggal</th>
-                                    <th>Id Barang</th>
-                                    <th>Nama Barang</th>
-
                                     <th>No. Member</th>
                                     <th>Aksi</th>
+
 
 
                                 </tr>
@@ -82,14 +80,11 @@
                                         <td><?php echo $no++ ?></td>
                                         <td><?php echo $value->id_jual_brg ?></td>
                                         <td><?php echo $value->tgl ?></td>
-                                        <td><?php echo $value->id_barang ?></td>
-
-                                        <td><?php echo $value->nama_brg ?></td>
                                         <td><?php echo $value->member_no ?></td>
 
-                                        <td>
+                                        <td> 
                                             <div class="hidden-sm hidden-xs action-buttons">
-                                                        <a href="" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
+                                                        <a href="<?php echo base_url() ?>laporan/detail/<?php echo $value->id_jual_brg ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                             </div>
 
                                             <div class="hidden-md hidden-lg">
@@ -201,7 +196,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null, null,
+                                    null, null, null, null,
                                     {"bSortable": false}
                                 ],
                                 "aaSorting": [],

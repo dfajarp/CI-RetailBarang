@@ -94,8 +94,8 @@
                 </div><!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
-                    <li class="">
-                        <a href="<?= base_url("manajemen"); ?>" class="button">
+                    <li class="<?= (in_array("manajemen",$menu_aktif)) ? "active" : "" ?>">
+                        <a href="<?= base_url("welcome/manajemen"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
@@ -103,7 +103,7 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
+                    <li class="<?= (in_array("laporan",$menu_aktif)) ? "active open" : "" ?>">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-print"></i>
                             <span class="menu-text"> Laporan </span>
@@ -114,7 +114,7 @@
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-                            <li class="">
+                            <li class="<?= (in_array("vstok",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("stok/vstok"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     <span class="menu-text">Stok</span>
@@ -123,7 +123,7 @@
                                 <b class="arrow"></b>
                             </li>
 
-                            <li class="">
+                            <li class="<?= (in_array("listpenjualan",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("laporan/listpenjualan"); ?>" class="button">
                                     <i class="menu-icon fa a-caret-right"></i>
                                     <span class="menu-textf">Penjualan</span>
@@ -131,7 +131,7 @@
 
                                 <b class="arrow"></b>
                             </li>
-                            <li class="">
+                            <li class="<?= (in_array("laporbeli",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("pemesanan/laporbeli"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     <span class="menu-text">Pembelian</span>

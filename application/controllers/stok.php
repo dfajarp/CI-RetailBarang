@@ -23,6 +23,7 @@ class Stok extends CI_Controller {
     }
 
     function edit($id_barang) {
+        $data['menu_aktif'] = array("edit");
         $where = array('id_barang' => $id_barang);
         $data['barang'] = $this->m_stok->edit_data($where, 'barang')->result();
         $this->load->view('barang/vedit', $data);

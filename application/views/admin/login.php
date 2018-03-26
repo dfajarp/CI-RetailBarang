@@ -35,9 +35,6 @@
                                             this.value = 'password';
                                         }"/>
                                 <div class="remember">
-                                    <span class="checkbox1">
-                                        <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
-                                    </span>
                                     <div class="clear"> </div>
                                 </div>
 
@@ -54,17 +51,7 @@
         <!--header end here-->
 
         <div class="copyright">
-            <p>© 2018 SoftMarket | Design by <a href="" target="_blank">  SoftMarket </a></p>
+            <p><a href="" target="_blank">© 2018 SoftMarket </a> | Design by SoftMarket </p>
         </div>
-        <?php
-        if ($this->session->flashdata('pesan') <> '') {
-            ?>
-            <div class="alert alert-danger">s
-                <?php echo $this->session->flashdata('pesan'); ?>
-            </div>
-            <?php
-        }
-        ?>
-        <!--footer end here-->
     </body>
 </html>

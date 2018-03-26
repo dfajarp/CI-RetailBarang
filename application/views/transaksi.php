@@ -31,18 +31,20 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 		 <div class="panel-body">
-		 	<form class="form-horizontal" id="form_transaksi" role="form">
-	      	<div class="col-md-4">
+		 	<!-- <form class="form-horizontal" id="form_transaksi" role="form"> -->
+		 	<form action="<?= base_url("Transaksi/savepenjualan"); ?>" method="POST" class="form-horizontal" id="form_transaksi" role="form">
+
+	      	<div class="col-md-6">
 			    <div class="form-group">
 			      <label class="control-label col-md-3" 
 			      	for="id_barang">Id Barang </label>
 			      <div class="col-md-5">
 			        <input list="list_barang" class="form-control reset" 
-			        	placeholder="Isi id..." name="id_barang" id="id_barang" 
-			        	autocomplete="off" onchange="showBarang(this.value)">
+			        	placeholder="Id Barang" name="id_barang" id="id_barang" 
+			        	autocomplete="on" onchange="showBarang(this.value)">
 	                  <datalist id="list_barang">
 	                  	<?php foreach ($barang as $barang): ?>
-	                  		<option value="<?= $barang->id_barang ?>"><?= $barang->nama_barang ?></option>
+	                  		<option value="<?= $barang->id_barang ?>"><?= $barang->nama_brg ?></option>
 	                  	<?php endforeach ?>
 	                  </datalist>
 			      </div>
@@ -65,10 +67,10 @@
 				    </div>
 				    <div class="form-group">
 				      <label class="control-label col-md-3" 
-				      	for="harga_barang">Harga </label>
+				      	for="harga_brg">Harga </label>
 				      <div class="col-md-8">
 				        <input type="text" class="form-control reset" 
-				        	name="harga_barang" id="harga_barang" 
+				        	name="harga_brg" id="harga_brg" 
 				        	readonly="readonly">
 				      </div>
 				    </div>
@@ -93,17 +95,36 @@
 			      </div>
 			    </div>
 			    <div class="form-group">
+			      <label class="control-label col-md-3" 
+			      	for="id_barang">No. Member </label>
+			      <div class="col-md-5">
+			        <input list="list_barang" class="form-control reset" 
+			        	placeholder="No. Member" name="" id="" 
+			        	autocomplete="off" onchange="">
+<!-- 	                  <datalist id="list_barang">
+	                  	<?php foreach ($barang as $barang): ?>
+	                  		<option value="<?= $barang->id_barang ?>"><?= $barang->nama_barang ?></option>
+	                  	<?php endforeach ?>
+	                  </datalist> -->
+			      </div>
+			      <div class="col-md-1">
+			      	<a href="javascript:;" class="btn btn-primary" 
+			      		data-toggle="modal" 
+			      		data-target="#modal-cari-member">
+			      		<i class="fa fa-search"></i></a>
+		          </div>
+			    </div>
+			    <div class="form-group">
 			    	<div class="col-md-offset-3 col-md-3">
 			      		<button type="button" class="btn btn-primary" 
 			      		id="tambah" onclick="addbarang()">
 			      		  <i class="fa fa-cart-plus"></i> Tambah</button>
 			    	</div>
 			    </div>
-			      <!-- </div>
-			    </div> --><!-- end panel-->
-	      	</div><!-- end col-md-8 -->
-				<div class="col-md-3">
-				  	<div class="form-group">
+
+<div class="tengah"> 
+			<div class="col-md-8">
+			    		<div class="form-group">
 				      <label for="total" class="besar">Total Pembayaran (Rp) :</label>
 				      	<input type="text" class="form-control input-lg" 
 			        	name="total" id="total" placeholder="0"
@@ -122,25 +143,28 @@
 			        	name="kembali" id="kembali" placeholder="0"
 			        	readonly="readonly">
 				    </div>
-				</div>
-	<div class="col-md-5">
-		 <div class="panel-body">
-		 	<form class="form-horizontal" id="form_transaksi" role="form">
+			  </div>
+</div>
+
+			      <!-- </div>
+			    </div> --><!-- end panel-->
+	      	</div><!-- end col-md-8 -->
+
+
+
+				<div class="col-md-6">
 	      	<div class="col-md-12">
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
                                         <b>List Pembelian</b>
                                     </div>
                                     <div class="panel-body">
-                                    	<!-- <pre> -->
-                                    		<!-- <?php print_r($this->cart->contents()); ?> -->
-                                    	<!-- </pre> -->
-                                        <table id="listBarang" class="table table-striped">
+                                        <table id="listBarang" class="table table-striped" >
+
 				<thead>
 				 	<tr>
-					   	<th>No</th>
 					   	<th>Nama Barang</th>
-					   	<th>Quantity</th>
+					   	<th>Jumlah</th>
 					   	<th>Sub Total</th>
 					   	<th>Aksi</th>
 				 	</tr>
@@ -153,54 +177,105 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+				  
+
+				</div>
+			<!-- </form> -->
+				<br>
+		<div class="col-md-6">
+		<div class="panel-body">
+		 	<!-- <form action="<?= base_url("Transaksi/savepenjualan"); ?>" method="POST" class="form-horizontal" id="form_transaksi" role="form"> -->
+
+
+
                     </div>
                 </div>
+
 			    <div class="col-md-offset-10">
-				<button type="button" class="btn btn-primary btn-lg" 
-				id="selesai" disabled="disabled" 
-				onclick="alert('Belum ada action untuk save pejualan')">
+			    <div class="col-md-9">
+				<button type="submit" class="btn btn-primary btn-lg" 
+				id="selesai" disabled="disabled">
 				Selesai <i class="fa fa-angle-double-right"></i></button>
 			</div>
 	      </div>
 	    </div>
-<!-- end col-md-9 -->
-	<!-- Modal selesai -->
-  <div class="modal fade" id="modal-cari-barang" role="dialog">
-    <div class="modal-dialog modal-lg">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Cari Barang</h4>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-          	<div class="form-group has-primary has-feedback">
-            	<input type="text" class="form-control input-lg" placeholder="Search for...">
-            	<span class="glyphicon glyphicon-search form-control-feedback"></span>
-          	</div>
-          	<table class="table">
-          		<thead>
-				 	<tr>
-					   	<th>No</th>
-					   	<th>Nama Barang</th>
-					   	<th>Quantity</th>
-					   	<th>SubTotal</th>
-					   	<th>Aksi</th>
-				 	</tr>
-				</thead>
-				<tbody id="dataCart">
-          	</table>
+	</div>
+</form>
+
+		  <div class="modal fade" id="modal-cari-barang" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Cari Barang</h4>
+		        </div>
+		        <div class="modal-body">
+		          <div class="form-group">
+		          	<div class="form-group has-primary has-feedback">
+		            	<input list="list_barang" class="form-control reset" placeholder="Cari Barang..." name="id_barang" id="id_barang" 
+					        	autocomplete="on" onchange="showBarang(this.value)">
+		            	<span class="glyphicon glyphicon-search form-control-feedback"></span>
+		          	</div>
+		          	<table class="table">
+		          		<thead>
+						 	<tr>
+							   	<th>No</th>
+							   	<th>Nama Barang</th>
+							   	<th>Stok Barang</th>
+							   	<th>Harga</th>
+							   	<th>Aksi</th>
+						 	</tr>
+						</thead>
+						<tbody id="dataCart">
+		          	</table>
+				  </div>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+		        </div>
+		      </div>
+		    </div>
 		  </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+		  <div class="modal fade" id="modal-cari-member" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Cari Member</h4>
+		        </div>
+		        <div class="modal-body">
+		          <div class="form-group">
+		          	<div class="form-group has-primary has-feedback">
+		            	<input list="list_barang" class="form-control reset" placeholder="Cari Member..." name="id_barang" id="id_barang" 
+					        	autocomplete="on" onchange="showBarang(this.value)">
+		            	<span class="glyphicon glyphicon-search form-control-feedback"></span>
+		          	</div>
+		          	<table class="table">
+		          		<thead>
+						 	<tr>
+							   	<th>No</th>
+							   	<th>No. Member</th>
+							   	<th>Nama Member</th>
+							   	<th>Email</th>
+							   	<th>Aksi</th>
+						 	</tr>
+						</thead>
+						<tbody id="dataCart">
+		          	</table>
+				  </div>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
 
 <script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
@@ -217,7 +292,7 @@
 
 	    if (str == "") {
 	        $('#nama_barang').val('');
-	        $('#harga_barang').val('');
+	        $('#harga_brg').val('');
 	        $('#qty').val('');
 	        $('#sub_total').val('');
 	        $('#reset').hide();
@@ -245,7 +320,7 @@
 	function subTotal(qty)
 	{
 
-		var harga = $('#harga_barang').val().replace(".", "").replace(".", "");
+		var harga = $('#harga_brg').val().replace(".", "").replace(".", "");
 
 		$('#sub_total').val(convertToRupiah(harga*qty));
 	}
@@ -262,43 +337,6 @@
 	    return rupiah.split('',rupiah.length-1).reverse().join('');
 	
 	}
-
-	// var table;
- //    $(document).ready(function() {
-
- //      // showKembali($('#bayar').val());
-
- //       table = $('#table_transaksi').DataTable({ 
- //         paging: false,
- //         "info": false,
- //         "searching": false,
- //         "processing": true, //Feature control the processing indicator.
- //         "serverSide": true, //Feature control DataTables' 
- //         // server-side processing mode.
-        
- //         // Load data for the table's content from an Ajax source
- //         "ajax": {
- //             "url": "<?= site_url('transaksi/ajax_list_transaksi')?>",
- //             "type": "POST"
- //         },
-
- //         //Set column definition initialisation properties.
- //         "columnDefs": [
- //        { 
- //           "targets": [ 0,1,2,3,4,5,6 ], //last column
- //           "orderable": false, //set not orderable
- //         },
- //         ],
-
- //       });
- //    });
-
-    function reload_table()
-    {
-
-      table.ajax.reload(null,false); //reload datatable ajax 
-    
-    }
 
     function addbarang()
     {
@@ -382,14 +420,6 @@
     	$('#total').val(convertToRupiah((Number(total)+Number(sub_total))));
 
   	}
-
- //  	//maskMoney
-	// $('.uang').maskMoney({
-	// 	thousands:'.', 
-	// 	decimal:',', 
-	// 	precision:0
-	// });
-
 	function showKembali(str)
   	{
 	    var total = $('#total').val().replace(".", "").replace(".", "");
@@ -410,3 +440,10 @@
   	}
 
 	</script>
+	<style type="text/css">
+		.tengah {
+			margin: auto;
+			position: relative;
+			top: 0; left: 130px; bottom: 0; right: 0px;
+		}
+	</style>

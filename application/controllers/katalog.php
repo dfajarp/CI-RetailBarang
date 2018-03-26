@@ -6,9 +6,13 @@ class Katalog extends CI_Controller {
         parent::__construct();
         $this->load->model('m_katalog');
         $this->load->helper('url');
+        if (empty($_SESSION['username'])){
+            redirect(base_url());
+        }
     }
 
     function katalog() {
+        $data['menu_aktif'] = array("katalog");
         $data['katalog'] = $this->m_katalog->tampil()->result();
         $this->load->view("/katalog/katalog", $data);
     }

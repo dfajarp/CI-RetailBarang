@@ -94,7 +94,7 @@
                 </div><!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
-                    <li class="">
+                    <li class="<?= (in_array("beranda",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("welcome/gudang"); ?>">
                             <i class="menu-icon fa fa-dashboard fa-fw"></i>
                             <span class="menu-text"> Beranda </span>
@@ -103,7 +103,7 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
+                    <li class="<?= (in_array("stok",$menu_aktif)) ? "active" : "" ?>">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon glyphicon glyphicon-briefcase"></i>
                             <span class="menu-text"> Barang </span>
@@ -114,7 +114,7 @@
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-                            <li class="">
+                            <li class="<?= (in_array("stok",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("stok/vbarang"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Stok Barang
@@ -123,7 +123,7 @@
                                 <b class="arrow"></b>
                             </li>
 
-                            <li class="">
+                            <li class="<?= (in_array("belibarang",$menu_aktif)) ? "active" : "" ?>">
                                 <a href="<?= base_url("pemesanan/belibarang"); ?>" class="button">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Beli Barang
@@ -134,7 +134,7 @@
                         </ul>
                     </li>
 
-                        <li class="">
+                        <li class="<?= (in_array("katalog",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("katalog/katalog"); ?>" class="button">
                             <i class="menu-icon fa fa-edit fa-fw"></i>
                             <span class="menu-text"> Katalog Harga </span>
@@ -144,7 +144,7 @@
                     </li>
 
 
-                    <li class="">
+                    <li class="<?= (in_array("supplier",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("crud/vsupplier"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-user"></i>
                             <span class="menu-text"> Supplier </span>

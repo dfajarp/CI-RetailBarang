@@ -44,6 +44,7 @@ class Crud extends CI_Controller {
     }
 
     function edit($id_supplier) {
+        $data['menu_aktif'] = array("edit");
         $where = array('id_supplier' => $id_supplier);
         $data['supplier'] = $this->m_data->edit_data($where, 'supplier')->result();
         $this->load->view('supplier/vedit', $data);

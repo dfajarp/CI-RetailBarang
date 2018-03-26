@@ -46,6 +46,7 @@ class Member extends CI_Controller {
     }
 
     function edit($member_no) {
+        $data['menu_aktif'] = array("edit");
         $where = array('member_no' => $member_no);
         $data['member'] = $this->m_member->edit_data($where, 'member')->result();
         $this->load->view('member/vedit', $data);

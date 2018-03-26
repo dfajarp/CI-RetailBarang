@@ -25,6 +25,7 @@ class Pemesanan extends CI_Controller {
     }
 
     function vtambah() {
+        $data['menu_aktif'] = array("vtambah");
         $data['data_beli_barang'] = $this->m_pemesanan->tampil();
         $this->load->view("/barang/vtambah", $data);
     }
@@ -82,6 +83,7 @@ class Pemesanan extends CI_Controller {
     }
 
     function edit($id_pembelian) {
+        $data['menu_aktif'] = array("edit");
         $where = array('id_pembelian' => $id_pembelian);
         $data['beli_barang'] = $this->m_pemesanan->edit_data($where, 'beli_barang')->result();
         $this->load->view('barang/belibarang', $data);
@@ -97,6 +99,7 @@ class Pemesanan extends CI_Controller {
     }
 
     function detail($id_pembelian) {
+        $data['menu_aktif'] = array("detail");
         $data['detail'] = 'Detail Pembelian';
         $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
         $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
@@ -107,7 +110,7 @@ class Pemesanan extends CI_Controller {
         $where = array('id_bb' => $id_pembelian);
         $barang = $this->m_pemesanan->get_data_barang($where, 'dbb');
         foreach ($barang as $b) {
-            $data['id_barang'] = $b->id_brg;
+            $data['id_barang'] = $b->id_barang;
             $data['id_kategori'] = $b->id_kategori;
             $data['nama_brg'] = $b->nama_brg;
             $data['harga_brg'] = $b->harga_brg;

@@ -84,8 +84,8 @@
                 </div><!-- /.sidebar-shortcuts -->
 
                 <ul class="nav nav-list">
-                    <li class="active">
-                        <a href="<?= base_url("welcome/kasir"); ?>" class="dropdown-toggle">
+                    <li class="<?= (in_array("kasir",$menu_aktif)) ? "active" : "" ?>">
+                        <a href="<?= base_url("welcome/kasir"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
                         </a>
@@ -95,7 +95,7 @@
 
               
 
-                        <li class="">
+                        <li class="<?= (in_array("transaksi",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("transaksi"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-transfer"></i>
                             <span class="menu-text"> Transaksi  </span>
@@ -105,7 +105,7 @@
                     </li>
 
 
-                    <li class="">
+                    <li class="<?= (in_array("member",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("member/vmember"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-user"></i>
                             <span class="menu-text"> Member </span>
@@ -113,9 +113,9 @@
 
                         <b class="arrow"></b>
                 </li>
-                                        <li class="">
-                        <a href="<?= base_url("transaksi"); ?>" class="button">
-                            <i class="menu-icon glyphicon glyphicon-transfer"></i>
+                    <li class="<?= (in_array("listpenjualan",$menu_aktif)) ? "active" : "" ?>">
+                        <a href="<?= base_url("kasir/listpenjualan"); ?>" class="button">
+                            <i class="menu-icon fa fa-list-alt"></i>
                             <span class="menu-text"> List Penjualan  </span>
                         </a>
 
