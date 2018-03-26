@@ -66,9 +66,9 @@
                                                         <a class="btn btn-primary btn-sm pindahkan" data-id='<?php echo $p->id_pembelian; ?>'><i class="glyphicon glyphicon-ok" ></i></a>
 
                                                         <a href="<?php echo base_url() ?>pemesanan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
-                                                        
+
                                                         <a class='btn btn-danger btn-sm  hapus-member' data-id='<?php echo $p->id_pembelian; ?>'><i class='glyphicon glyphicon-trash'></i></a>
-                                                        
+
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -137,47 +137,47 @@
 <script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
 <script type="text/javascript">
-    
-    function pad (str, max) {
+
+    function pad(str, max) {
         str = str.toString();
         return str.length < max ? pad("0" + str, max) : str;
     }
 
-    $(function(){
+    $(function () {
 
-        $(document).on("click",".hapus-member",function(){
-    var id_pembelian=$(this).attr("data-id");
-    swal({
-        title:"Hapus Pesanan",
-        text:"Yakin akan membatalkan pesanan?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Hapus",
-        closeOnConfirm: true,
-    },
-        function(){
-            window.location.href= '<?php echo base_url('pemesanan/hapus/'); ?>' + id_pembelian;
+        $(document).on("click", ".hapus-member", function () {
+            var id_pembelian = $(this).attr("data-id");
+            swal({
+                title: "Hapus Pesanan",
+                text: "Yakin akan membatalkan pesanan?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Hapus",
+                closeOnConfirm: true,
+            },
+                    function () {
+                        window.location.href = '<?php echo base_url('pemesanan/hapus/'); ?>' + id_pembelian;
+                    });
         });
-    });
 
-    $(document).on("click",".pindahkan",function(){
+        $(document).on("click", ".pindahkan", function () {
 
-        
 
-    var id_pembelian=$(this).attr("data-id");
-    swal({
-        title:"Aktifkan Barang",
-        text:"Apakah Anda Yakin Akan Mengaktifkan Barang Dengan Id_Pembelian : TR-"+ pad(id_pembelian, 4) +" ?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Aktifkan",
-        closeOnConfirm: true,
-    },
-        function(){
-            window.location.href= '<?php echo base_url('pemesanan/activebarang/'); ?>' + id_pembelian;
+
+            var id_pembelian = $(this).attr("data-id");
+            swal({
+                title: "Aktifkan Barang",
+                text: "Apakah Anda Yakin Akan Mengaktifkan Barang Dengan Id_Pembelian : TR-" + pad(id_pembelian, 4) + " ?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Aktifkan",
+                closeOnConfirm: true,
+            },
+                    function () {
+                        window.location.href = '<?php echo base_url('pemesanan/activebarang/'); ?>' + id_pembelian;
+                    });
         });
+
+
     });
-
-
-});
 </script>

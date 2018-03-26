@@ -85,65 +85,67 @@
                                             </label>
                                         </td>
                                         <td><?php echo $no++ ?></td>
-                                        <td><?php echo $u->id_barang?></td>
-                                        <td><?php echo $u->nama_brg?></td>
-                                        <td><?php echo $u->deskripsi_barang?></td>
+                                        <td><?php echo $u->id_barang ?></td>
+                                        <td><?php echo $u->nama_brg ?></td>
+                                        <td><?php echo $u->deskripsi_barang ?></td>
                                         <td><center><img src="<?php echo $u->gambar_barang; ?>" width="150"></center></td>
-                                        <td><?php echo "Rp" .number_format($u->harga_brg, "2", ",", ".");?></td>
-                                        <td><?php echo "Rp" .number_format($u->harga_jual, "2", ",", ".");?></td>
-                                        <td><?php if($u->status === '1'){
-                                            echo'<span class="label label-success arrowed">Aktif</span>';
-                                        }else if($u->status === '0'){
-                                            echo '<span class="label label-danger arrowed">Tidak Aktif</span>';
-                                        } ?></td>
+                                <td><?php echo "Rp" . number_format($u->harga_brg, "2", ",", "."); ?></td>
+                                <td><?php echo "Rp" . number_format($u->harga_jual, "2", ",", "."); ?></td>
+                                <td><?php
+                                    if ($u->status === '1') {
+                                        echo'<span class="label label-success arrowed">Aktif</span>';
+                                    } else if ($u->status === '0') {
+                                        echo '<span class="label label-danger arrowed">Tidak Aktif</span>';
+                                    }
+                                    ?></td>
 
-                                        <td>
-                                            <div class="hidden-sm hidden-xs action-buttons">
-                                                <a class="green" href="">
-                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                </a>
+                                <td>
+                                    <div class="hidden-sm hidden-xs action-buttons">
+                                        <a class="green" href="">
+                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                        </a>
 
-                                                <a class='red  hapus-data' data-id=''><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
+                                        <a class='red  hapus-data' data-id=''><i class='ace-icon fa fa-trash-o bigger-130'></i></a>
 
-                                                </a>
-                                            </div>
+                                        </a>
+                                    </div>
 
-                                            <div class="hidden-md hidden-lg">
-                                                <div class="inline pos-rel">
-                                                    <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                        <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-                                                    </button>
+                                    <div class="hidden-md hidden-lg">
+                                        <div class="inline pos-rel">
+                                            <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+                                            </button>
 
-                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                        <li>
-                                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                                <span class="blue">
-                                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                                </span>
-                                                            </a>
-                                                        </li>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                <li>
+                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                        <span class="blue">
+                                                            <i class="ace-icon fa fa-search-plus bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
 
-                                                        <li>
-                                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                                                <span class="green">
-                                                                    <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                                                </span>
-                                                            </a>
-                                                        </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                        <span class="green">
+                                                            <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
 
-                                                        <li>
-                                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                                                <span class="red">
-                                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                                </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
+                                                <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                        <span class="red">
+                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+<?php } ?>
                             </tbody>
                         </table>
 

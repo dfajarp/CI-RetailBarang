@@ -18,29 +18,29 @@
             <div class="widget-main">
 
 
-<p><h5>ID Barang</h5></p>
-    <input type="text" name="id_barang[]" class="form-control">
+                <p><h5>ID Barang</h5></p>
+                <input type="text" name="id_barang[]" class="form-control">
 
-<p><h5>Kategori</h5></p>
-<select class="form-control" name="id_kategori[]" >
-    <?php foreach ($data_kategori as $k) : ?>
-        <option value="<?php echo $k->id_kategori ?>"><?php echo $k->nama_kategori ?></option>
-<?php endforeach; ?>
-</select>
-<p><h5>Nama Barang</h5></p>
-    <input type="text" name="nama_barang[]" class="form-control">
+                <p><h5>Kategori</h5></p>
+                <select class="form-control" name="id_kategori[]" >
+                    <?php foreach ($data_kategori as $k) : ?>
+                        <option value="<?php echo $k->id_kategori ?>"><?php echo $k->nama_kategori ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <p><h5>Nama Barang</h5></p>
+                <input type="text" name="nama_barang[]" class="form-control">
 
-<p><h5>Harga Barang</h5></p>
-    <input type="text" name="harga_barang[]" class="form-control">
+                <p><h5>Harga Barang</h5></p>
+                <input type="text" name="harga_barang[]" class="form-control">
 
-<p><h5>Jumlah Barang</h5></p>
-    <input type="text" name="jumlah_barang[]" class="form-control">
+                <p><h5>Jumlah Barang</h5></p>
+                <input type="text" name="jumlah_barang[]" class="form-control">
 
-<p><h5>Deskripsi Barang</h5></p>
-    <input type="text" name="deskripsi_barang[]" class="form-control">
+                <p><h5>Deskripsi Barang</h5></p>
+                <input type="text" name="deskripsi_barang[]" class="form-control">
 
-<p><h5>Gambar Barang</h5></p>
-    <input type="file" class="id-input-file-2" name="gambar_barang[]">
+                <p><h5>Gambar Barang</h5></p>
+                <input type="file" class="id-input-file-2" name="gambar_barang[]">
 
             </div>
         </div>
@@ -50,7 +50,7 @@
 </div>
 
 
-  
+
 <script>
     $(function () {
 
@@ -73,5 +73,5 @@
 
     });
 
-    
+
 </script>

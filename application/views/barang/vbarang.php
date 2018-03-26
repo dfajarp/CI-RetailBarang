@@ -28,7 +28,7 @@
                 </h1>
             </div><!-- /.page-header -->
 
-             <div class="row">
+            <div class="row">
                 <div class="col-xs-12">
 
 
@@ -37,7 +37,7 @@
                     </div>
                     <div class="table-header">
                         Hasil Untuk "Data Barang"
-                        
+
                     </div>
 
                     <!-- div.table-responsive -->
@@ -64,16 +64,16 @@
                                     <th>Deskripsi</th>
                                     <th>Gambar</th>
                                     <th>Aksi</th>
-                                    
+
 
 
                                 </tr>
                             </thead>
                             <tbody>
-                         <?php
-                        $no = 1;
-                        foreach ($barang as $b) {
-                            ?>
+                                <?php
+                                $no = 1;
+                                foreach ($barang as $b) {
+                                    ?>
                                     <tr>
                                         <td class="center">
                                             <label class="pos-rel">
@@ -85,24 +85,24 @@
                                         <td><?php echo $b->id_barang ?></td>
                                         <td><?php echo $b->nama_kategori ?></td>
                                         <td><?php echo $b->nama_brg ?></td>
-                                        <td><?php echo "Rp" .number_format($b->harga_brg, "2", ",", "."); ?></td>
+                                        <td><?php echo "Rp" . number_format($b->harga_brg, "2", ",", "."); ?></td>
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
                                         <td><center><img src="<?php echo $b->gambar_barang; ?>" width="150"></center></td>
-                                       <td>
-                                            <div class="hidden-sm hidden-xs action-buttons">
-                                                <a class="green" href="<?php echo base_url('stok/edit/' .$b->id_barang); ?>">
-                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-
-                                            
+                                <td>
+                                    <div class="hidden-sm hidden-xs action-buttons">
+                                        <a class="green" href="<?php echo base_url('stok/edit/' . $b->id_barang); ?>">
+                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                        </a>
+                                    </div>
+                                </td>
 
 
-                                    </tr>
-                              
-                                <?php } ?>
+
+
+                                </tr>
+
+                            <?php } ?>
                             </tbody>
                         </table>
 
@@ -132,7 +132,7 @@
                 if ('ontouchstart' in document.documentElement)
                     document.write("<script src='<?= base_url() ?>/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
             </script>
-          
+
 
             <!-- page specific plugin scripts -->
             <script src="<?= base_url() ?>/assets/js/jquery.dataTables.min.js"></script>
@@ -160,7 +160,7 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null, null, null,null,
+                                    null, null, null, null, null, null, null, null,
                                     {"bSortable": false}
                                 ],
                                 "aaSorting": [],

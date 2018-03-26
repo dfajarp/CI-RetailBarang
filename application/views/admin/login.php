@@ -24,24 +24,33 @@
                 </div>
                 <div class="header-bottom" >
                     <div class="header-right w3agilewarna">
-                    <div class="kotak warna">
-                    	
-                        <div class="header-left-bottom agileinfo ">
-                            <form class="" action="<?= base_url("auth/cek_login") ?>" method="post" >
-                                <input type="text" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {
+                        <div class="kotak warna">
+
+                            <div class="header-left-bottom agileinfo ">
+                                <form class="" action="<?= base_url("auth/cek_login") ?>" method="post" >
+                                    <input type="text" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {
                                             this.value = 'Username';
                                         }"/>
-                                <input type="password"  name="password" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                    <input type="password"  name="password" onfocus="this.value = '';" onblur="if (this.value == '') {
                                             this.value = 'password';
                                         }"/>
+<<<<<<< HEAD
                                 <div class="remember">
                                     <div class="clear"> </div>
                                 </div>
+=======
+                                    <div class="remember">
+                                        <span class="checkbox1">
+                                            <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
+                                        </span>
+                                        <div class="clear"> </div>
+                                    </div>
+>>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
 
-                                <input type="submit" value="Login">
-                            </form>	
-                        
-                    </div>
+                                    <input type="submit" value="Login">
+                                </form>	
+
+                            </div>
                         </div>
                     </div>
 

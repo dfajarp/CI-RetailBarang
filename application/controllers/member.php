@@ -6,7 +6,7 @@ class Member extends CI_Controller {
         parent::__construct();
         $this->load->model('m_member');
         $this->load->helper('url');
-        if (empty($_SESSION['username'])){
+        if (empty($_SESSION['username'])) {
             redirect(base_url());
         }
     }
