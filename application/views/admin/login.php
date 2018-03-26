@@ -34,18 +34,11 @@
                                     <input type="password"  name="password" onfocus="this.value = '';" onblur="if (this.value == '') {
                                             this.value = 'password';
                                         }"/>
-<<<<<<< HEAD
                                 <div class="remember">
                                     <div class="clear"> </div>
                                 </div>
-=======
                                     <div class="remember">
-                                        <span class="checkbox1">
-                                            <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
-                                        </span>
                                         <div class="clear"> </div>
-                                    </div>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
 
                                     <input type="submit" value="Login">
                                 </form>	
