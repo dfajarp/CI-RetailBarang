@@ -84,11 +84,7 @@
 
                                         <td> 
                                             <div class="hidden-sm hidden-xs action-buttons">
-<<<<<<< HEAD
                                                         <a href="<?php echo base_url() ?>laporan/detail/<?php echo $value->id_jual_brg ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
-=======
-                                                <a href="" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
->>>>>>> 4b1daea9a8ec58ff97eb663442f0eeabe259cd71
                                             </div>
 
                                             <div class="hidden-md hidden-lg">
@@ -143,9 +139,9 @@
 
 
 
-            <script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
             <!--[if IE]>
     <script src="<?= base_url() ?>/assets/js/jquery-1.11.3.min.js"></script>
@@ -169,24 +165,24 @@
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
 
-            <script type="text/javascript">
-                            $(function () {
-                                $(document).on("click", ".hapus-data", function () {
-                                    var id_supplier = $(this).attr("data-id");
-                                    swal({
-                                        title: "Hapus Supplier",
-                                        text: "Yakin akan menghapus data supplier?",
-                                        type: "warning",
-                                        showCancelButton: true,
-                                        confirmButtonText: "Hapus",
-                                        closeOnConfirm: true,
-                                    },
-                                            function () {
-                                                window.location.href = '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
-                                            });
-                                });
-                            });
-            </script>
+<script type="text/javascript">
+    $(function(){
+         $(document).on("click",".hapus-data",function(){
+    var id_supplier=$(this).attr("data-id");
+    swal({
+        title:"Hapus Supplier",
+        text:"Yakin akan menghapus data supplier?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        closeOnConfirm: true,
+    },
+        function(){                 
+            window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
+        });
+    });
+    });
+</script>
 
 
             <!-- inline scripts related to this page -->

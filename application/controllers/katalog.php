@@ -18,10 +18,12 @@ class Katalog extends CI_Controller {
     }
 
     function vtambah() {
+        $data['menu_aktif'] = array("vtambah");
         $this->load->view("/katalog/vtambah");
     }
 
     function tambah_aksi() {
+        $data['menu_aktif'] = array("aksi");
         $id_barang = $this->input->post('id_barang');
         $harga_jual = $this->input->post('harga_jual');
         $status = $this->input->post('status');

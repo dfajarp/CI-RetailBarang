@@ -37,6 +37,7 @@
                     <div class="clearfix">
                         <div class="pull-right tableTools-container"></div>
                     </div>
+                    <div class="<?= (in_array("katalog",$menu_aktif)) ? "active" : "" ?>"></div>
                     <div class="table-header">
                         Hasil Untuk "Katalog"
                         <a href="<?= base_url("katalog/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
