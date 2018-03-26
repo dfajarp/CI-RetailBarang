@@ -102,6 +102,14 @@ class Pemesanan extends CI_Controller {
         $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
         $this->load->view('barang/vdetbarang', $data);
     }
+
+    function detail_lapor($id_pembelian) {
+        $data['detail'] = 'Detail Pembelian';
+        $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
+        $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
+        $this->load->view('barang/vdetbaranglapor', $data);
+    }
+
     function activebarang($id_pembelian) {
         $this->m_pemesanan->activebarang($id_pembelian);
         $where = array('id_bb' => $id_pembelian);

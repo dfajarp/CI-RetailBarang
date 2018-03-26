@@ -59,7 +59,7 @@
                                                     <td><?php echo $p->nama_supplier ?></td>
                                                     <td><?php echo $p->tanggal_beli ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url() ?>laporan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
+                                                        <a href="<?php echo base_url() ?>pemesanan/detail_lapor/<?php echo $p->id_pembelian ?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -101,7 +101,7 @@
                                                     <td><?php echo "TR-" . str_pad($p->id_pembelian, 4, "0", STR_PAD_LEFT) ?></td>
                                                     <td><?php echo $p->nama_supplier ?></td>
                                                     <td><?php echo $p->tanggal_beli ?></td>
-                                                    <td><a href="<?php echo base_url() ?>Laporan/detail/<?php echo $p->id_pembelian ?>" class="btn btn-success btn-sm""><i class="glyphicon glyphicon-zoom-in                                                                                                                                                                             "></i></a></td>	
+                                                    <td><a href="<?php echo base_url() ?>pemesanan/detail_lapor/<?php echo $p->id_pembelian ?>" class="btn btn-success btn-sm""><i class="glyphicon glyphicon-zoom-in"></i></a></td>	
                                                 </tr>
                                             <?php } ?>
 

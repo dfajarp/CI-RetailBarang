@@ -20,14 +20,23 @@ class Katalog extends CI_Controller {
     function tambah_aksi() {
         $id_barang = $this->input->post('id_barang');
         $harga_jual = $this->input->post('harga_jual');
-        $status = $this->input->post('status');
+        $s = $this->input->post('status');
+        $status = ($s != "") ? $s : 0;
 
-        $data = array(
-            'id_barang' => $id_barang,
-            'harga_jual' => $harga_jual,
-            'status' => ($status != "") ? $status : 0
-            );
-        $this->m_katalog->input_data($data, "katalog");
-        redirect('katalog/katalog');
+    	if ($status == 1){
+    		$where = array(
+    			'id_barang' => $id_barang
+    		);
+    		$this->m_katalog->update_status($where);
+    	}
+
+    	$data = array(
+    		'id_barang' => $id_barang,
+    		'harga_jual' => $harga_jual,
+    		'status' => $status
+    	);
+
+    	$this->m_katalog->input_data($data, "katalog");
+    	redirect('katalog/katalog');
     }
 }
