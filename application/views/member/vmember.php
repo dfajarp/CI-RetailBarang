@@ -82,11 +82,11 @@
                                             </label>
                                         </td>
                                         <td><?php echo $no++ ?></td>
-                                                <td><?php echo $u->member_no ?></td>
-                                                <td><?php echo $u->nama ?></td>
-                                                <td><?php echo $u->no_telepon ?></td>
-                                                <td><?php echo $u->email ?></td>
-                                                <td><?php echo $u->valid_date ?></td>
+                                        <td><?php echo $u->member_no ?></td>
+                                        <td><?php echo $u->nama ?></td>
+                                        <td><?php echo $u->no_telepon ?></td>
+                                        <td><?php echo $u->email ?></td>
+                                        <td><?php echo $u->valid_date ?></td>
                                         <td>
                                             <div class="hidden-sm hidden-xs action-buttons">
                                                 <a class="green" href="<?php echo base_url('member/edit/' . $u->member_no); ?>">

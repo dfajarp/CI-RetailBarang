@@ -6,7 +6,7 @@ class Laporan extends CI_Controller {
         parent::__construct();
         $this->load->model('m_jual');
         $this->load->helper('url');
-        if (empty($_SESSION['username'])){
+        if (empty($_SESSION['username'])) {
             redirect(base_url());
         }
     }
@@ -17,15 +17,18 @@ class Laporan extends CI_Controller {
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/laporbeli", $data);
     }
-   function detail($id_pembelian) {
+
+    function detail($id_pembelian) {
         $data['detail'] = 'Detail Pembelian';
         $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
         $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
         $this->load->view('barang/vdetlapor', $data);
     }
-        function listpenjualan() {
+
+    function listpenjualan() {
         $data['menu_aktif'] = array("listpenjualan");
         $data['djb'] = $this->m_jual->tampil_data()->result();
         $this->load->view("/supplier/listpenjualan", $data);
     }
+
 }

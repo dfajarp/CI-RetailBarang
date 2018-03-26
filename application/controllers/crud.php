@@ -6,7 +6,7 @@ class Crud extends CI_Controller {
         parent::__construct();
         $this->load->model('m_data');
         $this->load->helper('url');
-        if (empty($_SESSION['username'])){
+        if (empty($_SESSION['username'])) {
             redirect(base_url());
         }
     }

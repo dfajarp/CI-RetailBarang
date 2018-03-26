@@ -63,7 +63,7 @@
                                 </div>
                             </div >
 
-                           
+
 
                         </div>
                         <div class="clearfix form-actions">
@@ -132,20 +132,41 @@
     });
 </script>
 <script type="text/javascript">
-            jQuery(function($) {
-                $('#loading-btn').on(ace.click_event, function () {
-                    var btn = $(this);
-                    btn.button('loading')
-                    setTimeout(function () {
-                        btn.button('reset')
-                    }, 2000)
-                });
-            
-                $('#id-button-borders').attr('checked' , 'checked').on('click', function(){
-                    $('#default-buttons .btn').toggleClass('no-border');
-                });
-            })
-        </script>
+    jQuery(function ($) {
+        $('#loading-btn').on(ace.click_event, function () {
+            var btn = $(this);
+            btn.button('loading')
+            setTimeout(function () {
+                btn.button('reset')
+            }, 2000)
+        });
 
+        $('#id-button-borders').attr('checked', 'checked').on('click', function () {
+            $('#default-buttons .btn').toggleClass('no-border');
+        });
+    })
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {
+            $('#aktifkan').click(function () {
+                $("#aktifkan").val("1");
+
+            });
+        });
+
+        $(function () {
+            $('input[type="submit"]').prop('disabled', true);
+            $('#check').on('input', function (e) {
+                if (this.value.length === 5) {
+                    $('input[type="submit"]').prop('disabled', false);
+                } else {
+                    $('input[type="submit"]').prop('disabled', true);
+                }
+            });
+        });
+    });
+</script>
 
 

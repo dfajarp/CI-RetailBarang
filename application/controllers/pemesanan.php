@@ -6,7 +6,7 @@ class Pemesanan extends CI_Controller {
         parent::__construct();
         $this->load->model('m_pemesanan');
         $this->load->helper('url');
-        if (empty($_SESSION['username'])){
+        if (empty($_SESSION['username'])) {
             redirect(base_url());
         }
     }
@@ -17,6 +17,7 @@ class Pemesanan extends CI_Controller {
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/belibarang", $data);
     }
+
     function laporbeli() {
         $data['menu_aktif'] = array("laporbeli");
         $data['beli_barang_pending'] = $this->m_pemesanan->tampil_data(array("status" => 0));
@@ -37,32 +38,31 @@ class Pemesanan extends CI_Controller {
     function tambah_aksi() {
 
         $id_supplier = $this->input->post('id_supplier');
-        $tanggal_beli = $this->input->post('tanggal_beli');  
+        $tanggal_beli = $this->input->post('tanggal_beli');
 
         $data = array(
-             'id_supplier' => $id_supplier,
-             'tanggal_beli' => $tanggal_beli,
-             'username' => $this->session->username
-         );
-         $this->m_pemesanan->input_data($data, 'beli_barang');
+            'id_supplier' => $id_supplier,
+            'tanggal_beli' => $tanggal_beli,
+            'username' => $this->session->username
+        );
+        $this->m_pemesanan->input_data($data, 'beli_barang');
 
-         $id_bb = $this->db->insert_id();
+        $id_bb = $this->db->insert_id();
 
         $jml = count($_POST['id_barang']);
         $result = array();
-        $config['upload_path']          = './assets/images/gambar barang/';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['upload_path'] = './assets/images/gambar barang/';
+        $config['allowed_types'] = 'gif|jpg|png';
         $this->load->library('upload', $config);
 
-         for ($i = 0; $i < $jml; $i++) {
+        for ($i = 0; $i < $jml; $i++) {
             $_FILES['gambar']['name'] = $_FILES['gambar_barang']['name'][$i];
             $_FILES['gambar']['type'] = $_FILES['gambar_barang']['type'][$i];
             $_FILES['gambar']['tmp_name'] = $_FILES['gambar_barang']['tmp_name'][$i];
             $_FILES['gambar']['error'] = $_FILES['gambar_barang']['error'][$i];
             $_FILES['gambar']['size'] = $_FILES['gambar_barang']['size'][$i];
-            if ($this->upload->do_upload('gambar'))
-            {
-                 $result[] = array(
+            if ($this->upload->do_upload('gambar')) {
+                $result[] = array(
                     "id_bb" => $id_bb,
                     "id_brg" => $_POST['id_barang'][$i],
                     "id_kategori" => $_POST['id_kategori'][$i],
@@ -72,13 +72,12 @@ class Pemesanan extends CI_Controller {
                     "deskripsi_barang" => $_POST['deskripsi_barang'][$i],
                     "gambar_barang" => base_url("assets/images/gambar barang/" . $_FILES['gambar_barang']['name'][$i])
                 );
-
             } else {
                 $error = array('error' => $this->upload->display_errors());
             }
-         }
-         $this->db->insert_batch('dbb', $result);
-         redirect('/pemesanan/belibarang');
+        }
+        $this->db->insert_batch('dbb', $result);
+        redirect('/pemesanan/belibarang');
     }
 
     function edit($id_pembelian) {
@@ -87,8 +86,7 @@ class Pemesanan extends CI_Controller {
         $this->load->view('barang/belibarang', $data);
     }
 
-    function hapus($id_pembelian)
-    {
+    function hapus($id_pembelian) {
         $where = array('id_bb' => $id_pembelian);
         $this->m_pemesanan->hapus_data($where, 'dbb');
         $where = array('id_pembelian' => $id_pembelian);
@@ -102,6 +100,7 @@ class Pemesanan extends CI_Controller {
         $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
         $this->load->view('barang/vdetbarang', $data);
     }
+
     function activebarang($id_pembelian) {
         $this->m_pemesanan->activebarang($id_pembelian);
         $where = array('id_bb' => $id_pembelian);
@@ -116,7 +115,7 @@ class Pemesanan extends CI_Controller {
             $data['gambar_barang'] = $b->gambar_barang;
 
             $where = array('id_barang' => $b->id_brg);
-            if($this->m_pemesanan->get_data_barang($where, 'barang')){
+            if ($this->m_pemesanan->get_data_barang($where, 'barang')) {
                 $this->m_pemesanan->update($data);
             } else {
                 $this->m_pemesanan->insert($data);
@@ -126,4 +125,5 @@ class Pemesanan extends CI_Controller {
 
         redirect('pemesanan/belibarang');
     }
+
 }

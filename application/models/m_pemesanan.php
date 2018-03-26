@@ -26,8 +26,7 @@ class M_pemesanan extends CI_Model {
         }
     }
 
-    function detail_barang($id_pembelian)
-    {
+    function detail_barang($id_pembelian) {
         $this->db->select('dbb.*, kategori.nama_kategori');
         $this->db->from('dbb');
         $this->db->join('kategori', 'kategori.id_kategori = dbb.id_kategori');
@@ -36,8 +35,7 @@ class M_pemesanan extends CI_Model {
         return $data->result();
     }
 
-    function hapus_data($where, $table)
-    {
+    function hapus_data($where, $table) {
         $this->db->where($where);
         $this->db->delete($table);
     }
@@ -55,14 +53,12 @@ class M_pemesanan extends CI_Model {
         return $data->result();
     }
 
-    function get_kategori()
-    {
+    function get_kategori() {
         $data = $this->db->get('kategori');
         return $data->result();
     }
 
-    function get_data_barang($where, $table)
-    {
+    function get_data_barang($where, $table) {
         $this->db->where($where);
         $data = $this->db->get($table);
         return $data->result();

@@ -11,7 +11,7 @@ class Auth extends CI_Controller {
 
     public function cek_login() {
         $data = array('username' => $this->input->post('email', TRUE),
-                      'password' => md5($this->input->post('password', TRUE))
+            'password' => md5($this->input->post('password', TRUE))
         );
         $this->load->model('model_user'); // load model_user
         $hasil = $this->model_user->cek_user($data);
@@ -26,8 +26,7 @@ class Auth extends CI_Controller {
                 redirect('welcome/gudang');
             } else if ($this->session->userdata('tipe_user') == 'kasir') {
                 redirect('welcome/kasir');
-            }
-              else if ($this->session->userdata('tipe_user') == 'manajemen') {
+            } else if ($this->session->userdata('tipe_user') == 'manajemen') {
                 redirect('welcome/manajemen');
             }
         } else {
