@@ -48,12 +48,6 @@
 	                  	<?php endforeach ?>
 	                  </datalist>
 			      </div>
-			      <div class="col-md-1">
-			      	<a href="javascript:;" class="btn btn-primary" 
-			      		data-toggle="modal" 
-			      		data-target="#modal-cari-barang">
-			      		<i class="fa fa-search"></i></a>
-		          </div>
 			    </div>
 			    <div id="barang">
 				    <div class="form-group">
@@ -98,7 +92,7 @@
 			      <label class="control-label col-md-3" 
 			      	for="id_barang">No. Member </label>
 			      <div class="col-md-5">
-			        <input list="list_barang" class="form-control reset" 
+			        <input list="list_member" class="form-control reset" 
 			        	placeholder="No. Member" name="" id="" 
 			        	autocomplete="off" onchange="">
 <!-- 	                  <datalist id="list_barang">
@@ -107,12 +101,6 @@
 	                  	<?php endforeach ?>
 	                  </datalist> -->
 			      </div>
-			      <div class="col-md-1">
-			      	<a href="javascript:;" class="btn btn-primary" 
-			      		data-toggle="modal" 
-			      		data-target="#modal-cari-member">
-			      		<i class="fa fa-search"></i></a>
-		          </div>
 			    </div>
 			    <div class="form-group">
 			    	<div class="col-md-offset-3 col-md-3">

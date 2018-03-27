@@ -17,11 +17,11 @@ class Laporan extends CI_Controller {
         $data['beli_barang_sukses'] = $this->m_pemesanan->tampil_data(array("status" => 1));
         $this->load->view("/barang/laporbeli", $data);
     }
-   function detail($id_jual_barang) {
+   function detail($id_jual_brg) {
         $data['menu_aktif'] = array("detail");
         $data['detail'] = 'Detail Penjualan';
-        $data['data_penjualan'] = $this->m_jual->detail_penjualan($id_jual_barang);
-        $data['data_barang'] = $this->m_jual->detail_barang($id_jual_barang);
+        $data['data_penjualan'] = $this->m_jual->detail_penjualan($id_jual_brg);
+        $data['data_barang'] = $this->m_jual->detail_barang($id_jual_brg);
         $this->load->view('manajemen/vdetlapor', $data);
     }
     function listpenjualan() {
@@ -37,7 +37,7 @@ class Laporan extends CI_Controller {
         $data = array(
             'id_jual_brg' => $id_jual_brg,
             'tgl' => $tgl,
-            'member_no' => $member_no,
+            'member_no' => $member_no
         );
         $this->m_jual->input_data($data, "jual_barang");
         redirect('laporan/listpenjualan');
