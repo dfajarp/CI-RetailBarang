@@ -52,6 +52,7 @@
                                 <tr>
                                     <th class="center">
                                         <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
                                             <span class="lbl"></span>
                                         </label>
                                     </th>
@@ -59,6 +60,9 @@
                                     <th>ID Jual Barang</th>
                                     <th>Tanggal</th>
                                     <th>No. Member</th>
+                                    <th>Total Pembayaran</th>
+                                    <th>Bayar</th>
+                                    <th>Kembalian</th>
                                     <th>Aksi</th>
 
 
@@ -72,15 +76,20 @@
                                 foreach ($djb as $value) {
                                     ?>
                                     <tr>
-                                        <td class="center">
-                                            <label class="pos-rel">
-                                                <span class="lbl"></span>
-                                            </label>
-                                        </td>
+                                       <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
                                         <td><?php echo $no++ ?></td>
                                         <td><?php echo $value->id_jual_brg ?></td>
                                         <td><?php echo $value->tgl ?></td>
-                                        <td><?php echo $value->member_no ?></td>
+                                        <td><?php echo ($value->member_no != "") ? $value->member_no : "Not a Member" ?></td>
+                                        <td><?php echo $value->nilai_transaksi ?></td>
+                                        <td><?php echo $value->bayar ?></td>
+                                        <td><?php echo $value->kembalian ?></td>
+
 
                                         <td>
                                             <div class="hidden-sm hidden-xs action-buttons">
@@ -137,11 +146,9 @@
 
 
 
-
-
-<script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
+           <script type="text/javascript" src="<?php echo base_url('assets/jquery.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
 
             <!--[if IE]>
     <script src="<?= base_url() ?>/assets/js/jquery-1.11.3.min.js"></script>
@@ -165,24 +172,25 @@
             <!-- ace scripts -->
             <script src="<?= base_url() ?>/assets/js/ace-elements.min.js"></script>
 
-<script type="text/javascript">
-    $(function(){
-         $(document).on("click",".hapus-data",function(){
-    var id_supplier=$(this).attr("data-id");
-    swal({
-        title:"Hapus Supplier",
-        text:"Yakin akan menghapus data supplier?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Hapus",
-        closeOnConfirm: true,
-    },
-        function(){                 
-            window.location.href= '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
-        });
-    });
-    });
-</script>
+            <script type="text/javascript">
+                            $(function () {
+                                $(document).on("click", ".hapus-data",
+                                        function () {
+                                            var id_supplier = $(this).attr("data-id");
+                                            swal({
+                                                title: "Hapus Supplier",
+                                                text: "Yakin akan menghapus data supplier?",
+                                                type: "warning",
+                                                showCancelButton: true,
+                                                confirmButtonText: "Hapus",
+                                                closeOnConfirm: true,
+                                            },
+                                                    function () {
+                                                        window.location.href = '<?php echo base_url('crud/hapus/'); ?>' + id_supplier;
+                                                    });
+                                        });
+                            });
+            </script>
 
 
             <!-- inline scripts related to this page -->
@@ -196,7 +204,8 @@
                                 bAutoWidth: false,
                                 "aoColumns": [
                                     {"bSortable": false},
-                                    null, null, null, null, null,                                    {"bSortable": false}
+                                    null, null, null, null, null, null, null,
+                                    {"bSortable": false}
                                 ],
                                 "aaSorting": [],
 
@@ -415,5 +424,3 @@
 
                 })
             </script>
-
-

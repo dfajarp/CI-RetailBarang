@@ -25,7 +25,7 @@ class Transaksi extends CI_Controller {
     	$tr = array(
     		"tgl" => date("Y-m-d"),
     		"username" => $_SESSION['username'],
-    		"member_no" => $this->input->post('member_no'),
+    		"member_no" => ($this->input->post('member_no') != "") ? $this->input->post('member_no') : NULL,
     		"nilai_transaksi" => $this->input->post('total'),
     		"bayar" => $this->input->post('bayar'),
     		"kembalian" => $this->input->post('kembali')
@@ -143,6 +143,7 @@ class Transaksi extends CI_Controller {
 		// $no = 1; 
 		// $this->cart->remove('90f700cd5fd417d11a13db731ae92461');
 		$no=1; 
+		$total = 0;
 		foreach ($this->cart->contents() as $value):
 				echo '<tr>';
 				// echo '<th>' . $no . '</th>';
@@ -153,7 +154,14 @@ class Transaksi extends CI_Controller {
 				// echo '<th>' . date("Y-m-d") . '</th>';
 				echo '<th><button type="button" name="delete" data-id="'.$value['rowid'].'" class=" btn btn-danger btn-xs delete">Hapus</button></th>';
 				echo '</tr>';
+				$total += ($value['qty'] * $value['price']);
 	$no++; endforeach;
+		echo '<tr>';
+		echo '<th colspan="2">Total Belanja : </th>';
+		echo '<th>Rp. ' . number_format($total) . '</th>'; 
+		echo '<th></th>';
+		echo '</tr>';
+
 	}
 
 	public function addbarang()
@@ -161,6 +169,7 @@ class Transaksi extends CI_Controller {
 
 		$data = array(
 				'id' => $this->input->post('id_barang'),
+				'member_no' => $this->input->post('member_no'),
 				'name' => $this->input->post('nama_barang'),
 				'price' => str_replace('.', '', $this->input->post(
 					'harga_brg')),
@@ -174,15 +183,4 @@ class Transaksi extends CI_Controller {
 	function delete($id){
 		$this->cart->remove($id);
 	}
-	function savebarang()
-    {
-        $data = array(
-                'id_jual_brg' => $this->input->post('id_jual_brg'),
-                'tgl' => $this->input->post('tgl'),
-                'member_no' => str_replace('.', '', $this->input->post(
-                    'member_no')),
-            );
-        $insert = $this->view->insert($data);
-        echo json_encode(array("status" => TRUE));
-    }
 }

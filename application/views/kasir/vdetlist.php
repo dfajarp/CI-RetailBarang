@@ -112,21 +112,6 @@
                                     <td class="center"><?php echo $p->unit; ?></td>
                                 </tr>
 
-                                <tr>
-
-                                    <th class="center" bgcolor="CCCCCC" width="130">Total Pembayaran</th>
-                                    <td class="center"><?php echo $p->sub_total; ?></td>    
-                                </tr>
-                                <tr>
-
-                                    <th class="center" bgcolor="CCCCCC" width="130">Bayar</th>
-                                    <td class="center"><?php echo $p->bayar; ?></td>
-                                </tr>
-                                <tr>
-
-                                    <th class="center" bgcolor="CCCCCC" width="130">Kembalian</th>
-                                    <td class="center"><?php echo $p->kembalian; ?></td>
-                                </tr>
                             </table>
 
 

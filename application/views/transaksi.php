@@ -88,20 +88,7 @@
 			        	readonly="readonly">
 			      </div>
 			    </div>
-			    <div class="form-group">
-			      <label class="control-label col-md-3" 
-			      	for="id_barang">No. Member </label>
-			      <div class="col-md-5">
-			        <input list="list_member" class="form-control reset" 
-			        	placeholder="No. Member" name="" id="" 
-			        	autocomplete="off" onchange="">
-<!-- 	                  <datalist id="list_barang">
-	                  	<?php foreach ($barang as $barang): ?>
-	                  		<option value="<?= $barang->id_barang ?>"><?= $barang->nama_barang ?></option>
-	                  	<?php endforeach ?>
-	                  </datalist> -->
-			      </div>
-			    </div>
+			    
 			    <div class="form-group">
 			    	<div class="col-md-offset-3 col-md-3">
 			      		<button type="button" class="btn btn-primary" 
@@ -112,25 +99,13 @@
 
 <div class="tengah"> 
 			<div class="col-md-8">
-			    		<div class="form-group">
-				      <label for="total" class="besar">Total Pembayaran (Rp) :</label>
-				      	<input type="text" class="form-control input-lg" 
-			        	name="total" id="total" placeholder="0"
-			        	readonly="readonly"  value="<?= number_format( 
-                    	$this->cart->total(), 0 , '' , '.' ); ?>">
+				<div class="form-group">
+				      <label for="bayar" class="besar">No. Member</label>
+				        <input type="text" class="form-control input-lg" 
+				        	name="member_no" placeholder="No. member" autocomplete="off"
+				        	id="member_no">
 				    </div>
-				    <div class="form-group">
-				      <label for="bayar" class="besar">Bayar (Rp) :</label>
-				        <input type="text" class="form-control input-lg uang" 
-				        	name="bayar" placeholder="0" autocomplete="off"
-				        	id="bayar" onkeyup="showKembali(this.value)">
-				    </div>
-				    <div class="form-group">
-				      <label for="kembali" class="besar">Kembali (Rp) :</label>
-				      	<input type="text" class="form-control input-lg" 
-			        	name="kembali" id="kembali" placeholder="0"
-			        	readonly="readonly">
-				    </div>
+			    		
 			  </div>
 </div>
 
@@ -162,11 +137,34 @@
 				</tbody>
 			</table>
 
+
+
                                 </div>
                             </div>
+
+                            <div class="col-md-12">
+                            <div class="form-group">
+				      <label for="total" class="besar">Total Pembayaran (Rp) :</label>
+				      	<input type="text" class="form-control input-lg" 
+			        	name="total" id="total" placeholder="0"
+			        	readonly="readonly"  value="<?= number_format( 
+                    	$this->cart->total(), 0 , '' , '.' ); ?>">
+				    </div>
+				    <div class="form-group">
+				      <label for="bayar" class="besar">Bayar (Rp) :</label>
+				        <input type="text" class="form-control input-lg uang" 
+				        	name="bayar" placeholder="0" autocomplete="off"
+				        	id="bayar" onkeyup="showKembali(this.value)">
+				    </div>
+				    <div class="form-group">
+				      <label for="kembali" class="besar">Kembali (Rp) :</label>
+				      	<input type="text" class="form-control input-lg" 
+			        	name="kembali" id="kembali" placeholder="0"
+			        	readonly="readonly">
+				    </div>
                         </div>
-
-
+                        </div>
+					
 
 				  
 
