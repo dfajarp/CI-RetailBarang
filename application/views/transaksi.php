@@ -143,7 +143,7 @@
                             </div>
 
                             <div class="col-md-12">
-                            <div class="form-group">
+                            <div class="form-group hidden" >
 				      <label for="total" class="besar">Total Pembayaran (Rp) :</label>
 				      	<input type="text" class="form-control input-lg" 
 			        	name="total" id="total" placeholder="0"
