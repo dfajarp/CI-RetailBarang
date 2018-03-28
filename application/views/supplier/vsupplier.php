@@ -39,7 +39,7 @@
                     </div>
                     <div class="table-header">
                         Results for "Data Supplier"
-                        <a href="<?= base_url("crud/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
+                        <a href="<?= base_url("crud/vtambah"); ?>" class="btn btn-sm btn-warning pull-right">
                             <i class="glyphicon glyphicon-plus"></i> Tambah</a>
                     </div>
 

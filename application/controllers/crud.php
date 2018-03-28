@@ -19,7 +19,7 @@ class Crud extends CI_Controller {
 
     function vtambah() {
         $data['menu_aktif'] = array("vtambah");
-        $this->load->view("/supplier/vtambah");
+        $this->load->view("/supplier/vtambah", $data);
     }
 
     function tambah_aksi() {
