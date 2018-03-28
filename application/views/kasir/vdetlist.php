@@ -64,7 +64,7 @@
 
                                             <td class="center"><?php echo $data_penjualan->id_jual_brg ?></td>
                                             <td class="center"><?php echo $data_penjualan->tgl; ?></td>
-                                            <td class="center"><?php echo $data_penjualan->member_no; ?></td>
+                                            <td class="center"><?php echo ($data_penjualan->member_no != "") ? $data_penjualan->member_no : "Not a Member" ?></td>
                                         </tr>
 
 
@@ -75,7 +75,7 @@
                         </div><!-- /.row -->
                         <div class="hr hr-18 dotted hr-double"></div>
                         <?php
-                                            foreach ($data_barang as $p) {
+                        foreach ($data_barang as $p) {
                                 ?>
                         <div class="col-xs-4">
                             <div class="clearfix">
@@ -99,7 +99,7 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Harga Barang</th>
-                                    <td class="center"><?php echo "Rp" .number_format($p->harga_brg, "2", ",", "."); ?></td>
+                                    <td class="center"><?php echo "Rp" .number_format($p->harga_jual); ?></td>
                                 </tr>
                                 <tr>
 
@@ -109,9 +109,8 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Sub Total</th>
-                                    <td class="center"><?php echo $p->unit; ?></td>
+                                    <td class="center"><?php echo "Rp" .number_format($p->unit * $p->harga_jual); ?></td>
                                 </tr>
-
                             </table>
 
 

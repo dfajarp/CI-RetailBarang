@@ -18,7 +18,8 @@ class M_Jual extends CI_Model {
     function detail_barang($id_jual_brg) {
      $this->db->select('*');
      $this->db->from('barang');
-     $this->db->join('djb', 'barang.id_barang = djb.id_barang');
+     $this->db->join('katalog', 'barang.id_barang = katalog.id_barang and katalog.status = 1');
+     $this->db->join('djb', 'katalog.id_barang = djb.id_barang');
      $this->db->join('jual_brg', 'djb.id_jual_brg = jual_brg.id_jual_brg');
      $this->db->where('djb.id_jual_brg',$id_jual_brg);
      $query = $this->db->get();

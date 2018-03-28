@@ -59,6 +59,14 @@ class Transaksi extends CI_Controller {
 
 		if ($barang) {
 
+			$stok = $barang->jumlah_brg;
+
+			foreach ($this->cart->contents() as $item) {
+				if($id == $item['id']){
+					$stok = $barang->jumlah_brg - $item['qty'];
+				}
+			}
+
 			if ($barang->jumlah_brg == '0') {
 				$disabled = 'disabled';
 				$info_stok = '<span class="help-block badge" id="reset" 
@@ -66,9 +74,9 @@ class Transaksi extends CI_Controller {
 					          stok habis</span>';
 			}else{
 				$disabled = '';
-				$info_stok = '<span class="help-block badge" id="reset" 
+				$info_stok = '<span class="help-block badge badgeStok" id="reset" 
 					          style="background-color: #5cb85c;">stok : '
-					          .$barang->jumlah_brg.'</span>';
+					          .$stok.'</span>';
 			}
 
 			echo '<div class="form-group">
@@ -98,7 +106,8 @@ class Transaksi extends CI_Controller {
 				        	name="qty" placeholder="Isi qty..." autocomplete="off" 
 				        	id="qty" onchange="subTotal(this.value)" 
 				        	onkeyup="subTotal(this.value)" min="0"  
-				        	max="'.$barang->jumlah_brg.'" '.$disabled.'>
+				        	max="'.$stok.'" '.$disabled.'>
+				        	<input type="hidden" value="'. $stok .'" class="stokBarang">
 				      </div>'.$info_stok.'
 				    </div>';
 	    }else{

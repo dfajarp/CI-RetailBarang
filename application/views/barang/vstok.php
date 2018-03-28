@@ -87,7 +87,7 @@
                                         <td><?php echo "Rp" . number_format($b->harga_brg, "2", ",", "."); ?></td>
                                         <td><?php echo $b->jumlah_brg ?></td>
                                         <td><?php echo nl2br($b->deskripsi_barang) ?></td>
-                                        <td><center><img src="<?php echo $b->gambar_barang; ?>" width="150"></center></td>
+                                        <td><center><img src="<?php echo $b->gambar_barang; ?>" alt="No Image" width="150"></center></td>
 
 
                                 </tr>

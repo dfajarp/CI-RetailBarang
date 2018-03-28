@@ -44,7 +44,7 @@
 			        	autocomplete="on" onchange="showBarang(this.value)">
 	                  <datalist id="list_barang">
 	                  	<?php foreach ($barang as $barang): ?>
-	                  		<option value="<?= $barang->id_barang ?>"><?= $barang->nama_brg ?></option>
+	                  		<option value="<?= $barang->id_barang ?>"><?= $barang->id_barang . " - " . $barang->nama_brg ?></option>
 	                  	<?php endforeach ?>
 	                  </datalist>
 			      </div>
@@ -326,6 +326,7 @@
 
     function addbarang()
     {
+    	if($(".stokBarang").val() >= $('#qty').val()){
         var id_barang = $('#id_barang').val();
         var qty = $('#qty').val();
         if (id_barang == '') {
@@ -355,8 +356,12 @@
           showTotal();
           showKembali($('#bayar').val());
           //mereset semua value setelah btn tambah ditekan
+          $('.badgeStok').hide();
           $('.reset').val('');
         };
+    	} else {
+    		alert("Stok Kurang");
+    	}
     }
 
     function list() {

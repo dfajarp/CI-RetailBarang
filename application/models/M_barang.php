@@ -36,4 +36,12 @@ class M_barang extends CI_Model{
         $data = $this->db->query("SELECT * FROM member");
         return $data->result();
     }
+    function get_stok($kode)
+	{
+		return $this->db
+			->select('nama_barang, total_stok')
+			->where('id_barang', $kode)
+			->limit(1)
+			->get('barang');
+	}
 }
