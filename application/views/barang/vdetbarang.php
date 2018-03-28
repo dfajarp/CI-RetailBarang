@@ -93,7 +93,7 @@
                                 </td>
                                <tr>
                                     <th class="center"  bgcolor="CCCCCC" width="130">ID Barang</th>
-                                    <td class="center"><?php echo $p->id_barang; ?></td>
+                                    <td class="center"><?php echo $p->id_brg; ?></td>
                                 </tr>
                                 <tr>
 

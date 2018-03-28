@@ -9,36 +9,36 @@ class Katalog extends CI_Controller {
     }
 
     function katalog() {
+        $data['menu_aktif'] = array("katalog");
         $data['katalog'] = $this->m_katalog->tampil()->result();
         $this->load->view("/katalog/katalog", $data);
     }
 
     function vtambah() {
-        $data['menu_aktif'] = array("vtambah");
-        $this->load->view("/katalog/vtambah");
+        $data['menu_aktif'] = array("katalog");
+        $this->load->view("/katalog/vtambah", $data);
     }
 
     function tambah_aksi() {
-        $data['menu_aktif'] = array("aksi");
         $id_barang = $this->input->post('id_barang');
         $harga_jual = $this->input->post('harga_jual');
         $s = $this->input->post('status');
         $status = ($s != "") ? $s : 0;
 
-    	if ($status == 1){
-    		$where = array(
-    			'id_barang' => $id_barang
-    		);
-    		$this->m_katalog->update_status($where);
-    	}
+        if ($status == 1){
+            $where = array(
+                'id_barang' => $id_barang
+            );
+            $this->m_katalog->update_status($where);
+        }
 
-    	$data = array(
-    		'id_barang' => $id_barang,
-    		'harga_jual' => $harga_jual,
-    		'status' => $status
-    	);
+        $data = array(
+            'id_barang' => $id_barang,
+            'harga_jual' => $harga_jual,
+            'status' => $status
+        );
 
-    	$this->m_katalog->input_data($data, "katalog");
-    	redirect('katalog/katalog');
+        $this->m_katalog->input_data($data, "katalog");
+        redirect('katalog/katalog');
     }
 }

@@ -25,11 +25,13 @@ class Pemesanan extends CI_Controller {
     }
 
     function vtambah() {
+        $data['menu_aktif'] = array("vtambah");
         $data['data_beli_barang'] = $this->m_pemesanan->tampil();
         $this->load->view("/barang/vtambah", $data);
     }
 
     function add_barang() {
+        $data['menu_aktif'] = array("ad_brng");
         $data['data_kategori'] = $this->m_pemesanan->get_kategori();
         $this->load->view("ad_brng", $data);
     }
@@ -97,6 +99,7 @@ class Pemesanan extends CI_Controller {
     }
 
     function detail($id_pembelian) {
+        $data['menu_aktif'] = array("vdetbarang");
         $data['detail'] = 'Detail Pembelian';
         $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
         $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
@@ -104,6 +107,7 @@ class Pemesanan extends CI_Controller {
     }
 
     function detail_lapor($id_pembelian) {
+        $data['menu_aktif'] = array("vdetbaranglapor");
         $data['detail'] = 'Detail Pembelian';
         $data['data_pembelian'] = $this->m_pemesanan->detail_pembelian($id_pembelian);
         $data['data_barang'] = $this->m_pemesanan->detail_barang($id_pembelian);
