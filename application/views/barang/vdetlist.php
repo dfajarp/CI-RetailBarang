@@ -115,7 +115,7 @@
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Total Pembayaran</th>
-                                    <td class="center"><?php echo $p->sub_total; ?></td>    
+                                    <td class="center"><?php echo "Rp" .number_format($p->nilai_transaksi, "2", ",", "."); ?></td>    
                                 </tr>
                                 <tr>
 

@@ -19,7 +19,37 @@ class Transaksi extends CI_Controller {
 		$data['barang'] = $this->M_barang->get();
 
 		$this->load->view('transaksi',$data);
-	}	
+	}
+    public function savepenjualan() 
+    {
+    	$tr = array(
+    		"tgl" => date("Y-m-d"),
+    		"username" => $_SESSION['username'],
+    		"member_no" => $this->input->post('member_no'),
+    		"nilai_transaksi" => $this->input->post('total'),
+    		"bayar" => $this->input->post('bayar'),
+    		"kembalian" => $this->input->post('kembali')
+    	);
+    	
+    	$this->db->insert('jual_brg', $tr); 
+
+    	$idjb = $this->db->insert_id();
+    	$djb = array();
+    	$i = 0;
+    	foreach ($this->cart->contents() as $value) {
+    		$djb[$i]['id_barang'] = $value['id'];
+    		$djb[$i]['id_jual_brg'] = $idjb;
+    		$djb[$i]['harga'] = $value['price'];
+    		$djb[$i]['unit'] = $value['qty'];
+    		$djb[$i]['sub_total'] = $value['qty'] * $value['price'];
+    		$i++;
+    	}
+    	
+        $this->db->insert_batch('djb', $djb);
+        
+        $this->cart->destroy();
+        redirect(base_url('transaksi'));
+    }	
 	public function getbarang($id)
 	{
 
@@ -55,8 +85,8 @@ class Transaksi extends CI_Controller {
 				      <label class="control-label col-md-3" 
 				      	for="harga_barang">Harga </label>
 				      <div class="col-md-8">
-				        <input type="text" class="form-control reset" id="harga_barang" name="harga_barang" 
-				        	value="'.number_format( $barang->harga_brg, 0 ,
+				         <input type="text" class="form-control reset" id="harga_brg" name="harga_brg" 
+				        	value="'.number_format( $barang->harga_jual, 0 ,
 				        	 '' , '.' ).'" readonly="readonly">
 				      </div>
 				    </div>
@@ -115,41 +145,15 @@ class Transaksi extends CI_Controller {
 		$no=1; 
 		foreach ($this->cart->contents() as $value):
 				echo '<tr>';
+				// echo '<th>' . $no . '</th>';
+				// echo '<th>' . $value['id'];
 				echo '<th>' . $value['name'] . '</th>';
 				echo '<th>' . $value['qty'] . '</th>';
 				echo '<th>' . $value['qty'] * $value['price'] . '</th>';
+				// echo '<th>' . date("Y-m-d") . '</th>';
 				echo '<th><button type="button" name="delete" data-id="'.$value['rowid'].'" class=" btn btn-danger btn-xs delete">Hapus</button></th>';
 				echo '</tr>';
-			$no++; endforeach;
-        
-   //      foreach ($this->cart->contents() as $items){
-        	
-			// $row = array();
-			// $row[] = $no;
-			// $row[] = $items["id"];
-			// $row[] = $items["name"];
-			// $row[] = 'Rp. ' . number_format( $items['price'], 
-   //                  0 , '' , '.' ) . ',-';
-			// $row[] = $items["qty"];
-			// $row[] = 'Rp. ' . number_format( $items['subtotal'], 
-			// 		0 , '' , '.' ) . ',-';
-
-			// //add html for action
-			// $row[] = '<a 
-			// 	href="javascript:void()" style="color:rgb(255,128,128);
-			// 	text-decoration:none" onclick="deletebarang('
-			// 		."'".$items["rowid"]."'".','."'".$items['subtotal'].
-			// 		"'".')"> <i class="fa fa-close"></i> Delete</a>';
-		
-			// $data[] = $row;
-			// $no++;
-
-   //      }
-		// $output = array(
-		// 				"data" => $data,
-		// 		);
-		// //output to json format
-		// echo json_encode($output);
+	$no++; endforeach;
 	}
 
 	public function addbarang()
@@ -159,7 +163,7 @@ class Transaksi extends CI_Controller {
 				'id' => $this->input->post('id_barang'),
 				'name' => $this->input->post('nama_barang'),
 				'price' => str_replace('.', '', $this->input->post(
-					'harga_barang')),
+					'harga_brg')),
 				'qty' => $this->input->post('qty'),
 				'kategori' => $this->input->post('nama_barang')
 			);

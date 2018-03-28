@@ -63,7 +63,6 @@
                                     <tbody>
 
                                             <td class="center"><?php echo $data_penjualan->id_jual_brg ?></td>
-
                                             <td class="center"><?php echo $data_penjualan->tgl; ?></td>
                                             <td class="center"><?php echo $data_penjualan->member_no; ?></td>
                                         </tr>
@@ -94,11 +93,6 @@
                                 </tr>
                                 <tr>
 
-                                    <th class="center" bgcolor="CCCCCC" width="130">ID Katalog</th>
-                                    <td class="center"><?php echo $p->id_katalog; ?></td>
-                                </tr>
-                                <tr>
-
                                     <th class="center" bgcolor="CCCCCC" width="130">Nama Barang</th>
                                     <td class="center"><?php echo $p->nama_brg; ?></td>
                                 </tr>
@@ -112,6 +106,12 @@
                                     <th class="center" bgcolor="CCCCCC" width="130">Jumlah Barang</th>
                                     <td class="center"><?php echo $p->unit; ?></td>
                                 </tr>
+                                <tr>
+
+                                    <th class="center" bgcolor="CCCCCC" width="130">Sub Total</th>
+                                    <td class="center"><?php echo $p->unit; ?></td>
+                                </tr>
+
                                 <tr>
 
                                     <th class="center" bgcolor="CCCCCC" width="130">Total Pembayaran</th>

@@ -22,13 +22,18 @@ class M_barang extends CI_Model{
 
 	public function get_by_id($id)
 	{
-	  
-	  	$this->db->where($this->primary_key,$id); 
-	  
-	  	return $this->db->get($this->table_name)->row();
-	
-	}
-	function input_data($data, $table){
+     $this->db->select('barang.*, katalog.harga_jual');
+     $this->db->from('barang');
+     $this->db->join('katalog', 'barang.id_barang = katalog.id_barang and katalog.status = 1');
+     $this->db->where('barang.id_barang',$id);
+     $query = $this->db->get();
+     return $query->row();
+    }	function input_data($data, $table){
 		$this->db->insert($table, $data);
 	}
+
+	function get_member() {
+        $data = $this->db->query("SELECT * FROM member");
+        return $data->result();
+    }
 }
