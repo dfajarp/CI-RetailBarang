@@ -12,7 +12,7 @@ class Stok extends CI_Controller {
     }
 
     function vbarang() {
-        $data['menu_aktif'] = array("barang", "stok", "belibarang");
+        $data['menu_aktif'] = array("barang", "stok");
         $data['barang'] = $this->m_stok->tampil();
         $this->load->view("/barang/vbarang", $data);
     }
