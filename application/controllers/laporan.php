@@ -25,7 +25,7 @@ class Laporan extends CI_Controller {
         $this->load->view('manajemen/vdetlapor', $data);
     }
     function listpenjualan() {
-        $data['menu_aktif'] = array("listpenjualan");
+        $data['menu_aktif'] = array("laporan", "listpenjualan");
         $data['djb'] = $this->m_jual->tampil_data()->result();
         $this->load->view("/supplier/listpenjualan", $data);
     }

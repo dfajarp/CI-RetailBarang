@@ -103,7 +103,7 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="<?= (in_array("stok",$menu_aktif)) ? "active" : "" ?>">
+                    <li class="<?= (in_array("barang",$menu_aktif)) ? "active open" : "" ?>">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon glyphicon glyphicon-briefcase"></i>
                             <span class="menu-text"> Barang </span>
