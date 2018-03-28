@@ -105,3 +105,15 @@
                         </div>
 
 
+<script type="text/javascript">
+    $(function(){
+    $(document).ready(function(){
+        $('#aktifkan').click(function(){
+            $("#aktifkan").val("1");
+    
+       });     
+    });
+
+});
+
+</script>
