@@ -39,7 +39,7 @@
                     </div>
                     <div class="table-header">
                         Results for "Data Member"
-                        <a href="<?= base_url("member/vtambah"); ?>" class="btn btn-sm btn-primary pull-right">
+                        <a href="<?= base_url("member/vtambah"); ?>" class="btn btn-sm btn-warning pull-right">
                             <i class="glyphicon glyphicon-plus"></i> Tambah</a>
                     </div>
 

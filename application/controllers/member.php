@@ -18,7 +18,8 @@ class Member extends CI_Controller {
     }
 
     function vtambah() {
-        $this->load->view("/member/vtambah");
+        $data['menu_aktif'] = array("member", "tambah");
+        $this->load->view("/member/vtambah", $data);
     }
 
     function tambah_aksi() {
