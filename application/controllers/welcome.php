@@ -32,6 +32,8 @@ class Welcome extends CI_Controller {
 
     public function manajemen() {
         $data['menu_aktif'] = array("manajemen");
+        $data_penjualan = $this->M_statistik->penjualanPerTanggal();
+        $data['statistik_penjualan'] = json_encode($data_penjualan);
         $this->load->view("manajemen", $data);
     }
 

@@ -92,12 +92,21 @@
                         <span class="btn btn-danger"></span>
                     </div>
                 </div><!-- /.sidebar-shortcuts -->
-
                 <ul class="nav nav-list">
                     <li class="<?= (in_array("manajemen",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("welcome/manajemen"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Beranda </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                <ul class="nav nav-list">
+                    <li class="<?= (in_array("",$menu_aktif)) ? "active" : "" ?>">
+                        <a href="<?= base_url("datauser/vlistuser"); ?>" class="button">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> Data User </span>
                         </a>
 
                         <b class="arrow"></b>

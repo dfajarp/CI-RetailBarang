@@ -94,8 +94,7 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3><?php
-                                        $this->db->from('jual_brg');
-                                        echo $this->db->count_all_results();
+                                        echo $this->db->get('jual_brg')->num_rows();
                                         ?></h3>
 
                                     <p>Barang yang Terjual</p>
@@ -114,21 +113,16 @@
                         <!-- Left col -->
                         <section class="col-lg-7 connectedSortable">
                             <!-- Custom tabs (Charts with tabs)-->
-                            <div border="1">
-                                <div class="nav-tabs-custom">
-                                    <!-- Tabs within a box -->
-                                    <ul class="nav nav-tabs pull-right">
-                                        <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                                        <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                                        <li class="pull-left header"><i class="fa fa-inbox"></i> Penjualan</li>
-                                    </ul>
-                                    <div class="tab-content no-padding">
-                                        <!-- Morris chart - Sales -->
-                                        <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                                        <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-                                    </div>
+
+                            <div class="box box-primary" style="border: 1px solid #ddd;">
+                                <div class="box-header">
+                                    Data Penjualan
+                                </div>
+                                <div class="box-body">
+                                    <div class="chart tab-pane active" id="penjualan-chart" style="position: relative; height: 300px;"></div>
                                 </div>
                             </div>
+
                             <!-- /.nav-tabs-custom -->
                             <div class="box box-solid bg-green-gradient">
                                 <div class="box-header">
@@ -361,8 +355,28 @@
         <!-- AdminLTE App -->
         <script src="<?= base_url() ?>/assets/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="<?= base_url() ?>/assets/dist/js/pages/dashboard.js"></script>
+        <!-- <script src="<?= base_url() ?>/assets/dist/js/pages/dashboard.js"></script> -->
         <!-- AdminLTE for demo purposes -->
         <script src="<?= base_url() ?>/assets/dist/js/demo.js"></script>
+
+        <script type="text/javascript">
+            $(function(){
+
+                var area = new Morris.Area({
+                    element   : 'penjualan-chart',
+                    resize    : true,
+                    data      : <?= $statistik_penjualan ?>,
+                    xkey      : 'tgl',
+                    ykeys     : ['jml', 'jml2'],
+                    labels    : ['Penjualan Kategori Minuman', 'Penjualan Kategori Makanan'],
+                    lineColors: ['#45ad9c', '#3c8dbc'],
+                    hideHover : 'auto'
+                  });
+
+                    area.redraw();
+
+            });
+        </script>
+
         </body>
         </html>

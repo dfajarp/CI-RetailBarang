@@ -5,6 +5,9 @@ class M_Jual extends CI_Model {
     function tampil_data() {
         return $this->db->get('jual_brg');
     }
+    function tampil_user() {
+        return $this->db->get('user');
+    }
     function detail_penjualan($id_jual_brg) {
         $this->db->select('jual_brg.*');
         $this->db->from('jual_brg');
