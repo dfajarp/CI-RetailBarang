@@ -92,7 +92,8 @@
                         <span class="btn btn-danger"></span>
                     </div>
                 </div><!-- /.sidebar-shortcuts -->
-                <ul class="nav nav-list">
+                <ul class="nav nav-list">                            <!-- <i class="menu-icon glyphicon glyphicon-user"></i> -->
+
                     <li class="<?= (in_array("manajemen",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("welcome/manajemen"); ?>" class="button">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
@@ -105,7 +106,7 @@
                 <ul class="nav nav-list">
                     <li class="<?= (in_array("",$menu_aktif)) ? "active" : "" ?>">
                         <a href="<?= base_url("datauser/vlistuser"); ?>" class="button">
-                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <i class="menu-icon glyphicon glyphicon-user"></i>
                             <span class="menu-text"> Data User </span>
                         </a>
 

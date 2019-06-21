@@ -54,7 +54,7 @@
                                                 <td>ID Barang</td> 
                                                 <td> 
                                                     <div class="col-sm-6"> 
-                                                        <input type="text" name="id_barang" class="form-control textbox" maxlength="5" id="check" data-minlength="5" value=""> 
+                                                        <input type="text" name="id_barang" class="form-control textbox" maxlength="6" id="check" data-minlength="5" value=""> 
                                                         <span class="text-warning" ></span>
                                                     </div>
                                                 </td>

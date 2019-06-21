@@ -9,8 +9,7 @@
         <meta name="description" content="overview &amp; stats" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-
-        <link rel="stylesheet" href="<?= base_url() ?>/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" href="<?= base_url() ?>/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="<?= base_url() ?>/assets/bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
@@ -31,7 +30,15 @@
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="<?= base_url() ?>/assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
+        <!-- Google Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <!-- bootstrap & fontawesome -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/sweetalert/sweetalert.css'); ?>">
         <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css" />
@@ -60,12 +67,6 @@
         <!-- ace settings handler -->
         <script src="<?= base_url() ?>/assets/js/ace-extra.min.js"></script>
 
-        <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-        <!--[if lte IE 8]>
-        <script src="assets/js/html5shiv.min.js"></script>
-        <script src="assets/js/respond.min.js"></script>
-        <![endif]-->
     </head>
 
     <body class="no-skin">

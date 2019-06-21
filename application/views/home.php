@@ -114,211 +114,38 @@
                     <div class="row">
                         <!-- Left col -->
                         <section class="col-lg-7 connectedSortable">
-                            <!-- Custom tabs (Charts with tabs)-->
-                            <div border="1">
-                                <div class="nav-tabs-custom">
-                                    <!-- Tabs within a box -->
-                                    <ul class="nav nav-tabs pull-right">
-                                        <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                                        <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                                        <li class="pull-left header"><i class="fa fa-inbox"></i> Penjualan</li>
-                                    </ul>
-                                    <div class="tab-content no-padding">
-                                        <!-- Morris chart - Sales -->
-                                        <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                                        <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.nav-tabs-custom -->
-                            <div class="box box-solid bg-green-gradient">
+                             <div class="box box-primary" style="border: 1px solid #ddd;">
                                 <div class="box-header">
-                                    <i class="fa fa-calendar"></i>
-
-                                    <h3 class="box-title">Calendar</h3>
-                                    <!-- tools box -->
-                                    <div class="pull-right box-tools">
-                                        <!-- button with a dropdown -->
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                <i class="fa fa-bars"></i></button>
-                                            <ul class="dropdown-menu pull-right" role="menu">
-                                                <li><a href="#">Add new event</a></li>
-                                                <li><a href="#">Clear events</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">View calendar</a></li>
-                                            </ul>
-                                        </div>
-                                        <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                                        </button>
-                                    </div>
-                                    <!-- /. tools -->
+                                    Data Penjualan
                                 </div>
-                                <!-- /.box-header -->
-                                <div class="box-body no-padding">
-                                    <!--The calendar -->
-                                    <div id="calendar" style="width: 100%"></div>
-                                </div>
-                                <!-- /.box-body -->
-                                <div class="box-footer text-black">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <!-- Progress bars -->
-                                            <div class="clearfix">
-                                                <span class="pull-left">Task #1</span>
-                                                <small class="pull-right">90%</small>
-                                            </div>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                                            </div>
-
-                                            <div class="clearfix">
-                                                <span class="pull-left">Task #2</span>
-                                                <small class="pull-right">70%</small>
-                                            </div>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                                            </div>
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="col-sm-6">
-                                            <div class="clearfix">
-                                                <span class="pull-left">Task #3</span>
-                                                <small class="pull-right">60%</small>
-                                            </div>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                                            </div>
-
-                                            <div class="clearfix">
-                                                <span class="pull-left">Task #4</span>
-                                                <small class="pull-right">40%</small>
-                                            </div>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                                            </div>
-                                        </div>
-                                        <!-- /.col -->
-                                    </div>
-                                    <!-- /.row -->
+                                <div class="box-body">
+                                    <div class="chart tab-pane active" id="penjualan-chart" style="position: relative; height: 300px;"></div>
                                 </div>
                             </div>
-
-                            <!-- TO DO List -->
-
-                            <!-- /.box -->
-
-                            <!-- quick email widget -->
-
 
                         </section>
                         <!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
                         <section class="col-lg-5 connectedSortable">
-
-                            <!-- Map box -->
-                            <div class="box box-solid bg-light-blue-gradient">
+                                <div class="box box-primary" style="border: 1px solid #ddd;">
                                 <div class="box-header">
-                                    <!-- tools box -->
-                                    <div class="pull-right box-tools">
-                                        <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip"
-                                                title="Date range">
-                                            <i class="fa fa-calendar"></i></button>
-                                        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse"
-                                                data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                                            <i class="fa fa-minus"></i></button>
-                                    </div>
-                                    <!-- /. tools -->
-
-                                    <i class="fa fa-map-marker"></i>
-
-                                    <h3 class="box-title">
-                                        Visitors
-                                    </h3>
+                                     Data Pembelian Barang
                                 </div>
                                 <div class="box-body">
-                                    <div id="world-map" style="height: 250px; width: 100%;"></div>
-                                </div>
-                                <!-- /.box-body-->
-                                <div class="box-footer no-border">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                            <div id="sparkline-1"></div>
-                                            <div class="knob-label">Visitors</div>
-                                        </div>
-                                        <!-- ./col -->
-                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                            <div id="sparkline-2"></div>
-                                            <div class="knob-label">Online</div>
-                                        </div>
-                                        <!-- ./col -->
-                                        <div class="col-xs-4 text-center">
-                                            <div id="sparkline-3"></div>
-                                            <div class="knob-label">Exists</div>
-                                        </div>
-                                        <!-- ./col -->
-                                    </div>
-                                    <!-- /.row -->
+                                    <div class="chart tab-pane active" id="pembelian_barang" style="position: relative; height: 300px;"></div>
                                 </div>
                             </div>
-                            <!-- /.box -->
-
-                            <!-- solid sales graph -->
-                            <div class="box box-solid bg-teal-gradient">
-                                <div class="box-header">
-                                    <i class="fa fa-th"></i>
-
-                                    <h3 class="box-title">Grafik Penjualan</h3>
-
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="box-body border-radius-none">
-                                    <div class="chart" id="line-chart" style="height: 250px;"></div>
-                                </div>
-                                <!-- /.box-body -->
-                                <div class="box-footer no-border">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                            <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                                                   data-fgColor="#39CCCC">
-
-                                            <div class="knob-label">Mail-Orders</div>
-                                        </div>
-                                        <!-- ./col -->
-                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                            <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                                                   data-fgColor="#39CCCC">
-
-                                            <div class="knob-label">Online</div>
-                                        </div>
-                                        <!-- ./col -->
-                                        <div class="col-xs-4 text-center">
-                                            <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                                                   data-fgColor="#39CCCC">
-
-                                            <div class="knob-label">In-Store</div>
-                                        </div>
-                                        <!-- ./col -->
-                                    </div>
-                                    <!-- /.row -->
-                                </div>
-                                <!-- /.box-footer -->
-                            </div>
-                            <!-- /.box -->
-
-                            <!-- Calendar -->
-
-                            <!-- /.box -->
-
                         </section>
-                        <!-- right col -->
+                                <div class="col-lg-12 connectedSortable">
+                            <div class="box box-primary" style="border: 1px solid #ddd;">
+                                <div class="box-header">
+                                    Nilai Penjualan
+                                </div>
+                                <div class="box-body">
+                                    <div class="chart tab-pane active" id="nilai_penjualan" style="position: relative; height: 300px;"></div>
+                                </div>
+                            </div>
+                            </div>
                     </div>
                     <!-- /.row (main row) -->
 
@@ -328,6 +155,7 @@
         </div>
 
 
+        
         <!-- jQuery 3 -->
         <script src="<?= base_url() ?>/assets/bower_components/jquery/dist/jquery.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
@@ -362,8 +190,70 @@
         <!-- AdminLTE App -->
         <script src="<?= base_url() ?>/assets/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="<?= base_url() ?>/assets/dist/js/pages/dashboard.js"></script>
+        <!-- <script src="<?= base_url() ?>/assets/dist/js/pages/dashboard.js"></script> -->
         <!-- AdminLTE for demo purposes -->
         <script src="<?= base_url() ?>/assets/dist/js/demo.js"></script>
+
+        <script src="<?= base_url() ?>/assets/bower_components/jquery/dist/jquery.min.js"></script>
+    </div>
+</div>
+<!-- Bootstrap 3.3.7 -->
+<script src="<?= base_url() ?>/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="<?= base_url() ?>/assets/bower_components/raphael/raphael.min.js"></script>
+<script src="<?= base_url() ?>/assets/bower_components/morris.js/morris.min.js"></script>
+<!-- FastClick -->
+<script src="<?= base_url() ?>/assets/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url() ?>/assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= base_url() ?>/assets/dist/js/demo.js"></script>
+
+        <script type="text/javascript">
+            $(function(){
+
+                var area = new Morris.Area({
+                    element   : 'penjualan-chart',
+                    resize    : true,
+                    data      : <?= $statistik_penjualan ?>,
+                    xkey      : 'tgl',
+                    ykeys     : ['jml'],
+                    labels    : ['Total Transaksi'],
+                    lineColors: ['#45ad9c'],
+                    hideHover : 'auto'
+                  });
+                    
+                var data = new Morris.Area({
+                    element   : 'nilai_penjualan',
+                    resize    : true,
+                    data      : <?= $nilai_transaksi ?>,
+                    xkey      : 'tgl',
+                    ykeys     : ['jml'],
+                    labels    : ['Total Pendapatan'],
+                    lineColors: ['#20B2AA'],
+                    hideHover : 'auto'
+                });
+
+                var bar = new Morris.Bar({
+                    element: 'pembelian_barang',
+                    resize: true,
+                    data: <?= $pembelian_barang ?>,
+                    xkey: 'tanggal_beli',
+                    ykeys: ['jml'],
+                    labels: ['Total Pembelian Barang'],
+                    barColors: ['#800000'],
+                    hideHover: 'auto'
+                });
+
+                var pms = new Morris.Donut({
+                  element: 'pms',
+                  resize: true,
+                  colors: ["#3c8dbc", "#f56954"],
+                  data: <?= $pms ?>,
+                  hideHover: 'auto'
+                });
+            });
+        </script>
+
         </body>
         </html>

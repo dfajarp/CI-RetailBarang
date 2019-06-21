@@ -1,6 +1,7 @@
+
 <?php
 
-class M_statistik extends CI_Model {
+class M_statistikkasir extends CI_Model {
 
     function penjualanPerTanggal() {
         $query = $this->db->select("tgl, count(id_jual_brg) as jml")

@@ -26,9 +26,9 @@ class Transaksi extends CI_Controller {
     		"tgl" => date("Y-m-d"),
     		"username" => $_SESSION['username'],
     		"member_no" => ($this->input->post('member_no') != "") ? $this->input->post('member_no') : NULL,
-    		"nilai_transaksi" => $this->input->post('total'),
-    		"bayar" => $this->input->post('bayar'),
-    		"kembalian" => $this->input->post('kembali')
+    		"nilai_transaksi" => str_replace('.', '',$this->input->post('total')),
+    		"bayar" => str_replace('.', '',$this->input->post('bayar')),
+    		"kembalian" => str_replace('.', '',$this->input->post('kembali'))
     	);
     	
     	$this->db->insert('jual_brg', $tr); 
